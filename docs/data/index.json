@@ -1,11 +1,11 @@
 {
-    "title": "This is the title of the project",
+    "title": "Landmine Detector",
     "team": [
         {
-            "name": "Team Member Name 1",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx",
-            "github_profile":"#",
+            "name": "A. I. Karunanayake",
+            "email": "e17154@eng.pdn.ac.lk",
+            "eNumber": "E/17/154",
+            "github_profile":"https://github.com/Akilax0",
             "linkedin_profile":"#",
             "website": "#"
         },
