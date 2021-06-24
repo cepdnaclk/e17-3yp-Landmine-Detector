@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #d4d7de;
+  width: 100%;
+  height: 70px;
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  margin-right: 15%;
+}
+
+a {
+  margin: 15px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: black;
+}
+
+.banner-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-image: url("robots.jpg");
+}
+
+.intro-area,
+.ha-area,
+.hd-area,
+.sd-area,
+.team-area,
+.budget-area {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 1000px;
+}
