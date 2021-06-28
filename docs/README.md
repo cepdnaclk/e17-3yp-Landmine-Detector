@@ -3,20 +3,20 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-3yp-project-template
-title:
+repository-name: e17-3yp-Landmine-Detector 
+title: Landmine Detector 
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Landmine Detector 
 
 ---
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  E/17/154, A. I. Karunanayake, [e17154@eng.pdn.ac.lk](mailto:name@email.com)
+-  E/17/297,RUPASINGHE T.T.V.N., [e17297@eng.pdn.ac.lk](mailto:name@email.com)
+-  E/17/206, MANOHARA H.T., [e17206@eng.pdn.ac.lk](mailto:name@email.com)
 
 ## Table of Contents
 1. [Introduction](#introduction)
