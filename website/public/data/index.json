@@ -6,21 +6,24 @@
             "email": "e17154@eng.pdn.ac.lk",
             "eNumber": "E/17/154",
             "github_profile":"https://github.com/Akilax0",
-            "linkedin_profile":"https://www.linkedin.com/in/akila-karunanayake-978bba211/"
+            "linkedin_profile":"#",
+            "website": "#"
         },
         {
-            "name": "Team Member Name 2",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx",
-            "github_profile":"#",
-            "linkedin_profile":"#"
+            "name": "RUPASINGHE T.T.V.N.",
+            "email": "E17297@eng.pdn.ac.lk",
+            "eNumber": "E/17/297",
+            "github_profile":"https://github.com/VishvaNavanjana",
+            "linkedin_profile":"https://www.linkedin.com/in/vishva-navanjana-67334116a/",
+            "website": "https://www.vishva.me/"
         },
         {
-            "name": "Team Member Name 3",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx",
-            "github_profile":"#",
-            "linkedin_profile":"#"
+            "name": "MANOHARA H.T.",
+            "email": "e17206@eng.pdn.ac.lk",
+            "eNumber": "E/17/206",
+            "github_profile":"https://github.com/thisaramanohara",
+            "linkedin_profile":"https://www.linkedin.com/in/thisara-manohara-6990911a8/",
+            "website": "https://www.thisaramanohara.me/"
         }
     ],
     "supervisors": [
@@ -28,12 +31,14 @@
             "name": "Dr. Supervisor 1",
             "email": "email@eng.pdn.ac.lk",
             "linkedin_profile":"#",
+            "website": "#",
             "researchgate_profile":"#"
         },
         {
             "name": "Supervisor 2",
             "email": "email@eng.pdn.ac.lk",
             "linkedin_profile":"#",
+            "website": "#",
             "researchgate_profile":"#"
         }
     ],
