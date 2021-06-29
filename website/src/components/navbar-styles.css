@@ -37,7 +37,7 @@ a:hover {
   color: white;
 }
 
-.banner-area {
+/* .banner-area {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -45,8 +45,8 @@ a:hover {
   -webkit-background-size: cover;
   background-size: cover;
   background-color: white;
-  /* background-image: url("http://localhost:3000/public/images/land.jpeg"); */
-}
+  background-image: url("land.jpeg");
+} */
 
 .homeImg{
   min-height: 100%;
