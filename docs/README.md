@@ -14,8 +14,8 @@ title: Landmine Detector
 ---
 
 ## Team
--  E/17/154, A. I. Karunanayake, [e17154@eng.pdn.ac.lk](mailto:name@email.com)
--  E/17/297,RUPASINGHE T.T.V.N., [e17297@eng.pdn.ac.lk](mailto:name@email.com)
+-  E/17/154, KARUNANAYAKE A.I, [e17154@eng.pdn.ac.lk](mailto:name@email.com)
+-  E/17/297, RUPASINGHE T.T.V.N., [e17297@eng.pdn.ac.lk](mailto:name@email.com)
 -  E/17/206, MANOHARA H.T., [e17206@eng.pdn.ac.lk](mailto:name@email.com)
 
 ## Table of Contents
