@@ -21,10 +21,8 @@ function Navbar() {
             </ul>
         </div>
 
-        <div className='banner-area' id="home">
-            <img src={"/images/robots.jpg"} alt="homeimg" className="homeImg"></img>
-        </div>
-        {/* <Home /> */}
+        {/* <div className='banner-area' id="home"></div> */}
+        <Home id='home'/>
         <div className='intro-area' id='intro'>
             <Introduction />
         </div>
