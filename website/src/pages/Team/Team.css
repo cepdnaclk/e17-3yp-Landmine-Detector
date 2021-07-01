@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,100&display=swap");
+
+.main-topic {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  color: #43dea5;
+  font-size: 40px;
+  font-style: italic;
+}
+
+.team-members {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.member {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+}
+
+.member-img {
+  border-radius: 50%;
+}

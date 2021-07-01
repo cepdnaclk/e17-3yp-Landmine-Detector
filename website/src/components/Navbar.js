@@ -1,6 +1,7 @@
 // import Home from '../pages/Home/Home'
 
 import Introduction from '../pages/Introduction/Introduction';
+import Team from '../pages/Team/Team';
 import './navbar-styles.css'
 import Home from '../pages/Home/Home';
 
@@ -44,7 +45,7 @@ function Navbar() {
         </div>
         <hr/>
         <div className='team-area' id='team'>
-            <h1 style={{color:"#43dea5"}}>Team</h1>
+            <Team />
         </div>
         </body>
         
