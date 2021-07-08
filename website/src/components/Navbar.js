@@ -23,7 +23,7 @@ function Navbar() {
         </div>
 
         {/* <div className='banner-area' id="home"></div> */}
-        <Home id='home'/>
+        <Home id='home'></Home>
         <div className='intro-area' id='intro'>
             <Introduction />
         </div>
