@@ -1,10 +1,11 @@
 import './Home.css';
 import React from 'react';
+import TypeWriter from '../../components/TypeWriter'
 
 function Home() {
     return(
-        <div className="banner-area">
-            <img src={process.env.PUBLIC_URL + '/images/land.jpeg'} className = 'img'></img>
+        <div className="banner-area" id={'home'}>
+            <TypeWriter></TypeWriter>
         </div>
     )
 }
