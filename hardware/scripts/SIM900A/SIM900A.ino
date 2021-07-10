@@ -1,11 +1,3 @@
-/*THIS TUTORIAL USED GSM SIM900A MINI V3.9.2
- 
-  Connect 5VT to D9 and 5VR to D10
-  Feed GSM SIM900A with Arduino's 5V
-
-  Code by IDAYU SABRI - MYBOTIC
-*/
-
 #include <SoftwareSerial.h>
 SoftwareSerial mySerial(9, 10);
 char msg;
@@ -55,7 +47,7 @@ void SendMessage()
 {
   mySerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);  // Delay of 1000 milli seconds or 1 second
-  mySerial.println("AT+CMGS=\"+60XXXXXXXXX\"\r"); // Replace x with mobile number
+  mySerial.println("AT+CMGS=\"+94774521658\"\r"); // Replace x with mobile number
   delay(1000);
   mySerial.println("sim900a sms");// The SMS text you want to send
   delay(100);
