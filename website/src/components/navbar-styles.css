@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: right;
   list-style: none;
-  margin-right: 15%;
+  /* margin-right: 15%; */
 }
 
 a {
