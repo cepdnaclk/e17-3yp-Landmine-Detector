@@ -21,7 +21,7 @@ function Team() {
                     </a>
                 </div>
                 <div className="member">
-                    <img className="member-img" alt="" src={process.env.PUBLIC_URL + '/images/thisara.jpg'} width="200" height="190" />
+                    <img className="member-img" alt="" src={process.env.PUBLIC_URL + '/images/thisara.jpeg'} width="200" height="190" />
                     <h3>Thisara Manohara</h3>
                     <a href="https://www.linkedin.com/in/thisara-manohara-6990911a8/" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/linkedin.png'} width="40" height="40" />
