@@ -12,6 +12,7 @@ function Navbar() {
 
         <div className='navbar'>
             <ul className='nav'>
+                <li><a href='#home'><img alt="" src={process.env.PUBLIC_URL + '/png/logo.png'} width="40" height="40" /></a></li>
                 <li><a href='#home'>Home</a></li>
                 <li><a href='#intro'>Introduction</a></li>
                 <li><a href='#ha'>Hardware Architecture</a></li>
