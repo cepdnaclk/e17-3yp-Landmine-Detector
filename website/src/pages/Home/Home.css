@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 .banner-area {
     position: relative;
     width: 100%;
@@ -24,3 +26,11 @@
   align-items: 'center';
 }
 
+.heading {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #43dea5;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+}
