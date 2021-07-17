@@ -12,8 +12,8 @@ function Team() {
                         <img alt="" src={process.env.PUBLIC_URL + '/png/linkedin.png'} width="40" height="40" />
                         &emsp;
                     </a>
-                    <a href="#" target="_blank">
-                        <img alt="" src={process.env.PUBLIC_URL + '/png/fb.png'} width="40" height="40" />
+                    <a href="https://github.com/Akilax0" target="_blank">
+                        <img alt="" src={process.env.PUBLIC_URL + '/png/github.png'} width="40" height="40" />
                         &emsp;
                     </a>
                     <a href="#" target="_blank">
@@ -27,8 +27,8 @@ function Team() {
                         <img alt="" src={process.env.PUBLIC_URL + '/png/linkedin.png'} width="40" height="40" />
                         &emsp;
                     </a>
-                    <a href="#" target="_blank">
-                        <img alt="" src={process.env.PUBLIC_URL + '/png/fb.png'} width="40" height="40" />
+                    <a href="https://github.com/thisaramanohara" target="_blank">
+                        <img alt="" src={process.env.PUBLIC_URL + '/png/github.png'} width="40" height="40" />
                         &emsp;
                     </a>
                     <a href="https://www.thisaramanohara.me/" target="_blank">
@@ -42,8 +42,8 @@ function Team() {
                         <img alt="" src={process.env.PUBLIC_URL + '/png/linkedin.png'} width="40" height="40" />
                         &emsp;
                     </a>
-                    <a href="#" target="_blank">
-                        <img alt="" src={process.env.PUBLIC_URL + '/png/fb.png'} width="40" height="40" />
+                    <a href="https://github.com/VishvaNavanjana" target="_blank">
+                        <img alt="" src={process.env.PUBLIC_URL + '/png/github.png'} width="40" height="40" />
                         &emsp;
                     </a>
                     <a href="https://www.vishva.me/" target="_blank">
@@ -57,33 +57,35 @@ function Team() {
                 <div className="member">
                     <img className="member-img" alt="" src={process.env.PUBLIC_URL + '/images/isuru.png'} width="200" height="190" />
                     <h3>Dr. Isuru Nawinne</h3>
+                    &emsp;&emsp;&emsp;
                     <a href="#" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/linkedin.png'} width="40" height="40" />
                         &emsp;
                     </a>
-                    <a href="#" target="_blank">
+                    {/* <a href="#" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/fb.png'} width="40" height="40" />
                         &emsp;
                     </a>
                     <a href="#" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/web.png'} width="40" height="40" />
-                    </a>
+                    </a> */}
                 </div>
                 
                 <div className="member">
                     <img className="member-img" alt="" src={process.env.PUBLIC_URL + '/images/mahanama.jpg'} width="200" height="190" />
                     <h3>Dr. Mahanama Wickramasinghe</h3>
+                    &emsp;&emsp;&emsp;
                     <a href="https://www.linkedin.com/in/mahanama" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/linkedin.png'} width="40" height="40" />
                         &emsp;
                     </a>
-                    <a href="#" target="_blank">
+                    {/* <a href="#" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/fb.png'} width="40" height="40" />
                         &emsp;
                     </a>
                     <a href="#" target="_blank">
                         <img alt="" src={process.env.PUBLIC_URL + '/png/web.png'} width="40" height="40" />
-                    </a>
+                    </a> */}
                 </div>
             </div>
 

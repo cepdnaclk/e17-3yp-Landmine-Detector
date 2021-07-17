@@ -22,7 +22,7 @@ function Navbar() {
                 <li><a href='#team'>Team</a></li>
             </ul>
         </div>
-
+        <h1>Landmine Detection Robot</h1>
         {/* <div className='banner-area' id="home"></div> */}
         <Home id='home'></Home>
         <div className='intro-area' id='intro'>
