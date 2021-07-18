@@ -30,21 +30,23 @@ function Navbar() {
         </div>
         {/* <hr/> */}
         <div className='ha-area' id='ha'>
-            <h1 style={{color:"#43dea5"}}>Hardware Architecture</h1>       
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Solution Architecture</h1>       
         </div>
         <hr/>
         <div className='hd-area' id='hd'>
-            <h1 style={{color:"#43dea5"}}>Hardware Design</h1>             
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Hardware Design</h1>             
         </div>
         <hr/>
         <div className='sd-area' id='sd'>
-            <h1 style={{color:"#43dea5"}}>Software Design</h1>            
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Software Design</h1>            
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='budget-area' id='budget'>
-            <h1 style={{color:"#43dea5"}}>Budget</h1>         
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Budget</h1>   
+            <br></br>      
+            <img alt="" src={process.env.PUBLIC_URL + '/images/Budget.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='team-area' id='team'>
             <Team />
         </div>
