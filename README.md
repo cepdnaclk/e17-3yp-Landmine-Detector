@@ -22,9 +22,8 @@ For more information about the project please checkout our projects page at
 
 
 ## Links
-
-- [Project Repository](https://github.com/cepdnaclk/e17-3yp-Landmine-Detector)
 <!-- - [Project Page](https://cepdnaclk.github.io/e17-3yp-Le-Detector) -->
+- [Project Repository](https://github.com/cepdnaclk/e17-3yp-Landmine-Detector)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
