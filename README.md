@@ -9,6 +9,8 @@ title: Landmine Detector
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
 # Landmine Detector 
+For more information about the project please checkout our projects page at 
+[Project Page](https://cepdnaclk.github.io/e17-3yp-Le-Detector)
 
 ---
 
@@ -21,7 +23,7 @@ title: Landmine Detector
 
 ## Links
 
-- [Project Repository](https://github.com/cepdnaclk/e17-3yp-Landmine-Detector)
+<!-- - [Project Repository](https://github.com/cepdnaclk/e17-3yp-Landmine-Detector) -->
 - [Project Page](https://cepdnaclk.github.io/e17-3yp-Le-Detector)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
