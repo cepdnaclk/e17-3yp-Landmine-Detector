@@ -10,7 +10,7 @@ title: Landmine Detector
 
 # Landmine Detector 
 For more information about the project please checkout our projects page at 
-[Project Page](https://cepdnaclk.github.io/e17-3yp-Le-Detector)
+[Project Page](https://cepdnaclk.github.io/e17-3yp-Landmine-Detector)
 
 ---
 
