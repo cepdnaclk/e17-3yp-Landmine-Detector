@@ -7,7 +7,7 @@ function Home() {
         <div>
            <div className="banner-area" id={'home'}>
                 <div className="main-image" ></div>
-                <h1 className='heading'>Landmine Detection Robot</h1>
+                <h1 className='heading'>Landmine Detector</h1>
             {/* <TypeWriter></TypeWriter> */}
             </div> 
         </div>
