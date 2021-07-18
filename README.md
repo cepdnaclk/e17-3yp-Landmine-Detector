@@ -1,57 +1,74 @@
-___
-# DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
-___
+---
+layout: home
+permalink: index.html
 
-# eYY-3yp-project-template
+# Please update this with your repository name and title
+repository-name: e17-3yp-Landmine-Detector 
+title: Landmine Detector 
+---
 
-This is a sample repository you can use for your Embedded Systems project. Once you followed these instructions, remove the text and add a brief introduction to here.
+[comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-### Enable GitHub Pages
+# Landmine Detector 
 
-You can put the things to be shown in GitHub pages into the _docs/_ folder. Both html and md file formats are supported. You need to go to settings and enable GitHub pages and select _main_ branch and _docs_ folder from the dropdowns, as shown in the below image.
+---
 
-![image](https://user-images.githubusercontent.com/11540782/98789936-028d3600-2429-11eb-84be-aaba665fdc75.png)
+## Team
+-  E/17/154, KARUNANAYAKE A.I, [e17154@eng.pdn.ac.lk](mailto:name@email.com)
+-  E/17/297, RUPASINGHE T.T.V.N., [e17297@eng.pdn.ac.lk](mailto:name@email.com)
+-  E/17/206, MANOHARA H.T., [e17206@eng.pdn.ac.lk](mailto:name@email.com)
 
-### Special Configurations
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Solution Architecture](#solution-architecture )
+3. [Hardware & Software Designs](#hardware-and-software-designs)
+4. [Testing](#testing)
+5. [Detailed budget](#detailed-budget)
+6. [Conclusion](#conclusion)
+7. [Links](#links)
 
-These projects will be automatically added into [https://projects.ce.pdn.ac.lk](). If you like to show more details about your project on this site, you can fill the parameters in the file, _/docs/index.json_
+---
 
-```
-{
-  "title": "This is the title of the project",
-  "team": [
-    {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    }
-  ],
-  "supervisors": [
-    {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
-    }
-  ],
-  "tags": ["Web", "Embedded Systems"]
-}
-```
+## Introduction
 
-Once you filled this _index.json_ file, please verify the syntax is correct. (You can use [this](https://jsonlint.com/) tool).
+Description of the real world problem and solution, impact
 
-### Page Theme
+This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
 
-A custom theme integrated with this GitHub Page, which is based on [github.com/cepdnaclk/eYY-project-theme](https://github.com/cepdnaclk/eYY-project-theme). If you like to remove this default theme, you can remove the file, _docs/\_config.yml_ and use HTML based website.
+![Sample Image](./images/sample.png)
+
+
+## Solution Architecture
+
+High level diagram + description
+
+## Hardware and Software Designs
+
+Detailed designs with many sub-sections
+
+## Testing
+
+Testing done on hardware and software, detailed + summarized results
+
+## Detailed budget
+
+All items and costs
+
+| Item          | Quantity  | Unit Cost  | Total  |
+| ------------- |:---------:|:----------:|-------:|
+| Sample item   | 5         | 10 LKR     | 50 LKR |
+
+## Conclusion
+
+What was achieved, future developments, commercialization plans
+
+## Links
+
+- [Project Repository](https://github.com/cepdnaclk/e17-3yp-Landmine-Detector){:target="_blank"}
+- [Project Page](https://cepdnaclk.github.io/e17-3yp-Le-Detector){:target="_blank"}
+- [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
+- [University of Peradeniya](https://eng.pdn.ac.lk/)
+
+
+[//]: # (Please refer this to learn more about Markdown syntax)
+[//]: # (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
