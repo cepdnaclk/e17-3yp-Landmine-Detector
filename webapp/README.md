@@ -1,3 +1,10 @@
+# WEB APPLICATION
+
+## Hosted in AWS Amplify
+
+[![e5bc79b3b8e587472cde70a8bce98dec.jpg](https://i.postimg.cc/tT01Mz7L/e5bc79b3b8e587472cde70a8bce98dec.jpg)](https://main.dglpcaaalocq.amplifyapp.com/)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
