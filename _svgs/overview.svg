@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="overview.svg"
+   inkscape:export-filename="/home/akilax0/Documents/3YP/pictures/robot.png"
+   inkscape:export-xdpi="105.87191"
+   inkscape:export-ydpi="105.87191"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:zoom="0.52284038"
+     inkscape:cx="180.7435"
+     inkscape:cy="719.14874"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="0"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-object-midpoints="true" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5647" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5644" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5644-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5647-5" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#de5353;stroke-width:2.90966;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path11282"
+       cx="135.09854"
+       cy="203.43532"
+       rx="47.484177"
+       ry="46.370193" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#de5353;stroke-width:2.92146;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path11282-6"
+       cx="135.09854"
+       cy="203.98001"
+       rx="65.146744"
+       ry="64.790237" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#de5353;stroke-width:3;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path11282-3"
+       cx="135.09854"
+       cy="203.98001"
+       rx="24.932825"
+       ry="24.03826" />
+    <g
+       id="g1558"
+       style="fill:#808080"
+       transform="matrix(1.5098483,0,0,1.1418765,413.56729,28.276637)">
+      <rect
+         style="fill:#808080;stroke:#000000;stroke-width:0.865"
+         id="rect1328"
+         width="37.529358"
+         height="26.706673"
+         x="-184.68178"
+         y="141.83859" />
+      <rect
+         style="fill:#808080;stroke:#000000;stroke-width:0.865"
+         id="rect1330-3"
+         width="14.70757"
+         height="7.5969567"
+         x="-184.30965"
+         y="131.72624" />
+      <rect
+         style="fill:#808080;stroke:#000000;stroke-width:0.865"
+         id="rect1330-6"
+         width="14.70757"
+         height="7.5969567"
+         x="-162.58534"
+         y="170.98439" />
+      <rect
+         style="fill:#808080;stroke:#000000;stroke-width:0.865"
+         id="rect1330-7"
+         width="14.70757"
+         height="7.5969567"
+         x="-162.53456"
+         y="131.97368" />
+      <rect
+         style="fill:#808080;stroke:#000000;stroke-width:0.865"
+         id="rect1330-5"
+         width="14.70757"
+         height="7.5969567"
+         x="-184.79396"
+         y="170.97612" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 128.26095,205.89254 c -26.93681,-21.12527 -53.584056,0.17247 -53.584056,0.17247 0,0 -18.525805,15.89068 -29.058026,14.86942 C 19.379419,218.39012 17.839295,196.62619 6.7235706,198.58352"
+       id="path7539"
+       sodipodi:nodetypes="ccsc"
+       inkscape:export-filename="/home/akilax0/Documents/3YP/pictures/path7539.png"
+       inkscape:export-xdpi="105.87191"
+       inkscape:export-ydpi="105.87191" />
+  </g>
+</svg>

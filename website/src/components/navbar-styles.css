@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: right;
   list-style: none;
+  font-size: 25px;
   /* margin-right: 15%; */
 }
 

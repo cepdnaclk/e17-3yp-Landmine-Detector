@@ -4,6 +4,7 @@ function Team() {
     return(
         <div>
             <h1 className='main-topic'>Team</h1>
+            <br></br>
             <div className="team-members">
                 <div className="member">
                     <img className="member-img" alt="" src={process.env.PUBLIC_URL + '/images/akila.jpg'} width="200" height="190" />
@@ -53,6 +54,7 @@ function Team() {
             </div>
             <br/><br/>
             <h1 className='main-topic'>Supervisors</h1>
+            <br></br>
             <div className="team-members">
                 <div className="member">
                     <img className="member-img" alt="" src={process.env.PUBLIC_URL + '/images/isuru.png'} width="200" height="190" />
