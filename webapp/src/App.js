@@ -6,6 +6,7 @@ import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 
 Amplify.configure(awsconfig);
 
+
 function App() {
   return (
     <div className="App">
