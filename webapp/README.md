@@ -2,7 +2,7 @@
 
 ## Hosted in AWS Amplify
 
-[![e5bc79b3b8e587472cde70a8bce98dec.jpg](https://i.postimg.cc/tT01Mz7L/e5bc79b3b8e587472cde70a8bce98dec.jpg)](https://main.dglpcaaalocq.amplifyapp.com/)
+[![e5bc79b3b8e587472cde70a8bce98dec.jpg](https://i.postimg.cc/tT01Mz7L/e5bc79b3b8e587472cde70a8bce98dec.jpg)](https://main.d1vjjdxkj9tz2i.amplifyapp.com/)
 
 
 # Getting Started with Create React App
