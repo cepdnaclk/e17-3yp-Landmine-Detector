@@ -12,7 +12,7 @@ title: Landmine Detector
 
 ## Table of Contents
 * [Problem Overview](#Problem-Overview)
-* [Implementation](#Implementation)
+* [Existing System](#Existing System)
 * [Proposed System](#Proposed-System)
 * [Key Features and Scope](#Key-Features-and-Scope)
 * [Team](#Team)
