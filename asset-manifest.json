@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/e17-3yp-Landmine-Detector/static/css/main.0ae23c17.chunk.css",
-    "main.js": "/e17-3yp-Landmine-Detector/static/js/main.14ea5000.chunk.js",
-    "main.js.map": "/e17-3yp-Landmine-Detector/static/js/main.14ea5000.chunk.js.map",
+    "main.css": "/e17-3yp-Landmine-Detector/static/css/main.6f56ff6c.chunk.css",
+    "main.js": "/e17-3yp-Landmine-Detector/static/js/main.6357f0ad.chunk.js",
+    "main.js.map": "/e17-3yp-Landmine-Detector/static/js/main.6357f0ad.chunk.js.map",
     "runtime-main.js": "/e17-3yp-Landmine-Detector/static/js/runtime-main.9a5713f6.js",
     "runtime-main.js.map": "/e17-3yp-Landmine-Detector/static/js/runtime-main.9a5713f6.js.map",
     "static/js/2.3956a749.chunk.js": "/e17-3yp-Landmine-Detector/static/js/2.3956a749.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.d9cf8cd7.chunk.js": "/e17-3yp-Landmine-Detector/static/js/3.d9cf8cd7.chunk.js",
     "static/js/3.d9cf8cd7.chunk.js.map": "/e17-3yp-Landmine-Detector/static/js/3.d9cf8cd7.chunk.js.map",
     "index.html": "/e17-3yp-Landmine-Detector/index.html",
-    "static/css/main.0ae23c17.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/main.0ae23c17.chunk.css.map",
+    "static/css/main.6f56ff6c.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/main.6f56ff6c.chunk.css.map",
     "static/js/2.3956a749.chunk.js.LICENSE.txt": "/e17-3yp-Landmine-Detector/static/js/2.3956a749.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/e17-3yp-Landmine-Detector/static/media/land.a3d03566.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.9a5713f6.js",
     "static/js/2.3956a749.chunk.js",
-    "static/css/main.0ae23c17.chunk.css",
-    "static/js/main.14ea5000.chunk.js"
+    "static/css/main.6f56ff6c.chunk.css",
+    "static/js/main.6357f0ad.chunk.js"
   ]
 }
