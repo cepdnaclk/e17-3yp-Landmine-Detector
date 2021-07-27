@@ -19,6 +19,7 @@ function Navbar() {
                 <li><a href='#hd'>Hardware Design</a></li>
                 <li><a href='#sd'>Software Design</a></li>
                 <li><a href='#budget'>Budget</a></li>
+                <li><a href='#time'>Timeline</a></li>
                 <li><a href='#team'>Team</a></li>
             </ul>
         </div>
@@ -30,13 +31,17 @@ function Navbar() {
         </div>
         {/* <hr/> */}
         <div className='ha-area' id='ha'>
-            <h1 style={{color:"#43dea5", textAlign:'center' }}>Solution Architecture</h1>       
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Solution Architecture</h1>      
+            <br></br>      
+            <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='hd-area' id='hd'>
-            <h1 style={{color:"#43dea5", textAlign:'center' }}>Hardware Design</h1>             
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Hardware Design</h1>  
+            <br></br>      
+            <img alt="" src={process.env.PUBLIC_URL + '/images/Hardware.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>           
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='sd-area' id='sd'>
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Software Design</h1>            
         </div>
@@ -45,6 +50,11 @@ function Navbar() {
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Budget</h1>   
             <br></br>      
             <img alt="" src={process.env.PUBLIC_URL + '/images/Budget.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
+        </div>
+        <div className='time-area' id='time'>
+            <h1 style={{color:"#43dea5", textAlign:'center' }}>Timeline</h1>   
+            <br></br>      
+            <img alt="" src={process.env.PUBLIC_URL + '/images/timeline.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
         </div>
         {/* <hr/> */}
         <div className='team-area' id='team'>

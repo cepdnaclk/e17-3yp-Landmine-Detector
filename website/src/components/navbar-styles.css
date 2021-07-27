@@ -62,6 +62,7 @@ a:hover {
 .hd-area,
 .sd-area,
 .team-area,
+.time-area,
 .budget-area {
   position: relative;
   /* display: flex; */
