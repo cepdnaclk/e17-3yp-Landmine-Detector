@@ -57,9 +57,18 @@ a:hover {
   position: fixed;
 }
 
-.intro-area,
-.ha-area,
-.hd-area,
+.intro-area{
+    position: relative;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 800px;
+    padding-top: 70px;
+}
+
 .sd-area,
 .team-area,
 .time-area,
@@ -71,6 +80,30 @@ a:hover {
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  height: 1000px;
+  height: 1200px;
+  padding-top: 70px;
+}
+
+.hd-area{
+  position: relative;
+  /* display: flex; */
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 1200px;
+  padding-top: 70px;
+}
+
+.ha-area{
+  position:relative;
+  /* display: flex; */
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 1200px;
   padding-top: 70px;
 }
