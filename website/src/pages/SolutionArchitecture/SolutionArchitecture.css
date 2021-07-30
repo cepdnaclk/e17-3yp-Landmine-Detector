@@ -7,6 +7,14 @@
   font-size: 40px;
 }
 
+.sub-topic {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-left: 20px;
+    color: white;
+    font-size: 18px;
+  }
+
 
 .SolutionArchitectures {
     display: flex;
@@ -25,10 +33,13 @@
   
 .Application_Logo {
     border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .text {
-    text-align: left;
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     padding-left: 20px;
     color: rgb(134, 214, 174);
