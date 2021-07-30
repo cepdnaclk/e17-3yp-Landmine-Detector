@@ -5,6 +5,7 @@ import Hardware from '../pages/Hardware/Hardware';
 import Team from '../pages/Team/Team';
 import './navbar-styles.css'
 import Home from '../pages/Home/Home';
+import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
 
 
 function Navbar() {
@@ -32,9 +33,12 @@ function Navbar() {
         </div>
         <hr/>
         <div className='ha-area' id='ha'>
+             <SolutionArchitecture />
+             {/*
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Solution Architecture</h1>      
             <br></br>      
             <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block',marginLeft:'300px',width:'80%'}}/>
+            */}
         </div>
         <hr/>
         <div className='hd-area' id='hd'>
