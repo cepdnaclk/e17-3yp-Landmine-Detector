@@ -40,22 +40,23 @@ function Navbar() {
         <div className='hd-area' id='hd'>
             <Hardware/>
         </div>
-        {/* <hr/> */}
+        <hr/>
         <div className='sd-area' id='sd'>
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Software Design</h1>            
         </div>
-        {/* <hr/> */}
+        <hr/>
         <div className='budget-area' id='budget'>
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Budget</h1>   
             <br></br>      
             <img alt="" src={process.env.PUBLIC_URL + '/images/Budget.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
         </div>
+        <hr/>
         <div className='time-area' id='time'>
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Timeline</h1>   
             <br></br>      
             <img alt="" src={process.env.PUBLIC_URL + '/images/timeline.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
         </div>
-        {/* <hr/> */}
+        <hr/>
         <div className='team-area' id='team'>
             <Team />
         </div>
