@@ -20,9 +20,8 @@ function Hardware() {
         {/* <img alt="" src={process.env.PUBLIC_URL + '/images/Hardware.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>  */}
             <Slide easing="ease">
                     <div className="each-slide">
-                        <div style={{'backgroundImage': `url(${im})`}}>
-                        <span>Slide 1</span>
-                        </div>
+                        <img alt="" src={process.env.PUBLIC_URL + '/images/Hardware1.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%',marginTop:'auto',marginBottom:'auto'}}/>   
+                        {/* <span>Slide 1</span> */}
                     </div>
                     <div className="each-slide">
                         <div style={{'backgroundImage': `url(${im1})`}}>
@@ -35,7 +34,6 @@ function Hardware() {
                         </div>
                     </div>
             </Slide>
-
         </div>
     )
 }
