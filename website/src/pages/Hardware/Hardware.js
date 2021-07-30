@@ -14,7 +14,7 @@ function Hardware() {
                         <div className="left">
                         
                          <img alt="" src={process.env.PUBLIC_URL + '/images/esp32.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                         <p className='text'>Landmines are prominent weapons designed to destroy or 
+                         <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
                             disable enemy targets which detonate by the movement of its target, pressure, 
                             sound, magnetism and vibration. More than a hundred million land mines are scattered 
                             around the world which remain hazardous for years even after conflict termination
@@ -36,7 +36,7 @@ function Hardware() {
                     <h1 className='sub-topic'>NEO6M-GPS</h1>
                     <div className="left">
                          <img alt="" src={process.env.PUBLIC_URL + '/images/neo.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                         <p className='text'>Landmines are prominent weapons designed to destroy or 
+                         <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
                             disable enemy targets which detonate by the movement of its target, pressure, 
                             sound, magnetism and vibration. More than a hundred million land mines are scattered 
                             around the world which remain hazardous for years even after conflict termination
@@ -59,7 +59,7 @@ function Hardware() {
                     <h1 className='sub-topic'>GYRO SENSOR</h1>
                         <div className="left">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/Gyro.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                            <p className='text'>Landmines are prominent weapons designed to destroy or 
+                            <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
                                 disable enemy targets which detonate by the movement of its target, pressure, 
                                 sound, magnetism and vibration. More than a hundred million land mines are scattered 
                                 around the world which remain hazardous for years even after conflict termination
