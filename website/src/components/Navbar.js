@@ -6,11 +6,12 @@ import Team from '../pages/Team/Team';
 import './navbar-styles.css'
 import Home from '../pages/Home/Home';
 import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
+import Footer from './Footer';
 
 
 function Navbar() {
     return(
-        <body>
+        <div className='navbar-body'>
 
         <div className='navbar'>
             <ul className='nav'>
@@ -64,7 +65,9 @@ function Navbar() {
         <div className='team-area' id='team'>
             <Team />
         </div>
-        </body>
+
+        {/* <Footer /> */}
+        </div>
         
     )
 }
