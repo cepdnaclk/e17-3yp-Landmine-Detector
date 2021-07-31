@@ -11,3 +11,9 @@
     color: black;
     text-transform: lowercase;
   }
+
+  hr {
+    height: 1px;
+    background-color: black;
+    border: none;
+  }
