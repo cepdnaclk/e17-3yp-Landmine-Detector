@@ -11,7 +11,7 @@ import Footer from './Footer';
 
 function Navbar() {
     return(
-        <body>
+        <div className='navbar-body'>
 
         <div className='navbar'>
             <ul className='nav'>
@@ -66,8 +66,8 @@ function Navbar() {
             <Team />
         </div>
 
-        <Footer />
-        </body>
+        {/* <Footer /> */}
+        </div>
         
     )
 }
