@@ -51,7 +51,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            9:30 am
+            22 July 2021
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -63,16 +63,17 @@ function Timeline_LM() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Eat
+              Milestone 1
             </Typography>
-            <Typography>Because you need strength</Typography>
+            <Typography>Project Proposal</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
+
       <TimelineItem>
         <TimelineOppositeContent>
         <WhiteTextTypography>
-            9:30 am
+            24 August 2021
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -84,16 +85,17 @@ function Timeline_LM() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Code
+            Milestone 2
             </Typography>
-            <Typography>Because it&apos;s awesome!</Typography>
+            <Typography>Web Application & Data flow </Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
+      
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            9:30 am
+            {/* add date */}
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -105,16 +107,39 @@ function Timeline_LM() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Sleep
+            Milestone 3
             </Typography>
-            <Typography>Because you need rest</Typography>
+            <Typography>3D design & PCB Design</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
+
+      <TimelineItem>
+        <TimelineOppositeContent>
+        <WhiteTextTypography>
+            {/* add date */}
+          </WhiteTextTypography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot color="primary">
+            {/* <LaptopMacIcon /> */}
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3} className={classes.paper}>
+            <Typography variant="h6" component="h1">
+            Milestone 4
+            </Typography>
+            <Typography>Prototype & Testing</Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            9:30 am
+            {/* //add date */}
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -124,32 +149,16 @@ function Timeline_LM() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Repeat
+            Milestone 5
             </Typography>
-            <Typography>Because this is the life you love!</Typography>
+            <Typography>Complete Working System</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
-      <TimelineItem>
-          <TimelineOppositeContent>
-            <WhiteTextTypography>
-              9:30 am
-            </WhiteTextTypography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot color="secondary">
-            </TimelineDot>
-          </TimelineSeparator>
-          <TimelineContent>
-            <Paper elevation={3} className={classes.paper}>
-              <Typography variant="h6" component="h1">
-                Repeat
-              </Typography>
-              <Typography>Because this is the life you love!</Typography>
-            </Paper>
-          </TimelineContent>
-        </TimelineItem>
-      </Timeline>
+
+
+
+    </Timeline>
     </div>
   );
 }
