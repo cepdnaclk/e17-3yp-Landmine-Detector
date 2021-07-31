@@ -51,7 +51,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            9:30 am
+            22 July 2021
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -73,7 +73,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
         <WhiteTextTypography>
-            9:30 am
+            24 August 2021
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -95,7 +95,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            9:30 am
+            {/* add date */}
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -117,7 +117,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
         <WhiteTextTypography>
-            9:30 am
+            {/* add date */}
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -139,7 +139,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            9:30 am
+            {/* //add date */}
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
