@@ -1,0 +1,54 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,100&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+.main-topic {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #43dea5;
+  font-size: 40px;
+}
+
+.sub-topic {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-left: 20px;
+    color: white;
+    font-size: 18px;
+  }
+
+
+.SolutionArchitectures {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  
+.Application {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    align-items: center;
+}
+  
+.Application_Logo {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text {
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(134, 214, 174);
+    font-size: 18px;
+}
+
+.sol-block{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}

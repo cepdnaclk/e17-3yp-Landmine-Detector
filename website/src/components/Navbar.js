@@ -8,6 +8,7 @@ import Home from '../pages/Home/Home';
 import Timeline_LM from '../pages/Timeline_LM/Timeline_LM';
 import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
 import Footer from './Footer';
+import Budget from '../pages/Budget/Budget';
 
 
 function Navbar() {
@@ -52,9 +53,7 @@ function Navbar() {
         </div>
         <hr/>
         <div className='budget-area' id='budget'>
-            <h1 style={{color:"#43dea5", textAlign:'center' }}>Budget</h1>   
-            <br></br>      
-            <img alt="" src={process.env.PUBLIC_URL + '/images/Budget.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
+              <Budget />
         </div>
         <hr/>
         <div className='time-area' id='time'>
