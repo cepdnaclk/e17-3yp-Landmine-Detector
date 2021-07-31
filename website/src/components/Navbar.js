@@ -58,6 +58,8 @@ function Navbar() {
         </div>
         <hr/>
         <div className='time-area' id='time'>
+        <h1 className='main-topic'>Timeline</h1>
+            <br></br>
             <Timeline_LM/>
         </div>
         <hr/>

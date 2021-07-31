@@ -45,6 +45,8 @@ function Timeline_LM() {
 
   return (
     <div className="time">
+      
+
     <Timeline align="alternate">
       <TimelineItem>
         <TimelineOppositeContent>
@@ -128,7 +130,26 @@ function Timeline_LM() {
           </Paper>
         </TimelineContent>
       </TimelineItem>
-    </Timeline>
+      <TimelineItem>
+          <TimelineOppositeContent>
+            <WhiteTextTypography>
+              9:30 am
+            </WhiteTextTypography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot color="secondary">
+            </TimelineDot>
+          </TimelineSeparator>
+          <TimelineContent>
+            <Paper elevation={3} className={classes.paper}>
+              <Typography variant="h6" component="h1">
+                Repeat
+              </Typography>
+              <Typography>Because this is the life you love!</Typography>
+            </Paper>
+          </TimelineContent>
+        </TimelineItem>
+      </Timeline>
     </div>
   );
 }

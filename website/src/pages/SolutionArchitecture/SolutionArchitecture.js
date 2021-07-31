@@ -2,8 +2,10 @@ import './SolutionArchitecture.css'
 
 function SolutionArchitecture() {
     return(
-        <div>
+        <div className='sol-block'>
             <h1 className='main-topic'>Solution Architecture</h1>
+            <br></br>
+            <br></br>
             <br></br>
 
             <div className="SolutionArchitectures">
@@ -36,8 +38,10 @@ function SolutionArchitecture() {
                 </div>
 
             </div>
-
-
+            <br></br>
+            <br></br>
+            <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block',width:'100%',opacity:'70%'}}/>
+            
         </div>
 
 
