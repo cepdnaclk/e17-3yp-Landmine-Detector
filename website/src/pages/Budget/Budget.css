@@ -22,6 +22,11 @@ table{
   border-collapse: collapse;
 }
 
+tr:hover {
+  background-color:#05da8c;
+}
+
+
 th{
   padding: 20px 15px;
   text-align: left;
@@ -43,9 +48,11 @@ td{
   color: rgb(0, 0, 0);
   border: 1px solid  #43dea5;
   border-collapse: collapse;
-  background-color: rgb(178, 230, 194);
-  
+}
 
+tr{
+ 
+  background-color: rgb(178, 230, 194);
 }
 
 .total{
