@@ -2,7 +2,7 @@ import './Budget.css'
 
 function Budget() {
     return(
-        <div className='sol-block'>
+        <div className='budget-block'>
             <h1 className='main-topic'>Budget</h1>
             <br></br>
             <br></br>
@@ -53,7 +53,7 @@ function Budget() {
         <td>6000</td>
     </tr>
     <tr>
-        <td>"Tires Chassis and other robot components"</td>
+        <td>Tires Chassis and other robot components</td>
         <td>5000</td>
         <td>1</td>
         <td>5000</td>
@@ -65,7 +65,7 @@ function Budget() {
         <td>250</td>
     </tr>
     <tr>
-        <td>"Resistors capacitors and other components"</td>
+        <td>Resistors capacitors and other components</td>
         <td>500</td>
         <td>1</td>
         <td>500</td>
@@ -76,11 +76,11 @@ function Budget() {
         <td>1</td>
         <td>2500</td>
     </tr>
-    <tr>
-        <td>Total</td>
-        <td></td>
-        <td></td>
-        <td>24350</td>
+    <tr >
+        <td className='total'>Total</td>
+        <td className='total'></td>
+        <td className='total'></td>
+        <td className='total' >24350</td>
     </tr>
   
 </table>
