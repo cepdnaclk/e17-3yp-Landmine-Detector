@@ -7,20 +7,6 @@
   font-size: 40px;
 }
 
-.column-topic {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    padding-left: 20px;
-    color: white;
-    font-size: 18px;
-  }
-
-.sol-block{
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 table{
   width:100%;
   table-layout: fixed;
@@ -29,15 +15,7 @@ table{
   border: 1px solid  #43dea5;
   border-collapse: collapse;
 }
-.tbl-header{
-  background-color: rgba(255,255,255,0.3);
- }
-.tbl-content{
-  height:300px;
-  overflow-x:auto;
-  margin-top: 0px;
-  border: 1px solid rgba(255,255,255,0.3);
-}
+
 th{
   padding: 20px 15px;
   text-align: left;
@@ -47,19 +25,24 @@ th{
   text-transform: uppercase;
   border: 1px solid  #43dea5;
   border-collapse: collapse;
+  background-color: rgb(16, 139, 53);
 
 }
-tr{
+td{
   padding: 20px 15px;
   text-align: left;
   vertical-align:middle;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 14px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   border: 1px solid  #43dea5;
   border-collapse: collapse;
+  background-color: rgb(178, 230, 194);
+  
+
 }
 
 .item{
   background-color: rgb(16, 139, 53);
 }
+

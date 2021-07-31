@@ -11,7 +11,7 @@ function Budget() {
             <table>
     <tr>
         
-        <th class='item'>Component </th>
+        <th>Component </th>
         <th>Unit Price(Rs.)</th>
         <th>Quantity</th>
         <th>Price</th>
@@ -82,9 +82,7 @@ function Budget() {
         <td></td>
         <td>24350</td>
     </tr>
-    <tr>
-        <td></td>
-    </tr>
+  
 </table>
 
             
