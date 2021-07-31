@@ -2,7 +2,7 @@ import './Introduction.css'
 
 function Introduction() {
     return(
-        <div>
+        <div className="text-block">
             <h1 className='main-topic'>Introduction</h1>
             <h1 className='sub-topic'>About</h1>
             <p className='text'>Landmines are prominent weapons designed to destroy or 

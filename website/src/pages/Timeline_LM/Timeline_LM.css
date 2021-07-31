@@ -1,0 +1,14 @@
+.time{
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-topic {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #43dea5;
+    font-size: 40px;
+}
+  

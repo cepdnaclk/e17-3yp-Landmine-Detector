@@ -42,6 +42,13 @@
     text-align: justify;
     font-family: 'Montserrat', sans-serif;
     padding-left: 20px;
+    padding-right: 20px;
     color: rgb(134, 214, 174);
     font-size: 18px;
+}
+
+.sol-block{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
