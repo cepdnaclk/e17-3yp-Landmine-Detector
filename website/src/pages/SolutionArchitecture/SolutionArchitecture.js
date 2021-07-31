@@ -44,6 +44,4 @@ function SolutionArchitecture() {
     )
 
 }
-
-
 export default SolutionArchitecture;

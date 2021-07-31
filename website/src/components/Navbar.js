@@ -5,6 +5,7 @@ import Hardware from '../pages/Hardware/Hardware';
 import Team from '../pages/Team/Team';
 import './navbar-styles.css'
 import Home from '../pages/Home/Home';
+import Timeline_LM from '../pages/Timeline_LM/Timeline_LM';
 import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
 
 
@@ -56,9 +57,7 @@ function Navbar() {
         </div>
         <hr/>
         <div className='time-area' id='time'>
-            <h1 style={{color:"#43dea5", textAlign:'center' }}>Timeline</h1>   
-            <br></br>      
-            <img alt="" src={process.env.PUBLIC_URL + '/images/timeline.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>
+            <Timeline_LM/>
         </div>
         <hr/>
         <div className='team-area' id='team'>
