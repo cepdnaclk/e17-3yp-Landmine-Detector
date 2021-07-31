@@ -6,6 +6,7 @@ import Team from '../pages/Team/Team';
 import './navbar-styles.css'
 import Home from '../pages/Home/Home';
 import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
+import Footer from './Footer';
 
 
 function Navbar() {
@@ -64,6 +65,8 @@ function Navbar() {
         <div className='team-area' id='team'>
             <Team />
         </div>
+
+        <Footer />
         </body>
         
     )
