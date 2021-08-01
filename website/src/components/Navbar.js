@@ -8,6 +8,7 @@ import Home from '../pages/Home/Home';
 import Timeline_LM from '../pages/Timeline_LM/Timeline_LM';
 import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
 import Footer from './Footer';
+import Software from '../pages/Software/Software'
 import Budget from '../pages/Budget/Budget';
 
 
@@ -49,7 +50,7 @@ function Navbar() {
         </div>
         <hr/>
         <div className='sd-area' id='sd'>
-            <h1 style={{color:"#43dea5", textAlign:'center' }}>Software Design</h1>            
+            <Software />
         </div>
         <hr/>
         <div className='budget-area' id='budget'>
