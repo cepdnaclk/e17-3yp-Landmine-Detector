@@ -91,7 +91,7 @@ function SolutionArchitecture() {
                             <ul  className='ha-text'>
                                 <h2 className="sec-topic">Cloud Security</h2>
                                 <br></br>
-                                <li>Data protection-AWS provides security services to  protect our data, accounts, and workloads from unauthorized access. AWS data protection services provide encryption and key management and threat detection that continuously monitors and protects our accounts and workloads.</li>
+                                <li>Data protection-AWS provides security services to protect our data, accounts and workloads from unauthorized access. AWS data protection services provide encryption and key management and threat detection that continuously monitors and protects our accounts and workloads.</li>
                                 <br></br>
                                 <li>Identity and access management</li>
                                 <br></br>
