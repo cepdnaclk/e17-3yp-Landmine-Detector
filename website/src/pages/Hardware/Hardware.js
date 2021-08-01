@@ -69,7 +69,12 @@ function Hardware() {
                         </div>
                     </div>
             </Slide>
+            
         </div>
+
+        
+
+
     )
 }
 
