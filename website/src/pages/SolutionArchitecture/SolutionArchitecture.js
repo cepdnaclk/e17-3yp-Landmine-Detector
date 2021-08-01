@@ -80,8 +80,11 @@ function SolutionArchitecture() {
                         </div>
                     </div>
 
+            </div>
 
-                    <div className="each-slide-sa">
+            <div>
+                
+            <div className="each-slide-sa">
                     <br></br>
                     <br></br>
                     <br></br>
@@ -117,6 +120,8 @@ function SolutionArchitecture() {
                             </ul>
         
                         </div>
+
+        
                     </div>
             </div>
             
