@@ -15,7 +15,7 @@ function Navbar() {
         <div className='navbar-body'>
 
         <div className='navbar'>
-        <a href='#home'><img alt="" src={process.env.PUBLIC_URL + '/png/logo.png'} height="50" marginTop='0' /></a>
+        <a href='#home'><img alt="" src={process.env.PUBLIC_URL + '/png/logo.png'} height="40" marginTop='0' /></a>
             <ul className='nav'>
                 {/* <li><a href='#home'>Home</a></li> */}
                 <li><a href='#intro'>Introduction</a></li>
