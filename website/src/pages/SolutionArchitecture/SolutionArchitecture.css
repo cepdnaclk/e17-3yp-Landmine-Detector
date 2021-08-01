@@ -86,3 +86,12 @@
   width: 500px;
   height: 100%;
 }
+
+.sec-topic {
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+  padding-left: 20px;
+  color: rgb(16, 236, 170);
+  font-size: 22px;
+  font-weight: bold;
+}

@@ -79,6 +79,50 @@ function SolutionArchitecture() {
                                 to make lands safer for humans to use.</p> */}
                         </div>
                     </div>
+
+            </div>
+
+            <div>
+                
+            <div className="each-slide-sa">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h1 className='sub-topic-ha'>SECURITY</h1>
+                        <div className="left-sa">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/Cloud_Security.png'} style={{ display: 'block', marginRight:'auto',width:'25%',opacity:'70%'}}/> 
+                            <ul  className='ha-text'>
+                                <h2 className="sec-topic">Cloud Security</h2>
+                                <br></br>
+                                <li>Data protection-AWS provides security services to protect our data, accounts and workloads from unauthorized access. AWS data protection services provide encryption and key management and threat detection that continuously monitors and protects our accounts and workloads.</li>
+                                <br></br>
+                                <li>Identity and access management</li>
+                                <br></br>
+                                <li>Network and application protection</li>
+                                <br></br>
+                                <li>Compliance and data privacy</li>
+                    
+
+                            </ul>
+        
+                        </div>
+
+                        <div className="left-sa">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/aws_iot.jpg'} style={{ display: 'block', marginRight:'auto',width:'20%',opacity:'70%'}}/> 
+                            <ul  className='ha-text'>
+                                <h2 className="sec-topic">IOT Security</h2>
+                                <br></br>
+                                <li>When we connect our  Landmine detection robot to AWS IoT Core, it provides the security  to securely connect devices to the cloud . AWS IoT core security features allow enforcing security controls such as authentication, authorization, audit logging and end-to-end encryption.</li>
+                               
+                                <br></br>
+                                <br></br>
+
+                            </ul>
+        
+                        </div>
+
+        
+                    </div>
             </div>
             
         </div>
