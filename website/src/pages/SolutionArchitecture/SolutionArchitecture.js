@@ -79,6 +79,38 @@ function SolutionArchitecture() {
                                 to make lands safer for humans to use.</p> */}
                         </div>
                     </div>
+
+
+                    <div className="each-slide-sa">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <h1 className='sub-topic-ha'>SECURITY</h1>
+                        <div className="left-sa">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/Cloud_Security.png'} style={{ display: 'block', marginRight:'auto',width:'25%',opacity:'70%'}}/> 
+                            <ul  className='ha-text'>
+                                <h2 className="sec-topic">Cloud Security</h2>
+                                <br></br>
+                                <li>Data protection-AWS provides security services to  protect our data, accounts, and workloads from unauthorized access. AWS data protection services provide encryption and key management and threat detection that continuously monitors and protects our accounts and workloads.</li>
+                                <br></br>
+                                <li>Identity and access management</li>
+                                <br></br>
+                                <li>Network and application protection</li>
+                                <br></br>
+                                <li>Compliance and data privacy</li>
+                                <br></br>
+                                <br></br>
+
+                            </ul>
+                            {/* <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
+                                disable enemy targets which detonate by the movement of its target, pressure, 
+                                sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                                around the world which remain hazardous for years even after conflict termination
+                                posing a significant threat to civilians and the economy. More Effective and 
+                                sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                                to make lands safer for humans to use.</p> */}
+                        </div>
+                    </div>
             </div>
             
         </div>
