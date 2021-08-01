@@ -70,13 +70,6 @@ function SolutionArchitecture() {
                                 <br></br>
 
                             </ul>
-                            {/* <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
-                                disable enemy targets which detonate by the movement of its target, pressure, 
-                                sound, magnetism and vibration. More than a hundred million land mines are scattered 
-                                around the world which remain hazardous for years even after conflict termination
-                                posing a significant threat to civilians and the economy. More Effective and 
-                                sophisticated tools to detect, locate and deactivate landmines are urgently needed
-                                to make lands safer for humans to use.</p> */}
                         </div>
                     </div>
 
@@ -90,8 +83,7 @@ function SolutionArchitecture() {
                     <br></br>
                     <h1 className='sub-topic-ha'>SECURITY</h1>
                         <div className="left-sa">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/Cloud_Security.png'} style={{ display: 'block', marginRight:'auto',width:'25%',opacity:'70%'}}/> 
-                            <ul  className='ha-text'>
+                            <ul  className='hd-text-2'>
                                 <h2 className="sec-topic">Cloud Security</h2>
                                 <br></br>
                                 <li>Data protection-AWS provides security services to protect our data, accounts and workloads from unauthorized access. AWS data protection services provide encryption and key management and threat detection that continuously monitors and protects our accounts and workloads.</li>
@@ -101,15 +93,14 @@ function SolutionArchitecture() {
                                 <li>Network and application protection</li>
                                 <br></br>
                                 <li>Compliance and data privacy</li>
-                    
-
                             </ul>
-        
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/Cloud_Security.png'} style={{ display: 'block',width:'25%',opacity:'70%'}}/> 
+                            
                         </div>
 
                         <div className="left-sa">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/aws_iot.jpg'} style={{ display: 'block', marginRight:'auto',width:'20%',opacity:'70%'}}/> 
-                            <ul  className='ha-text'>
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/aws_iot.jpg'} style={{ display: 'block',width:'24%',opacity:'70%'}}/> 
+                            <ul  className='hd-text-1'>
                                 <h2 className="sec-topic">IOT Security</h2>
                                 <br></br>
                                 <li>When we connect our  Landmine detection robot to AWS IoT Core, it provides the security  to securely connect devices to the cloud . AWS IoT core security features allow enforcing security controls such as authentication, authorization, audit logging and end-to-end encryption.</li>
