@@ -8,6 +8,7 @@ import Home from '../pages/Home/Home';
 import Timeline_LM from '../pages/Timeline_LM/Timeline_LM';
 import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitecture';
 import Footer from './Footer';
+import Software from '../pages/Software/Software'
 import Budget from '../pages/Budget/Budget';
 
 
@@ -16,7 +17,7 @@ function Navbar() {
         <div className='navbar-body'>
 
         <div className='navbar'>
-        <li><a href='#home'><img alt="" src={process.env.PUBLIC_URL + '/png/logo.png'} height="50" marginTop='0' /></a></li>
+        <a href='#home'><img alt="" src={process.env.PUBLIC_URL + '/png/logo.png'} height="40" marginTop='0' /></a>
             <ul className='nav'>
                 {/* <li><a href='#home'>Home</a></li> */}
                 <li><a href='#intro'>Introduction</a></li>
@@ -49,7 +50,7 @@ function Navbar() {
         </div>
         <hr/>
         <div className='sd-area' id='sd'>
-            <h1 style={{color:"#43dea5", textAlign:'center' }}>Software Design</h1>            
+            <Software />
         </div>
         <hr/>
         <div className='budget-area' id='budget'>

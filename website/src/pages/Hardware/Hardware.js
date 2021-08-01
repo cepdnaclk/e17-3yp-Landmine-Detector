@@ -10,7 +10,7 @@ function Hardware() {
         {/* <img alt="" src={process.env.PUBLIC_URL + '/images/Hardware.png'} style={{ display: 'block',marginLeft:'auto', marginRight:'auto',width:'80%'}}/>  */}
             <Slide easing="ease">
                     <div className="each-slide">
-                    <h1 className='sub-topic'>ESP32</h1>
+                    <h1 className='sub-topic-hd'>ESP32</h1>
                         <div className="left">
                         
                          <img alt="" src={process.env.PUBLIC_URL + '/images/esp32.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
@@ -33,7 +33,7 @@ function Hardware() {
                         </div> */}
                     </div>
                     <div className="each-slide">
-                    <h1 className='sub-topic'>NEO6M-GPS</h1>
+                    <h1 className='sub-topic-hd'>NEO6M-GPS</h1>
                     <div className="left">
                          <img alt="" src={process.env.PUBLIC_URL + '/images/neo.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
                          <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
@@ -56,7 +56,7 @@ function Hardware() {
                     </div>
                     
                     <div className="each-slide">
-                    <h1 className='sub-topic'>GYRO SENSOR</h1>
+                    <h1 className='sub-topic-hd'>GYRO SENSOR</h1>
                         <div className="left">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/Gyro.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
                             <p className='ha-text'>Landmines are prominent weapons designed to destroy or 

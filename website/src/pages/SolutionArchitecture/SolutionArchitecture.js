@@ -40,7 +40,46 @@ function SolutionArchitecture() {
             </div>
             <br></br>
             <br></br>
-            <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block',width:'100%',opacity:'70%'}}/>
+            {/* <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block',width:'100%',opacity:'70%'}}/> */}
+
+            <div>
+            {/* <p className='text'>
+                    Landmines are prominent weapons designed to destroy or disable enemy targets which detonate by the movement of its target, pressure, sound, magnetism and vibration. More than a hundred million land mines are scattered around the world which remain hazardous for years even after conflict termination posing a significant threat to civilians and the economy. More Effective and sophisticated tools to detect, locate and deactivate landmines are urgently needed to make lands safer for humans to use.
+                    </p>  */}
+
+                    <div className="each-slide-sa">
+                    <h1 className='sub-topic-ha'>DATA FLOW</h1>
+                        <div className="left-sa">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block', marginRight:'auto',width:'45%',opacity:'70%'}}/> 
+                            <ul  className='ha-text'>
+                                <li>Data Flow Generation at the user interface</li>
+                                <br></br>
+                                <li>Inserts GPS cordinates  along with a search area. The data will be sent to the servers as raw input</li>
+                                <br></br>
+                                <li>When recieved cloud functions would run within the backend to calculate relevent boundaries of given search area in the real environment</li>
+                                <br></br>
+                                <li>These values will be stored at the servers and at the same time send calculated values to the robot through the established network</li>
+                                <br></br>
+                                <li>When received a data structure would be created within the Robot to keep track of the path it travelled, Landmine locations, boundaries.</li>
+                                <br></br>
+                                <li>While travelling the details of the search would first be stored at the local data structure. Then with timed HTTP requests would send the updates of the data to the backend</li>
+                                <br></br>
+                                <li>The received values would get stored at the servers, and also providing read access to the webserver for the updated data</li>
+                                <br></br>
+                                <li>When data received a virtual map drawn to represent the location data gets drwan at the user interface. Providing visual  and informative data to the user</li>
+                                <br></br>
+
+                            </ul>
+                            {/* <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
+                                disable enemy targets which detonate by the movement of its target, pressure, 
+                                sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                                around the world which remain hazardous for years even after conflict termination
+                                posing a significant threat to civilians and the economy. More Effective and 
+                                sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                                to make lands safer for humans to use.</p> */}
+                        </div>
+                    </div>
+            </div>
             
         </div>
 
