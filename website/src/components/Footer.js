@@ -5,6 +5,36 @@ const Footer = () => {
     return(
         
         <div className='footer-body'>
+        
+        <div className='row'>
+            <h1 className='contact'>Contact Us</h1>
+        </div>
+        <div className='row'>
+            <div className='col'>
+                <h2>Akila Karunanayake</h2>
+                <strong>Phone: </strong> &emsp;
+                +94 81 239 33 00 <br/>
+            </div>
+
+            <div className='col'>
+                <h2>Thisara Manohara</h2>
+                <strong>Phone: </strong> &emsp;
+                +94 81 239 33 00 <br/>
+            </div>
+
+            <div className='col'>
+                <h2>Vishva Navanjana</h2>
+                <strong>Phone: </strong> &emsp;
+                +94 81 239 33 00 <br/>
+            </div>
+
+
+
+        </div>
+
+
+        <hr/>   
+
         <div className='row'>
             {/* col1 */}
             <div className='col'>
