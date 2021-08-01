@@ -14,7 +14,7 @@ function SolutionArchitecture() {
                 <img className="Application_Logo" alt="" src={process.env.PUBLIC_URL + '/images/web_app.png'} width="100" height="95"  />
                     <h3 className='sub-topic'>Web Application</h3>
                     <p className='text'>
-                    Landmines are prominent weapons designed to destroy or disable enemy targets which detonate by the movement of its target, pressure, sound, magnetism and vibration. More than a hundred million land mines are scattered around the world which remain hazardous for years even after conflict termination posing a significant threat to civilians and the economy. More Effective and sophisticated tools to detect, locate and deactivate landmines are urgently needed to make lands safer for humans to use.
+                        The Web Applciation is hosted using Amplify Serverless methods. Acts as the access point for all the users in the User Groups. After logging in users can access either modular front page for controling a spcific robot or User Admin Page related to a group who has all data access.Considering control page for a specific robot a detail entry point and control options will be available along with graphical representation of search area maps.
                     </p>
 
                 </div>
@@ -23,7 +23,7 @@ function SolutionArchitecture() {
                     <img className="Application_Logo" alt="" src={process.env.PUBLIC_URL + '/images/robo_logo.jpg'} width="100" height="95" />
                     <h3 className='sub-topic'>Automated Robot</h3>
                     <p className='text'>
-                    Landmines are prominent weapons designed to destroy or disable enemy targets which detonate by the movement of its target, pressure, sound, magnetism and vibration. More than a hundred million land mines are scattered around the world which remain hazardous for years even after conflict termination posing a significant threat to civilians and the economy. More Effective and sophisticated tools to detect, locate and deactivate landmines are urgently needed to make lands safer for humans to use.
+                    Is the main hardware component of the project. Includes a core functionality of landmine detection, autonoumus navigation and data exchange. Accoring to tha main data flow the key aspects of the robot will be, accepting cordinates from server, storing a data structures to maintain search area details, passive landmine detection while navigatting through the path while updating the data and sending back data to the servers. 
                     </p>
 
                 </div>
@@ -32,7 +32,7 @@ function SolutionArchitecture() {
                     <img className="Application_Logo" alt="" src={process.env.PUBLIC_URL + '/images/web_server.jpg'} width="100" height="95" />
                     <h3 className='sub-topic'>Web Server</h3>
                     <p className='text'>
-                    Landmines are prominent weapons designed to destroy or disable enemy targets which detonate by the movement of its target, pressure, sound, magnetism and vibration. More than a hundred million land mines are scattered around the world which remain hazardous for years even after conflict termination posing a significant threat to civilians and the economy. More Effective and sophisticated tools to detect, locate and deactivate landmines are urgently needed to make lands safer for humans to use.
+                        The backend servers acts as an immediate between the hardware component and user all while doing essential tasks of data storing , calculating parameters and orgainzing inputs and outputs. When the inital inputs received from user server cloud functions would calculate intial boundaries for search area and relevent parameters for setting up the search.Once the search starts the robot updates data stored here to give a real time like data accessability for the users.
                     </p>
 
                 </div>
