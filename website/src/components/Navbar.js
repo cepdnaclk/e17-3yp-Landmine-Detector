@@ -52,17 +52,17 @@ function Navbar() {
         <div className='sd-area' id='sd'>
             <Software />
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='budget-area' id='budget'>
               <Budget />
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='time-area' id='time'>
         <h1 className='main-topic'>Timeline</h1>
             <br></br>
             <Timeline_LM/>
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='team-area' id='team'>
             <Team />
         </div>

@@ -11,7 +11,7 @@ function SolutionArchitecture() {
             <div className="SolutionArchitectures">
 
                 <div className="Application ">
-                <img className="Application_Logo" alt="" src={process.env.PUBLIC_URL + '/images/web_app.png'} width="100" height="95"  />
+                <img className="Application_Logo" alt="" src={process.env.PUBLIC_URL + '/images/web.jpg'} width="100" height="95"  />
                     <h3 className='sub-topic'>Web Application</h3>
                     <p className='text'>
                         The Web Applciation is hosted using Amplify Serverless methods. Acts as the access point for all the users in the User Groups. After logging in users can access either modular front page for controling a spcific robot or User Admin Page related to a group who has all data access.Considering control page for a specific robot a detail entry point and control options will be available along with graphical representation of search area maps.
@@ -66,7 +66,7 @@ function SolutionArchitecture() {
                                 <br></br>
                                 <li>The received values would get stored at the servers, and also providing read access to the webserver for the updated data</li>
                                 <br></br>
-                                <li>When data received a virtual map drawn to represent the location data gets drwan at the user interface. Providing visual  and informative data to the user</li>
+                                <li>When data received a virtual map drawn to represent the location data gets drawn at the user interface. Providing visual  and informative data to the user</li>
                                 <br></br>
 
                             </ul>

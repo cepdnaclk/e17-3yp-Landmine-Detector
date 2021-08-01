@@ -29,7 +29,7 @@
     width: 60%;
     height: 50%;
   }
-  .ha-text{
+  .hd-text{
     /* margin-right: auto; */
     width:50%;
     text-align: center;
@@ -37,7 +37,7 @@
     padding-left: 0px;
     padding-right: 20px;
     color: rgb(134, 214, 174);
-    font-size: 18px;
+    font-size: 25px;
   }
 
   .left{
