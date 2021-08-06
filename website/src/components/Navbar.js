@@ -35,7 +35,7 @@ function Navbar() {
         <div className='intro-area' id='intro'>
             <Introduction />
         </div>
-        <hr/>
+        {/* <hr/> */}
         <div className='ha-area' id='ha'>
              <SolutionArchitecture />
              {/*
@@ -44,19 +44,16 @@ function Navbar() {
             <img alt="" src={process.env.PUBLIC_URL + '/images/Overview.png'} style={{ display: 'block',marginLeft:'300px',width:'80%'}}/>
             */}
         </div>
-        <hr/>
+        <br></br>
+        {/* <hr/> */}
         <div className='hd-area' id='hd'>
             <Hardware/>
             {/* <img alt="" src={process.env.PUBLIC_URL + '/png/robo-design.png'} width="40" height="40" /> */}
             
         </div>
-
         <div className='robo-design'>
             <img alt="" src={process.env.PUBLIC_URL + '/png/robo-design.png'} width="1000" height="500" />
         </div>
-        
-        <hr/>
-
         <div className='sd-area' id='sd'>
             <Software />
         </div>
