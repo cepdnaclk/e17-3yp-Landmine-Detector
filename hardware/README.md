@@ -1,6 +1,6 @@
 # HARDWARE COMPONENTS
 
-- ESP32
+- ESP32 https://www.etechnophiles.com/esp32-dev-board-pinout-specifications-datasheet-and-schematic/
 - NEO6M
 - SIM900A
 - GYRO & ACCELEROMETER
