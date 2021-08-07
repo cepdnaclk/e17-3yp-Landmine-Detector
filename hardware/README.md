@@ -6,4 +6,5 @@
 - GYRO & ACCELEROMETER
 - MOTOR (100RPM HIGH TORQUE)
 - DFRobot 65mm Rubber Wheel
-- Seeduino
+
+

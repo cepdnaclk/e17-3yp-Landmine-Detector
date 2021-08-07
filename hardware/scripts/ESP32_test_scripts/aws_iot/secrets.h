@@ -3,8 +3,8 @@
 #define SECRET
 #define THINGNAME "esp32_test"
 
-const char WIFI_SSID[] = "SLT-Fiber-AA63";
-const char WIFI_PASSWORD[] = "homeWIFI2485";
+const char WIFI_SSID[] = "xxxxxx";
+const char WIFI_PASSWORD[] = "xxxxxxxx";
 const char AWS_IOT_ENDPOINT[] = "a3ey8fsc2z6gz-ats.iot.us-east-1.amazonaws.com";
 
 // Amazon Root CA 1
@@ -58,30 +58,6 @@ DBkCSe84NWohN61WrXNLiiT7yGWCG543WAqQE+jPwbyQGdOcd+LwBDkexeyuX4Xa
 // Device Private Key
 static const char AWS_CERT_PRIVATE[] PROGMEM = R"KEY(
 -----BEGIN RSA PRIVATE KEY-----
-MIIEowIBAAKCAQEAxvHltuSht0QK2eixV1r0ynQc9BaYnoXJARrnlNvLDW7FVD+F
-lxbSFX25Od+A6HeHURy8LjwDyjcbMJ9ry2NyQDffa2TfU6Yy3p43+PMyMh1IHYz8
-bb6DHdxZZDb0qedG0Io346fBRJ9k6AHXQqCoRHH3t7wi5fqgALk7pDMn2ugFXNay
-OZ/LsIWAnIvKel8MlfdNWsgGdXTR2yBEhx75WOvHwek+bqmpgtzeOCWu14ic1ko6
-SnCdnPhpp2ySr13fEeFnBzYlVeqNhb8QWpZLedGlygnUK5MFc4Ik6LvvEA21+TED
-joxnZEZO8ozqGGfKiayF3q2Y76y0L3l9gObeyQIDAQABAoIBAFl2aAWR1MMT/wk0
-4aLVzSTJiEefbaxDnzs2/RLsr+fvex9CnXFvGrP9YHEM9+wR7DDmih0EcfPaSgjY
-d+Hza2pDdd3Wc7MrFs8TOTpjKpxsnIRlZRJ4zH9+Gli9edJ5pVecADwIsRmJ0Beg
-1Esq8eAtm+bs3Iis5ozMv2w8cNy4FHylFuEA4VfT67GuiBDBFToSq8HI3hP0Ukss
-zzZFtpA8mShBbxS8ha4IfZEO4TLD11lhlvrfrpDC1CV5yJ/ToUP28jWhSgQJrxwp
-JZQySYAnkzqEqyqSYymsvfLn5JX+JIiiIDrlQAP2vYvp6MAqF8Ygj+ndCoMb/l7C
-T8kVKu0CgYEA7uioKuAljry8WO1heYQqRpxKciL1wOw0iN7/E0YDbEjM8P/Yi6ST
-uKeRviEwda9c8DcJoO0Lwge8aXAMzuTjXC6wpY6xa28gxROIlu8HnJhdR48Mro+o
-4JwASD297QR730lQMRibTrIqn1bpTzMme50jiVjP5lxX/EWGQnDR/ncCgYEA1S1Y
-09MgGpmFoVnTvXQmhxMwOUwxyiVYGfFxwaHMOi96MzxiKox8BWL+GM49QhtrINQF
-/POanV3I9SNr+ieLJ2DvOSYAQpJ4jd/XyyyvgxaSZxcAZf3H2hXQ/9NF3f9H16c2
-R/i4vTvRQ6V6GFzeoVBFSI+WK2u9/Gr0x+cDHL8CgYBBpI1oUnQfVv5NVNP+hnDz
-O8g8uhxaKMx6ewMM8aTJIOumoDWIkOzBxNEHs6jT/R4FJqovnFIpuuRq+A2c30kV
-MAL7Sky3Xy5a1/YkuoKV5Utj+Qsb/38AT/zH3KcNs7ixbjxpcQBjTBLn+wJZ74z4
-VAHKoCtneSH3v8aXBNa+GwKBgGSiZZ6JukwUUUscNqLnJBD78/X4jECbZH3KxyLb
-mKeXJh7t0IG5lAqO8tkO80gz3Vy/+puw/DpxvZ5LvHt5E23hisz1rYW/031WQG6/
-h5NgonhcGWoMZb4EMoeyWvczvdyGKU/MkJl0lZNTmNHLdaW9WReqAQA6epOggjGk
-UonNAoGBAJ2k0RMaToQCxHRdgj9WFeKesQyYo1T3qT+5MW3rqK1/LiN2nW1bF++g
-yx14ol4qtPqrsQz9AaJH+LEyfDkk1G3ZLrKgK62Nhr9yV+ILkGLVLu950eib5gew
-LmG+HYej02DbAsh98/zHXScxVJtHsr32KHmM7iEgA2YJko5k0eX+
+
 -----END RSA PRIVATE KEY-----
 )KEY";
