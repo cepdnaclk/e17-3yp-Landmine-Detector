@@ -40,3 +40,15 @@ export class PhysicsTest extends Scene3D{
 
 const config = {scenes:[PhysicsTest], antialias: true}
 PhysicsLoader('/ammo',()=> new Project(config))
+
+/**
+ * setting timed
+ *       setTimeout(() => {
+            this.isRolling = true
+          }, 2000)
+        }
+
+        update() {
+          if (this.isRolling) this.wheel.body.setAngularVelocityX(1)
+        }
+ */

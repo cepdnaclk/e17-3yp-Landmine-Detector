@@ -1,11 +1,12 @@
 import {PhysicsLoader, Project, Scene3D} from 'enable3d'
-import { GreaterEqualDepth } from 'three'
+import { GreaterEqualDepth, Plane } from 'three'
 import * as THREE from 'three'
 
 
 // scalar to simulate speed
-var posx=6,posy=0.5,posz=6
+var posx=15,posy=1,posz=15
 var box1;
+var area;
 
 export class PhysicsTest extends Scene3D{
 
@@ -15,11 +16,20 @@ export class PhysicsTest extends Scene3D{
   }
 
   async create(){
-    this.warpSpeed()
-    // let plane = this.physics.add.plane({x:0,y:0,z:0,width:5,height:20},{lambert:{color: 0xffff00}});
-    // plane.rotation.set(0, Math.PI / 2, 0)
+    this.warpSpeed('-ground').then(({ ground }) => {
+      if (ground) {
+        
+      }
+    })
+
+      
+
+
+   
+    let plane = this.physics.add.box({x:5,y:0,z:0,width:40,height:1,depth:40},{lambert:{color: 0xffff00}});
+    
     //plane.rotation.x = 90
-    this.camera.position.set(13,10,13)
+    this.camera.position.set(20,13,20)
     // this.haveSomeFun()
 
     box1 = this.physics.add.box({x:posx,y:posy,z:posz},{phong: {color: 'green'}})
@@ -29,7 +39,8 @@ export class PhysicsTest extends Scene3D{
     // this.scene
     // this.physics
 
-
+    area = this.physics.add.box({x:0,y:0,z:0,height:1,width:50,depth:50})
+    
     // let group = new THREE.Group()
     // const body = this.add.box({ height: 0.8, y: 1, width: 0.4, depth: 0.4 }, { lambert: { color: 0xffff00 } })
     // const head = this.add.sphere({ radius: 0.25, y: 1.7, z: 0.05 }, { lambert: { color: 0xffff00 } })
@@ -38,10 +49,14 @@ export class PhysicsTest extends Scene3D{
     // this.add.existing(group)
     // this.physics.add.existing(group)
 
+    plane.body.setCollisionFlags(2)
+    area.body.setCollisionFlags(2)
     box1.body.setCollisionFlags(2)
   }
 
   update() {
+    this.camera.lookAt(box1.position.clone())
+    //this.camera.attach(box1)
 
     // const orbitRadius = 5
     // const date = time * 0.0025
