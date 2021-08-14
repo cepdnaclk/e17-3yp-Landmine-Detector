@@ -1,0 +1,3 @@
+# Cloud Architecture
+- Storage - DynamoDB
+
