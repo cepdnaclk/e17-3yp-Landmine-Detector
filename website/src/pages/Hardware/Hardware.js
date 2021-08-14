@@ -14,67 +14,71 @@ function Hardware() {
                         <div className="left">
                         
                          <img alt="" src={process.env.PUBLIC_URL + '/images/esp32.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                         <p className='hd-text'>The handler or the main processing unit of the robot. 
-                         Incharge of conveying the metal detection information to the network and at same time
-                         work on autonoumous navigation managing a data structure.</p>
+                         <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
+                            disable enemy targets which detonate by the movement of its target, pressure, 
+                            sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                            around the world which remain hazardous for years even after conflict termination
+                            posing a significant threat to civilians and the economy. More Effective and 
+                            sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                            to make lands safer for humans to use.</p>
                          </div>
+                         {/* <div className="right">
+                         <p className='text'>Landmines are prominent weapons designed to destroy or 
+                            disable enemy targets which detonate by the movement of its target, pressure, 
+                            sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                            around the world which remain hazardous for years even after conflict termination
+                            posing a significant threat to civilians and the economy. More Effective and 
+                            sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                            to make lands safer for humans to use.</p>
+                        </div> */}
                     </div>
                     <div className="each-slide">
                     <h1 className='sub-topic-hd'>NEO6M-GPS</h1>
                     <div className="left">
                          <img alt="" src={process.env.PUBLIC_URL + '/images/neo.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                         <p className='hd-text'>Component that indicates the current GPS location of the robot.
-                         Helps to identify landmine locations as well as location of the robot during a search.</p>
+                         <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
+                            disable enemy targets which detonate by the movement of its target, pressure, 
+                            sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                            around the world which remain hazardous for years even after conflict termination
+                            posing a significant threat to civilians and the economy. More Effective and 
+                            sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                            to make lands safer for humans to use.</p>
                     </div>
+                         {/* <div className="right">
+                         <p className='text'>Landmines are prominent weapons designed to destroy or 
+                            disable enemy targets which detonate by the movement of its target, pressure, 
+                            sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                            around the world which remain hazardous for years even after conflict termination
+                            posing a significant threat to civilians and the economy. More Effective and 
+                            sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                            to make lands safer for humans to use.</p>
+                        </div> */}
                     </div>
                     
                     <div className="each-slide">
                     <h1 className='sub-topic-hd'>GYRO SENSOR</h1>
                         <div className="left">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/Gyro.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                            <p className='hd-text'>Direction sensing component works in conjunction with the NEO6M
-                            to provide navigation direction while the robot is in motion</p>
+                            <p className='ha-text'>Landmines are prominent weapons designed to destroy or 
+                                disable enemy targets which detonate by the movement of its target, pressure, 
+                                sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                                around the world which remain hazardous for years even after conflict termination
+                                posing a significant threat to civilians and the economy. More Effective and 
+                                sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                                to make lands safer for humans to use.</p>
                         </div>
-                    </div>
-                    <div className="each-slide">
-                    <h1 className='sub-topic-hd'>SIM900A</h1>
-                        <div className="left">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/sim.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                            <p className='hd-text'>Used for the network connectivity between the robot and the servers.
-                            Holds significant importance as primary connection provider. </p>
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                    <h1 className='sub-topic-hd'>L298N</h1>
-                        <div className="left">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/L298.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                            <p className='hd-text'>Motor driver component of the robot to handle the 4x motor system. Would work alongside GYRO sensor
-                            for control signals to be conveyed to the wheels</p>
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                    <h1 className='sub-topic-hd'>MOTORS</h1>
-                        <div className="left">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/motor.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                            <p className='hd-text'>Since efficient and carfeul search is required a 100RPM gear motor is used to navigate
-                            the tricky search paths. 4x wheel design used to withstand terrain variations.</p>
-                        </div>
-                    </div>
-                    <div className="each-slide">
-                    <h1 className='sub-topic-hd'>WHEELS</h1>
-                        <div className="left">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/tyre.jpg'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                            <p className='hd-text'>65mm Rubber Wheels used for both withstanding rough terrain and providing stability for the whole 
-                            structure of the robot.</p>
-                        </div>
+                        {/* <div className="right">
+                            <p className='text'>Landmines are prominent weapons designed to destroy or 
+                                disable enemy targets which detonate by the movement of its target, pressure, 
+                                sound, magnetism and vibration. More than a hundred million land mines are scattered 
+                                around the world which remain hazardous for years even after conflict termination
+                                posing a significant threat to civilians and the economy. More Effective and 
+                                sophisticated tools to detect, locate and deactivate landmines are urgently needed
+                                to make lands safer for humans to use.</p>
+                        </div> */}
                     </div>
             </Slide>
-            
         </div>
-
-        
-
-
     )
 }
 

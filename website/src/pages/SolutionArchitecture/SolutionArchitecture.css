@@ -89,31 +89,9 @@
 
 .sec-topic {
   font-family: 'Montserrat', sans-serif;
-  text-align: left;
+  text-align: justify;
   padding-left: 20px;
   color: rgb(16, 236, 170);
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
-}
-
-.hd-text-1{
-  /* margin-right: auto; */
-  width:50%;
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-  padding-left: 80px;
-  padding-right: 20px;
-  color: rgb(134, 214, 174);
-  font-size: 25px;
-}
-
-.hd-text-2{
-  /* margin-right: auto; */
-  width:50%;
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-  padding-left: 0px;
-  padding-right: 20px;
-  color: rgb(134, 214, 174);
-  font-size: 25px;
 }
