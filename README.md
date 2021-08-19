@@ -15,7 +15,7 @@ title: Landmine Detector
 * [Existing System](#Existing-System)
 * [Proposed System](#Proposed-System)
 * [Key Features and Scope](#Key-Features-and-Scope)
-* [Hardware](#https://github.com/Akilax0/e17-3yp-Landmine-Detector/tree/main/_designs/hardware)
+* [Hardware](https://github.com/Akilax0/e17-3yp-Landmine-Detector/tree/main/_designs/hardware)
 * [Team](#Team)
 * [Links](#Links)
 
