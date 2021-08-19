@@ -4,8 +4,11 @@
 - NEO6M
 - SIM900A
 - GYRO & ACCELEROMETER
-- MOTOR (100RPM HIGH TORQUE)
+- MOTOR (12V 200RPM HIGH TORQUE)
+- L298N Motor Driver
 - DFRobot 65mm Rubber Wheel
+- Power board
+- Battery 
 
 ## NEO6M
 
@@ -48,10 +51,27 @@ It is advisable to use a 5V power supply that can provide 2A. It can also be pow
 
 <!-- #it has a holder for a 3V CR1220 battery at the back -->
 
+## MOTORS
 
-## MOTORS + L293D
+4 x 200 RPM 12V Gear motors used for movement and navigation.
+While travelling to destined location the motors will receive inputs according to various sensor values.
+Namely the GYRO sensor helping the navigation, sonar sensors for obstacle detection and interrupts for emergencies.
 
-100 RPM 12V Gear motors used for navigation
+
+### Characteristics:
+- Overall Diameter: 25mm
+- Overall Length (Excluding Shaft): 57.8mm
+- Stall Current: ~1.5A
+- Rated Voltage: 12VDC
+- Mounting Holes: M3
+- Shaft Diameter: 4mm
+- Shaft Length: 11mm
+- No Load Shaft RPM: ~200 RPM @ 12VDC
+- No Load Current: ~70mA
+- Flatted Shaft
+
+## L298N
+
 L298N can handle upto 3V at 35V, allowing us to drive two DC motors simultanously.
 
 You can control the DC motor speed by applying a PWM signal to the enable pin of the L298N motor driver. The speed will be proportional to the duty cycle.
@@ -62,11 +82,21 @@ Ex:- generating a signal of 30000 Hz on channel 0 with a 8-bit resolution. We st
 
 
 ### Characteristics:
-- +12V: The +12V terminal is where you should connect your power supply
-- GND: power supply GND
-- +5V: provide 5V if jumper is removed. Acts as a 5V output if jumper is in place
-- Jumper: jumper in place – uses the motors power supply to power up the chip. Jumper removed: you need to provide 5V to the +5V terminal. If you supply more than 12V, you should remove the jumper
+- Driver Model: L298N 2A
+- Driver Chip: Double H Bridge L298N
+- Motor Supply Voltage (Maximum): 46V
+- Motor Supply Current (Maximum): 2A
+- Logic Voltage: 5V
+- Driver Voltage: 5-35V
+- Driver Current:2A
+- Logical Current:0-36mA
+- Maximum Power (W): 25W
+- Current Sense for each motor
+Heatsink for better performance
+- Power-On LED indicator
 
+<!-- mainly for 12V and upward motors -->
 
-<!-- #it has a holder for a 3V CR1220 battery at the back -->
+<!-- ## POWER BOARD
 
+THe board allows  power distribution within the system.   -->
