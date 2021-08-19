@@ -16,7 +16,7 @@ title: Landmine Detector
 * [Proposed System](#Proposed-System)
 * [Key Features and Scope](#Key-Features-and-Scope)
 * [Hardware](https://github.com/Akilax0/e17-3yp-Landmine-Detector/tree/main/_designs/hardware)
-* [Cloud Architecture](https://github.com/Akilax0/e17-3yp-Landmine-Detector/tree/main/_designs/cloud_architecture)
+* [Cloud Architecture](https://github.com/Akilax0/e17-3yp-Landmine-Detector/tree/main/_designs/cloud_archiecture)
 * [Database Design](https://github.com/Akilax0/e17-3yp-Landmine-Detector/tree/main/_designs/database_schemas)
 * [Team](#Team)
 * [Links](#Links)
