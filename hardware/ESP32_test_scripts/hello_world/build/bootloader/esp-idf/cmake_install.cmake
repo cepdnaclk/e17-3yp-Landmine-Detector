@@ -1,4 +1,4 @@
-# Install script for directory: /home/akilax0/Programs/esp/esp-idf
+# Install script for directory: /home/akilaksha/esp/esp-idf
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,29 +34,30 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/akilax0/.espressif/tools/xtensa-esp32-elf/esp-2020r3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump")
+  set(CMAKE_OBJDUMP "/home/akilaksha/.espressif/tools/xtensa-esp32-elf/esp-2021r1-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/xtensa/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp32/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/newlib/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/hal/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/soc/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/micro-ecc/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/spi_flash/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/bootloader_support/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/efuse/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_hw_support/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_common/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_rom/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/log/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/partition_table/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/bootloader/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_system/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esptool_py/cmake_install.cmake")
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/main/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/newlib/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/hal/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/soc/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/micro-ecc/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/spi_flash/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/bootloader_support/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/efuse/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_system/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_hw_support/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/xtensa/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp32/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_common/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esp_rom/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/log/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/esptool_py/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/partition_table/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/bootloader/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/freertos/cmake_install.cmake")
+  include("/home/akilaksha/Documents/e17-3yp-Landmine-Detector/hardware/ESP32_test_scripts/hello_world/build/bootloader/esp-idf/main/cmake_install.cmake")
 
 endif()
 
