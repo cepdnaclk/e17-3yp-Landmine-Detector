@@ -2,6 +2,9 @@ import './SolutionArchitecture.css'
 
 function SolutionArchitecture() {
     return(
+
+        <div>
+
         <div className='sol-block'>
             <h1 className='main-topic'>Solution Architecture</h1>
             <br></br>
@@ -88,7 +91,11 @@ function SolutionArchitecture() {
                     <br></br>
                     <br></br>
                     <br></br>
-                    <h1 className='sub-topic-ha'>SECURITY</h1>
+                    
+                    <h1 className='sub-topic-ha'>STATE DIAGRAM</h1>
+                    {/* <img alt="" src={process.env.PUBLIC_URL + '/images/state-diagram-1.png'} style={{}}/>  */}
+
+                    {/* <h1 className='sub-topic-ha'>SECURITY</h1>
                         <div className="left-sa">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/Cloud_Security.png'} style={{ display: 'block', marginRight:'auto',width:'25%',opacity:'70%'}}/> 
                             <ul  className='ha-text'>
@@ -119,12 +126,18 @@ function SolutionArchitecture() {
 
                             </ul>
         
-                        </div>
+                        </div> */}
 
         
                     </div>
             </div>
             
+        </div>
+        <div>
+            {/* <h1 className='sub-topic-ha' style={{color: "red"}}>SECURITY</h1> */}
+            <img alt="" src={process.env.PUBLIC_URL + '/images/state-diagram-1.png'} style={{maxWidth: '100%'}}/> 
+            <img alt="" src={process.env.PUBLIC_URL + '/images/state-diagram-2.png'} style={{maxWidth: '100%'}}/>
+        </div>
         </div>
 
 
