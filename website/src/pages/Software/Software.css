@@ -11,3 +11,45 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.each-slide-sd > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 700px;
+    width : 100%;
+  }
+  
+  .each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+    
+  }
+
+  .slide-show{
+        position: relative;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 50%;
+  }
+
+  .sf-text{
+    /* margin-right: auto; */
+    width:30%;
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 0px;
+    padding-right: 20px;
+    color: rgb(134, 214, 174);
+    font-size: 18px;
+  }
