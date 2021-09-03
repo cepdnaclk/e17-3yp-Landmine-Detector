@@ -12,44 +12,47 @@
     margin-right: auto;
 }
 
-.each-slide-sd > div {
+.each-slide-sa > div {
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
-    height: 700px;
+    height: 500px;
     width : 100%;
   }
-  
-  .each-slide span {
-    padding: 20px;
-    font-size: 20px;
-    background: #efefef;
-    text-align: center;
-    
-  }
 
-  .slide-show{
-        position: relative;
-    /* display: flex; */
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    height: 50%;
-  }
-
-  .sf-text{
-    /* margin-right: auto; */
-    width:30%;
-    text-align: right;
+  .sub-topic-ha {
     font-family: 'Montserrat', sans-serif;
-    padding-left: 0px;
-    padding-right: 20px;
-    color: rgb(134, 214, 174);
-    font-size: 18px;
+    text-align: left;
+    padding-left: 20px;
+    color: white;
+    font-size: 40px;
   }
+
+  
+.each-fade {
+    display: flex;
+    width: 100%;
+  }
+  
+  .each-fade > div {
+    width: 75%;
+  }
+  
+  .each-fade > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .each-fade p {
+    width: 25%;
+    font-size: 3em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: #adceed;
+  }
+  
