@@ -137,6 +137,21 @@ function SolutionArchitecture() {
             {/* <h1 className='sub-topic-ha' style={{color: "red"}}>SECURITY</h1> */}
             <img alt="" src={process.env.PUBLIC_URL + '/images/state-diagram-1.png'} style={{maxWidth: '100%'}}/> 
             <img alt="" src={process.env.PUBLIC_URL + '/images/state-diagram-2.png'} style={{maxWidth: '100%'}}/>
+            
+            <div className="each-slide-sa sol-block">
+                <br></br>
+                <br></br>
+                <br></br>           
+                <h1 className='sub-topic-ha'>ER DIAGRAM</h1>
+                <img alt="" src={process.env.PUBLIC_URL + '/images/er.png'} style={{maxWidth: '100%'}}/>
+
+                <br></br>
+                
+                <h1 className='sub-topic-ha'>RELATIONAL SCHEMA</h1>
+                <img alt="" src={process.env.PUBLIC_URL + '/images/relational.png'} style={{maxWidth: '100%'}}/>
+
+            </div>
+
         </div>
         </div>
 
