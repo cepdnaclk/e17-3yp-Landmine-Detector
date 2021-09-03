@@ -1,0 +1,46 @@
+{
+    "title": "Landmine Detector",
+    "team": [
+        {
+            "name": "KARUNANAYAKE A.I.",
+            "email": "e17154@eng.pdn.ac.lk",
+            "eNumber": "E/17/154",
+            "github_profile":"https://github.com/Akilax0",
+            "linkedin_profile":"#",
+            "website": "#"
+        },
+        {
+            "name": "RUPASINGHE T.T.V.N.",
+            "email": "e17297@eng.pdn.ac.lk",
+            "eNumber": "E/17/297",
+            "github_profile":"https://github.com/VishvaNavanjana",
+            "linkedin_profile":"https://www.linkedin.com/in/vishva-navanjana-67334116a/",
+            "website": "https://www.vishva.me/"
+        },
+        {
+            "name": "MANOHARA H.T.",
+            "email": "e17206@eng.pdn.ac.lk",
+            "eNumber": "E/17/206",
+            "github_profile":"https://github.com/thisaramanohara",
+            "linkedin_profile":"https://www.linkedin.com/in/thisara-manohara-6990911a8/",
+            "website": "https://www.thisaramanohara.me/"
+        }
+    ],
+    "supervisors": [
+        {
+            "name": "Dr. Isuru Nawinne",
+            "email": "isurunawinne@eng.pdn.ac.lk ",
+            "linkedin_profile":"#",
+            "website": "#",
+            "researchgate_profile":"#"
+        },
+        {
+            "name": "Dr. Mahanama Wickramasinghe",
+            "email": "mahanamaw@eng.pdn.ac.lk ",
+            "linkedin_profile":"https://www.linkedin.com/in/mahanama",
+            "website": "#",
+            "researchgate_profile":"#"
+        }
+    ],
+    "tags": ["Web", "Embedded Systems"]
+}
