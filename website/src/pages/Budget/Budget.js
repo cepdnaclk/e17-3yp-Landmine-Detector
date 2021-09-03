@@ -23,13 +23,13 @@ function Budget() {
         <td>1500</td>
     </tr>
     <tr>
-        <td>Seeduino</td>
-        <td>1600</td>
-        <td>1</td>
-        <td>1600</td>
+        <td>Atmega328p</td>
+        <td>750</td>
+        <td>2</td>
+        <td>1500</td>
     </tr>
     <tr>
-        <td>NEO6M-GPS</td>
+        <td>NEO8M-GPS</td>
         <td>2190</td>
         <td>1</td>
         <td>2190</td>
@@ -41,13 +41,13 @@ function Budget() {
         <td>1950</td>
     </tr>
     <tr>
-        <td>GYRO/Accelerometer</td>
+        <td>GY80 - IMU</td>
         <td>2800</td>
         <td>1</td>
         <td>2800</td>
     </tr>
     <tr>
-        <td>Motors</td>
+        <td>Motors 150RPM</td>
         <td>1500</td>
         <td>4</td>
         <td>6000</td>
@@ -57,6 +57,18 @@ function Budget() {
         <td>5000</td>
         <td>1</td>
         <td>5000</td>
+    </tr>
+    <tr>
+        <td>DT11</td>
+        <td>1000</td>
+        <td>1 </td>
+        <td>1000</td>
+    </tr>
+    <tr>
+        <td>Ultrasonic sensors(HCSR04)</td>
+        <td>250</td>
+        <td>3</td>
+        <td>750</td>
     </tr>
     <tr>
         <td>Copper wire</td>
@@ -71,16 +83,16 @@ function Budget() {
         <td>500</td>
     </tr>
     <tr>
-        <td>12V battery</td>
-        <td>2500</td>
+        <td>12V battery LiPo</td>
+        <td>5000</td>
         <td>1</td>
-        <td>2500</td>
+        <td>5000</td>
     </tr>
     <tr >
         <td className='total'>Total</td>
         <td className='total'></td>
         <td className='total'></td>
-        <td className='total' >24350</td>
+        <td className='total' >28440</td>
     </tr>
   
 </table>
