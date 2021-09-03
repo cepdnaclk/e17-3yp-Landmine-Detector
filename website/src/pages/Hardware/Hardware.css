@@ -41,10 +41,10 @@
   }
   .hd-text{
     /* margin-right: auto; */
-    width:40%;
+    width:30%;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    padding-left: 0px;
+    padding-left: 20px;
     padding-right: 20px;
     color: rgb(134, 214, 174);
     font-size: 18px;
