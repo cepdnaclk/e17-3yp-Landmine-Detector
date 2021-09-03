@@ -26,10 +26,10 @@ export class PhysicsTest extends Scene3D{
 
 
    
-    let plane = this.physics.add.box({x:5,y:0,z:0,width:40,height:1,depth:40},{lambert:{color: 0xffff00}});
+    let plane = this.physics.add.box({x:5,y:0,z:0,width:30,height:1.01,depth:40},{lambert:{color: 0x0ffff00}});
     
     //plane.rotation.x = 90
-    this.camera.position.set(20,13,20)
+    this.camera.position.set(20,50,20)
     // this.haveSomeFun()
 
     box1 = this.physics.add.box({x:posx,y:posy,z:posz},{phong: {color: 'green'}})
