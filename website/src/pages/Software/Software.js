@@ -29,7 +29,20 @@ function Software() {
         <br></br>
         <h1 className='sub-topic-ha'>cloud architecture</h1>
         
-        <img alt="" src={process.env.PUBLIC_URL + '/images/cloud-architecture.JPG'} style={{ display: 'block',marginLeft:'auto',marginRight:'auto',width:'80%',opacity:'80%'}}/>          
+        <div style={{}}>
+        <img alt="" src={process.env.PUBLIC_URL + '/images/cloud-architecture.JPG'} style={{ display: 'block', marginRight:'auto',width:'100%',opacity:'100%'}}/>          
+            <div  className='hd-text'>
+                <p>User is interacted with our front end which is hosted in AWS amplify. Authentication and authorization happen using cognito pools and identity groups. 
+                  In the event of creating a user a lambda function is called to sign up a user to a relevant group. With authorized credentials the user calls the API to
+                   initiate a new search. The input values are stored in the database and at the same time lambda function is called to publish the data to a topic in the IoT core.
+                    Then the robots which are subscribed to the same topic receive data via the MQTT protocol. 
+Returned data from the robot will be published using MQTT and using IoT rule by which the data can be processed. Once the data is received, an aws lambda function will trigger and check
+ for identity and access of the robot and call the API to store the data into the database. And at the same time data is sent to the user.
+</p>
+            </div>
+        </div>
+
+        {/* <img alt="" src={process.env.PUBLIC_URL + '/images/cloud-architecture.JPG'} style={{ display: 'block',marginLeft:'auto',marginRight:'auto',width:'80%',opacity:'80%'}}/>           */}
         <br></br>
         <br></br>
         <br></br>
