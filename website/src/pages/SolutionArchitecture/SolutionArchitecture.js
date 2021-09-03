@@ -145,7 +145,7 @@ function SolutionArchitecture() {
                 <h1 className='sub-topic-ha'>ER DIAGRAM</h1>
                 <img alt="" src={process.env.PUBLIC_URL + '/images/er.png'} style={{maxWidth: '100%'}}/>
 
-                <br></br>
+                <br></br> 
                 
                 <h1 className='sub-topic-ha'>RELATIONAL SCHEMA</h1>
                 <img alt="" src={process.env.PUBLIC_URL + '/images/relational.png'} style={{maxWidth: '100%'}}/>
