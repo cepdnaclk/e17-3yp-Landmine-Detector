@@ -73,7 +73,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
         <WhiteTextTypography>
-            24 August 2021
+            03 September 2021
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -87,7 +87,11 @@ function Timeline_LM() {
             <Typography variant="h6" component="h1">
             Milestone 2
             </Typography>
-            <Typography>Web Application & Data flow </Typography>
+            <Typography><ul>
+              <li>Designs of Hardware and Software</li>
+              <li>Full data and control flow</li>
+              <li>Getting familiar with technologies.</li>
+              </ul></Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -109,7 +113,11 @@ function Timeline_LM() {
             <Typography variant="h6" component="h1">
             Milestone 3
             </Typography>
-            <Typography>3D design & PCB Design</Typography>
+            <Typography><ul>
+              <li>3D Models for Robot.</li>
+              <li>Implementation of Backend.</li>
+              <li>PCB designs of circuits.</li>
+              </ul></Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>

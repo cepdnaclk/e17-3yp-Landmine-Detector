@@ -1,9 +1,22 @@
+import React from 'react'
 import './Introduction.css'
+import ReactPlayer from 'react-player/youtube'
+import vid from './LM.mp4'
+
+// Only loads the YouTube player
+
 
 function Introduction() {
     return(
         <div className="text-block">
             <h1 className='main-topic'>Introduction</h1>
+            {/* <div className="intro-vid"><ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /></div>
+             */}
+             <video autoPlay loop id='video'>
+                 <source src={vid} type='video/mp4'></source>
+            </video> 
+
+
             <h1 className='sub-topic'>About</h1>
             <p className='text'>Landmines are prominent weapons designed to destroy or 
             disable enemy targets which detonate by the movement of its target, pressure, 
