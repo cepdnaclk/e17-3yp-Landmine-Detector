@@ -17,6 +17,10 @@
           "GROUP": "GroupUsers",
           "deploymentBucketName": "amplify-amplifywebui-dev-185833-deployment",
           "s3Key": "amplify-builds/amplifyWebappPostConfirmation-70624470774f6f753358-build.zip"
+        },
+        "AdminQueries2a90a1fc": {
+          "deploymentBucketName": "amplify-amplifywebui-dev-185833-deployment",
+          "s3Key": "amplify-builds/AdminQueries2a90a1fc-43757968776a43574d55-build.zip"
         }
       },
       "auth": {
