@@ -1,0 +1,6 @@
+type Search @model {
+  id: ID!
+  name: String!
+  description: String
+  startLoc: Int
+}
