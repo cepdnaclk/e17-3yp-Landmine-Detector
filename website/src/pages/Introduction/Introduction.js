@@ -12,9 +12,9 @@ function Introduction() {
             <h1 className='main-topic'>Introduction</h1>
             {/* <div className="intro-vid"><ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /></div>
              */}
-             <video autoPlay loop id='video'>
+             {/* <video autoPlay loop id='video'>
                  <source src={vid} type='video/mp4'></source>
-            </video> 
+            </video>  */}
 
 
             <h1 className='sub-topic'>About</h1>
