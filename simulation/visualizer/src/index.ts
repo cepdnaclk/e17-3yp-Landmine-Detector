@@ -1,6 +1,8 @@
-import {PhysicsLoader, Project, Scene3D} from 'enable3d'
+import {PhysicsLoader, Project, Scene3D,THREE, ExtendedMesh, ExtendedObject3D} from 'enable3d'
 import { GreaterEqualDepth, Plane } from 'three'
-import * as THREE from 'three'
+
+
+
 
 
 // scalar to simulate speed
@@ -8,11 +10,16 @@ var posx=15,posy=1,posz=15
 var box1;
 var area;
 
+
+
+
 export class PhysicsTest extends Scene3D{
 
   async init(){
     this.renderer.setPixelRatio(1)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
+
+    
   }
 
   async create(){
@@ -22,7 +29,27 @@ export class PhysicsTest extends Scene3D{
       }
     })
 
-      
+    // Adding thrree js objects
+
+    // const geometry = new THREE.SphereGeometry(0.8, 16, 16)
+    // const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 })
+    // const cube = new ExtendedMesh(geometry, material)
+    // const object = new ExtendedObject3D()
+    
+    // this.scene.add(cube)
+
+    const material = new THREE.LineBasicMaterial( { color: 0x0000ff , linewidth: 2,} );
+    const points = [new THREE.Vector3( 10, 0.5, 0 ),new THREE.Vector3( -8 , 0.5, 0 )];
+
+    
+    const geometry = new THREE.BufferGeometry().setFromPoints( points );
+    const line = new THREE.Line( geometry, material );
+    this.scene.add(line)
+
+
+
+
+
 
 
    
@@ -69,6 +96,9 @@ export class PhysicsTest extends Scene3D{
           //   0,
           //   Math.sin(date) * orbitRadius + 0
           // )
+
+    
+
     if(posx>-6){
       posx=posx-0.1
     }
