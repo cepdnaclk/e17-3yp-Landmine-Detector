@@ -10,6 +10,7 @@ export const getSearch = /* GraphQL */ `
       startLoc
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -27,6 +28,7 @@ export const listSearches = /* GraphQL */ `
         startLoc
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }

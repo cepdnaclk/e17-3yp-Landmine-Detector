@@ -13,6 +13,7 @@ export const createSearch = /* GraphQL */ `
       startLoc
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -28,6 +29,7 @@ export const updateSearch = /* GraphQL */ `
       startLoc
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -43,6 +45,7 @@ export const deleteSearch = /* GraphQL */ `
       startLoc
       createdAt
       updatedAt
+      owner
     }
   }
 `;
