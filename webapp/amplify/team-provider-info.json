@@ -15,16 +15,16 @@
       "function": {
         "webappb753ea04DefineAuthChallenge": {
           "deploymentBucketName": "amplify-webapp-dev-190355-deployment",
-          "s3Key": "amplify-builds/webappb753ea04DefineAuthChallenge-39303966453037684256-build.zip"
+          "s3Key": "amplify-builds/webappb753ea04DefineAuthChallenge-726663686a587a467255-build.zip"
         },
         "webappb753ea04CreateAuthChallenge": {
           "deploymentBucketName": "amplify-webapp-dev-190355-deployment",
-          "s3Key": "amplify-builds/webappb753ea04CreateAuthChallenge-694f485857466a723857-build.zip"
+          "s3Key": "amplify-builds/webappb753ea04CreateAuthChallenge-63794d76587377557170-build.zip"
         },
         "webapp5b730c32PostConfirmation": {
           "GROUP": "Users",
           "deploymentBucketName": "amplify-webapp-dev-190355-deployment",
-          "s3Key": "amplify-builds/webapp5b730c32PostConfirmation-59612b614849752f3868-build.zip"
+          "s3Key": "amplify-builds/webapp5b730c32PostConfirmation-51703736782f74427952-build.zip"
         }
       },
       "auth": {
