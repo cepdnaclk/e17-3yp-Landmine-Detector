@@ -16,7 +16,8 @@
     "@enable3d/ammo-physics": "~0.22.0",
     "@enable3d/three-graphics": "~0.22.0",
     "enable3d": "^0.22.0",
-    "three": "~0.127.0"
+    "three": "~0.127.0",
+    "tweakpane": "^3.0.5"
   },
   "devDependencies": {
     "five-server": "^0.0.24",

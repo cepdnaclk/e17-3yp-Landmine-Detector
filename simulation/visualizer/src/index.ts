@@ -1,14 +1,14 @@
 import {PhysicsLoader, Project, Scene3D,THREE, ExtendedMesh, ExtendedObject3D} from 'enable3d'
 import { GreaterEqualDepth, Plane } from 'three'
-
+import {Pane} from 'tweakpane';
 
 
 
 
 // scalar to simulate speed
-var posx=15,posy=1,posz=15
+var posx=15,posy=0.5,posz=15
 var box1;
-var area;
+var area,area1;
 
 
 
@@ -23,13 +23,15 @@ export class PhysicsTest extends Scene3D{
   }
 
   async create(){
-    this.warpSpeed('-ground').then(({ ground }) => {
-      if (ground) {
+    // this.warpSpeed('-ground').then(({ ground }) => {
+    //   if (ground) {
         
-      }
-    })
+    //   }
+    // })
 
-    // Adding thrree js objects
+    this.warpSpeed()
+
+    // Adding thrree js objects ============================
 
     // const geometry = new THREE.SphereGeometry(0.8, 16, 16)
     // const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 })
@@ -38,26 +40,48 @@ export class PhysicsTest extends Scene3D{
     
     // this.scene.add(cube)
 
-    const material = new THREE.LineBasicMaterial( { color: 0x0000ff , linewidth: 2,} );
-    const points = [new THREE.Vector3( 10, 0.5, 0 ),new THREE.Vector3( -8 , 0.5, 0 )];
+    //=================================
+
+    // const material = new THREE.LineBasicMaterial( { color: 0x0000ff , linewidth: 2,} );
+    // const points = [new THREE.Vector3( 10, 0.5, 0 ),new THREE.Vector3( -8 , 0.5, 0 )];
 
     
-    const geometry = new THREE.BufferGeometry().setFromPoints( points );
-    const line = new THREE.Line( geometry, material );
-    this.scene.add(line)
+    // const geometry = new THREE.BufferGeometry().setFromPoints( points );
+    // const line = new THREE.Line( geometry, material );
+    // this.scene.add(line)
 
 
 
+    // const size = 10;
+    // const divisions = 10;
+    
+    // const gridHelper = new THREE.GridHelper( size, divisions );
+    const PARAMS = {
+      factor: 123,
+      title: 'hello',
+      color: '#0f0',
+    };
 
+    //to do figure out how to add elements
+    const pane = new Pane();
 
+    
+  
+    
+
+    const gridHelper = new THREE.GridHelper( 100, 20, 0x0000ff, 0x808080 );
+    const area = new THREE.GridHelper( 50, 10, PARAMS.color,  0xff0000);
+    area.position.y = 0.1;
+    this.scene.add( gridHelper );
+    this.scene.add(area);
 
 
    
-    let plane = this.physics.add.box({x:5,y:0,z:0,width:30,height:1.01,depth:40},{lambert:{color: 0x0ffff00}});
+    // let plane = this.physics.add.box({x:5,y:0,z:0,width:30,height:1.01,depth:40},{lambert:{color: 0x0ffff00}});
     
-    //plane.rotation.x = 90
-    this.camera.position.set(20,50,20)
-    // this.haveSomeFun()
+    // //plane.rotation.x = 90
+    // this.camera.position.set(20,50,20)
+    // // this.haveSomeFun()
 
     box1 = this.physics.add.box({x:posx,y:posy,z:posz},{phong: {color: 'green'}})
     this.physics.debug?.enable()
@@ -66,7 +90,8 @@ export class PhysicsTest extends Scene3D{
     // this.scene
     // this.physics
 
-    area = this.physics.add.box({x:0,y:0,z:0,height:1,width:50,depth:50})
+    area1 = this.physics.add.box({x:0,y:0,z:0,height:0.1,width:50,depth:50})
+    
     
     // let group = new THREE.Group()
     // const body = this.add.box({ height: 0.8, y: 1, width: 0.4, depth: 0.4 }, { lambert: { color: 0xffff00 } })
@@ -75,9 +100,6 @@ export class PhysicsTest extends Scene3D{
     // group.position.setX(3)
     // this.add.existing(group)
     // this.physics.add.existing(group)
-
-    plane.body.setCollisionFlags(2)
-    area.body.setCollisionFlags(2)
     box1.body.setCollisionFlags(2)
   }
 
