@@ -2,15 +2,19 @@ import {PhysicsLoader, Project, Scene3D,THREE, ExtendedMesh, ExtendedObject3D} f
 import { GreaterEqualDepth, Plane } from 'three'
 import {Pane} from 'tweakpane';
 
-
-
-
 // scalar to simulate speed
-var posx=15,posy=0.5,posz=15
+
 var box1;
 var area,area1;
+var area_length = 75, area_div = 15;
+var block_dis = area_length/area_div;
+var blocks_per_side = area_length/block_dis;
+var posx= - ((blocks_per_side/2>>0)*(block_dis)) ,posy=1.1 ,posz = posx;
 
+// Create one dimensional array
+var searchMatrix = new Array(15);
 
+var k =0;
 
 
 export class PhysicsTest extends Scene3D{
@@ -29,7 +33,8 @@ export class PhysicsTest extends Scene3D{
     //   }
     // })
 
-    this.warpSpeed()
+    (await this.warpSpeed()).camera?.position.set(-75,40,0);
+    
 
     // Adding thrree js objects ============================
 
@@ -59,38 +64,56 @@ export class PhysicsTest extends Scene3D{
     const PARAMS = {
       factor: 123,
       title: 'hello',
-      color: '#0f0',
+      color: '#ff0',
     };
 
-    //to do figure out how to add elements
+    //to do figure out how to add elements (tweakPane)
     const pane = new Pane();
 
-    
-  
-    
-
     const gridHelper = new THREE.GridHelper( 100, 20, 0x0000ff, 0x808080 );
-    const area = new THREE.GridHelper( 50, 10, PARAMS.color,  0xff0000);
+    const area = new THREE.GridHelper( area_length, area_div, PARAMS.color,  0xff0000);
     area.position.y = 0.1;
-    this.scene.add( gridHelper );
+    // this.scene.add( gridHelper );
     this.scene.add(area);
 
 
-   
-    // let plane = this.physics.add.box({x:5,y:0,z:0,width:30,height:1.01,depth:40},{lambert:{color: 0x0ffff00}});
-    
-    // //plane.rotation.x = 90
-    // this.camera.position.set(20,50,20)
-    // // this.haveSomeFun()
 
-    box1 = this.physics.add.box({x:posx,y:posy,z:posz},{phong: {color: 'green'}})
+    // Loop to create 2D array using 1D array
+
+    // for (var i = 0; i < 15; i++) {
+    //   for (var j = 0; j < 15; j++) {
+    //     searchMatrix[i][j] = new Array(3);
+    //   }
+    // }
+
+    // var h = -((blocks_per_side/2>>0)*(block_dis));
+
+    // // Loop to initialize 2D array elements.
+    // for (var i = 0; i < 15; i++) {
+    //   for (var j = 0; j < 15; j++) {
+    //     searchMatrix[i][j][0]  = h;
+    //     searchMatrix[i][j][1]  = h + j*(block_dis); 
+    //     searchMatrix[i][j][2]  = 0;
+    //   }
+    //   h+=(block_dis);
+    // }
+  
+    // Loop to display the elements of 2D array. 
+    // for (var i = 0; i < 2; i++) {
+    //   for (var j = 0; j < 2; j++)    {
+    //     document.write(searchMatrix[i][j][0] + " ");
+    //   }
+    //   document.write("<br>");
+    // } 
+
+    box1 = this.physics.add.box({x:posx,y:posy,z:posz,height:2,width:2,depth:2},{phong: {color: 'green'}})
     this.physics.debug?.enable()
     this.renderer
     // this.camera
     // this.scene
     // this.physics
 
-    area1 = this.physics.add.box({x:0,y:0,z:0,height:0.1,width:50,depth:50})
+    area1 = this.physics.add.box({x:0,y:0,z:0,height:0.1,width:75,depth:75})
     
     
     // let group = new THREE.Group()
@@ -104,7 +127,8 @@ export class PhysicsTest extends Scene3D{
   }
 
   update() {
-    this.camera.lookAt(box1.position.clone())
+    this.camera.lookAt(0,0,0)
+    // this.camera.lookAt(box1.position.clone())
     //this.camera.attach(box1)
 
     // const orbitRadius = 5
@@ -121,17 +145,15 @@ export class PhysicsTest extends Scene3D{
 
     
 
-    if(posx>-6){
-      posx=posx-0.1
-    }
-    else if(posz>-6){
-      posz=posz-0.1
+    if(posx < 0){
+      posx = posx+0.5; //searchMatrix[k][0][0];
+      k++;
     }
     // box1.rotation.x =+ 0.01
     // set needUpdate to true, every time you want
     // to adjust the position or rotation of a kinematic body
     box1.position.set(posx,posy,posz)
-    box1.body.needUpdate = true
+    box1.body.needUpdate = true;
   }
 }
 
