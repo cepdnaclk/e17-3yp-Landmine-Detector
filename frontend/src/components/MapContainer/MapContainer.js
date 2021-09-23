@@ -13,10 +13,12 @@ export class MapContainer extends React.Component {
   }
   render() {
     const mapStyles = {
-      width: "100%",
+      width: "70%",
       height: "100%",
     };
     return (
+
+      
       <Map
         google={this.props.google}
         zoom={8}
@@ -25,6 +27,7 @@ export class MapContainer extends React.Component {
       >
         <Marker position={{ lat: 9.761927, lng: 79.95244 }} />
       </Map>
+
     );
     
   }
