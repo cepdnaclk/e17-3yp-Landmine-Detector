@@ -16,11 +16,11 @@ function Profile() {
         <li><a href="#">Reports</a></li>
       </ul>
     </div>
-    <section>
+    <section >
       {/* Username should get */}
       <header>User</header>
 
-      <div style={{paddingLeft:'300px'}}>
+      <div style={{paddingLeft:'25%'}}>
         <br/>
       <form>
         <div style={{display:'flex', justifyContent:'space-around'}}>
