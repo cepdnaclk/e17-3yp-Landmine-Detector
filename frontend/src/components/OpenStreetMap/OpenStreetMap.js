@@ -1,7 +1,7 @@
 import { Marker } from "leaflet";
 import React from "react";
 import { geolocated } from "react-geolocated";
-import { MapContainer, TileLayer } from 'react-leaflet'
+import { MapContainer, Popup, TileLayer } from 'react-leaflet'
 
 class OpenStreetMap extends React.Component {
     
@@ -23,11 +23,17 @@ class OpenStreetMap extends React.Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-        {/* {
-            <Marker
-                position={[this.state.lan,this.state.lat]}
-            />
-        } */}
+        
+            {/* <Marker
+                // position={[this.state.lan,this.state.lat]}
+                position={[-123,48]}
+            >
+            <Popup>
+                You are here !!!
+            </Popup>
+
+            </Marker> */}
+        
 
         </MapContainer>
         )
@@ -35,6 +41,12 @@ class OpenStreetMap extends React.Component {
     }
     
 }
+
+
+
+
+
+
 
 export default geolocated({
     positionOptions:{
