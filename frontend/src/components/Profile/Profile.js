@@ -2,6 +2,7 @@ import React from 'react'
 // import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import './Profile.css'
 import MapContainer from '../MapContainer/MapContainer';
+import OpenStreetMap from '../OpenStreetMap/OpenStreetMap';
 
 function Profile() {
   return(
@@ -35,7 +36,8 @@ function Profile() {
         <br/>
           <button style={{justifyContent:'center'}} type="submit" class="">SEARCH</button>
 </form>
-        <MapContainer />
+        {/* <MapContainer /> */}
+        <OpenStreetMap />
       </div>
 
 
