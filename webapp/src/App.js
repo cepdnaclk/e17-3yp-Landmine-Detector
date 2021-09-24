@@ -26,7 +26,7 @@ function App() {
     try{
     const apiData = await API.graphql(graphqlOperation(listSearches ));
     setNotes(apiData.data.listSearches.items);
-  } catch (err) {
+    } catch (err) {
     console.log('error creating todo:', err)
   }
   }
