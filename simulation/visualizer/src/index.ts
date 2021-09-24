@@ -12,7 +12,7 @@ var blocks_per_side = area_length/block_dis;
 var posx= - ((blocks_per_side/2>>0)*(block_dis)) ,posy=1.1 ,posz = posx;
 
 // Create one dimensional array
-var searchMatrix = new Array(15);
+var searchMatrix;// = new Array(15);
 
 var k =0;
 
@@ -79,24 +79,26 @@ export class PhysicsTest extends Scene3D{
 
 
     // Loop to create 2D array using 1D array
+    searchMatrix = new Array(15);
 
-    // for (var i = 0; i < 15; i++) {
-    //   for (var j = 0; j < 15; j++) {
-    //     searchMatrix[i][j] = new Array(3);
-    //   }
-    // }
-
-    // var h = -((blocks_per_side/2>>0)*(block_dis));
+    for(var i=0;i<15;i++){
+      searchMatrix[i]= new Array(15);
+      for(var j=0;j<searchMatrix[i].length;j++){
+        searchMatrix[i][j] = new Array(15);
+        searchMatrix[i][j][0]=0.5;
+      }
+    }
+    var h = -((blocks_per_side/2>>0)*(block_dis));
 
     // // Loop to initialize 2D array elements.
-    // for (var i = 0; i < 15; i++) {
-    //   for (var j = 0; j < 15; j++) {
-    //     searchMatrix[i][j][0]  = h;
-    //     searchMatrix[i][j][1]  = h + j*(block_dis); 
-    //     searchMatrix[i][j][2]  = 0;
-    //   }
-    //   h+=(block_dis);
-    // }
+    for (var i = 0; i < 15; i++) {
+      for (var j = 0; j < 15; j++) {
+        searchMatrix[i][j][0]  = h;
+        searchMatrix[i][j][1]  = h + j*(block_dis); 
+        searchMatrix[i][j][2]  = 0;
+      }
+      h+=(block_dis);
+    }
   
     // Loop to display the elements of 2D array. 
     // for (var i = 0; i < 2; i++) {
@@ -144,11 +146,15 @@ export class PhysicsTest extends Scene3D{
           // )
 
     
-
-    if(posx < 0){
-      posx = posx+0.5; //searchMatrix[k][0][0];
-      k++;
-    }
+    
+      if(posx < 0 ){
+          posx = searchMatrix[k][0][0];
+          k++;
+      }
+      else if(posz < 0){
+        posz = posz+0.5; //searchMatrix[k][0][0];
+      }
+    
     // box1.rotation.x =+ 0.01
     // set needUpdate to true, every time you want
     // to adjust the position or rotation of a kinematic body
