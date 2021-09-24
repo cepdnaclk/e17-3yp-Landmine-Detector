@@ -3,28 +3,35 @@ import React from "react";
 import { geolocated } from "react-geolocated";
 import { MapContainer, TileLayer } from 'react-leaflet'
 
-const DEFAULT_LANGITUDE = -123
-const DEFAULT_LATITUDE = 48
-
 class OpenStreetMap extends React.Component {
+    
+    constructor() {
+        super()
+        this.state = {
+            lan : -123,
+            lat : 48
+        }
+    }
+    
     render() {
-        const lan = DEFAULT_LANGITUDE
-    const lat = DEFAULT_LATITUDE
-    return(
-        <MapContainer center={[lan,lat]} zoom={12}>
+        return(
+
+            
+            <MapContainer center={[this.state.lan,this.state.lat]} zoom={12}>
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-        {
+        {/* {
             <Marker
-                position={[lan,lat]}
+                position={[this.state.lan,this.state.lat]}
             />
-        }
+        } */}
 
         </MapContainer>
-    )
+        )
+        
     }
     
 }
