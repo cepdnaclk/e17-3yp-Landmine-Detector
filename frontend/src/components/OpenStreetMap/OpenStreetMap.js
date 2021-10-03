@@ -8,8 +8,8 @@ class OpenStreetMap extends React.Component {
     constructor() {
         super()
         this.state = {
-            lan : -123,
-            lat : 48
+            lan : 6.0535,
+            lat : 80.2210
         }
     }
     
@@ -26,7 +26,7 @@ class OpenStreetMap extends React.Component {
         
             <Marker
                 // position={[this.state.lan,this.state.lat]}
-                position={[-123,48]}
+                position={[this.state.lan,this.state.lat]}
             >
             <Popup>
                 You are here !!!
