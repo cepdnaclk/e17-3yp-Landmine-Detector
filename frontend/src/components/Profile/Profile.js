@@ -42,20 +42,20 @@ function Profile() {
       <div style={{paddingLeft:'25%'}}>
         <br/>
       {/* <form> */}
-        <div style={{display:'flex', justifyContent:'space-around'}}>
-          LAN: <input type="text" class="" id="xx" onChange={e=>setLan(e.target.value)} value={lan} />
-          LAT: <input type="text" class="" id="" onChange={e=>setLat(e.target.value)} value={lat} />
+          {/* <div style={{display:'flex', justifyContent:'space-around'}}>
+            LAN: <input type="text" class="" id="xx" onChange={e=>setLan(e.target.value)} value={lan} />
+            LAT: <input type="text" class="" id="" onChange={e=>setLat(e.target.value)} value={lat} />
           </div>
           <br/>
           <div style={{display:'flex', justifyContent:'space-around'}}>
-          Area: <input type="text" class="" id="" />
-          Des: <input type="text" class="" id="" />
-        </div>
+            Area: <input type="text" class="" id="" />
+            Des: <input type="text" class="" id="" />
+          </div>
         <br/>
-          <button onClick={submitDetails} style={{justifyContent:'center'}} type="submit" class="">SEARCH</button>
+          <button onClick={submitDetails} style={{justifyContent:'center'}} type="submit" class="">SEARCH</button> */}
 {/* </form> */}
         {/* <MapContainer /> */}
-        <OpenStreetMap lat={lat} lan={lan} />
+        <OpenStreetMap />
       </div>
 
 
