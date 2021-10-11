@@ -1,6 +1,0 @@
-type Search @model @auth(rules: [ {allow: owner } ]){
-  id: ID!
-  name: String!
-  description: String
-  startLoc: Int
-}

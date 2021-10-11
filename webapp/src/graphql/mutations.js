@@ -1,51 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createSearch = /* GraphQL */ `
-  mutation CreateSearch(
-    $input: CreateSearchInput!
-    $condition: ModelSearchConditionInput
+export const createTodo = /* GraphQL */ `
+  mutation CreateTodo(
+    $input: CreateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    createSearch(input: $input, condition: $condition) {
+    createTodo(input: $input, condition: $condition) {
       id
       name
       description
-      startLoc
+      searchLoc
+      searchArea
       createdAt
       updatedAt
-      owner
     }
   }
 `;
-export const updateSearch = /* GraphQL */ `
-  mutation UpdateSearch(
-    $input: UpdateSearchInput!
-    $condition: ModelSearchConditionInput
+export const updateTodo = /* GraphQL */ `
+  mutation UpdateTodo(
+    $input: UpdateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    updateSearch(input: $input, condition: $condition) {
+    updateTodo(input: $input, condition: $condition) {
       id
       name
       description
-      startLoc
+      searchLoc
+      searchArea
       createdAt
       updatedAt
-      owner
     }
   }
 `;
-export const deleteSearch = /* GraphQL */ `
-  mutation DeleteSearch(
-    $input: DeleteSearchInput!
-    $condition: ModelSearchConditionInput
+export const deleteTodo = /* GraphQL */ `
+  mutation DeleteTodo(
+    $input: DeleteTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    deleteSearch(input: $input, condition: $condition) {
+    deleteTodo(input: $input, condition: $condition) {
       id
       name
       description
-      startLoc
+      searchLoc
+      searchArea
       createdAt
       updatedAt
-      owner
     }
   }
 `;
