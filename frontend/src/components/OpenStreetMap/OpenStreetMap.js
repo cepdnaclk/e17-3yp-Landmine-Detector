@@ -12,7 +12,8 @@ class OpenStreetMap extends React.Component {
         //     lat : this.props.lat
         // }
     }
-    
+
+
     render() {
         return(
             <MapContainer center={[this.props.lan,this.props.lat]} zoom={12}>
@@ -29,7 +30,7 @@ class OpenStreetMap extends React.Component {
                 position={[this.props.lan,this.props.lat]}
             >
             <Popup>
-                You are here !!!
+                {[this.props.lan,this.props.lat]}
             </Popup>
 
             </Marker>
