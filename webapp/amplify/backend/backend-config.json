@@ -1,36 +1,26 @@
 {
-  "function": {
-    "webappb753ea04DefineAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "webappb753ea04CreateAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "webapp5b730c32PostConfirmation": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
+  "function": {},
   "auth": {
-    "webapp5b730c32": {
-      "service": "Cognito",
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "webapp5b730c32PostConfirmation",
-          "triggerProvider": "Cognito",
+          "category": "auth",
+          "resourceName": "WebAppAuth",
           "attributes": [
-            "Arn",
-            "Name"
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
           ]
         }
-      ],
+      ]
+    },
+    "WebAppAuth": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "loginMechanisms": [
@@ -43,9 +33,9 @@
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
-        "mfaConfiguration": "OFF",
+        "mfaConfiguration": "OPTIONAL",
         "mfaTypes": [
-          "SMS"
+          "TOTP"
         ],
         "verificationMechanisms": [
           "EMAIL"
@@ -54,7 +44,7 @@
     }
   },
   "api": {
-    "webappAPI": {
+    "WebAppAPI": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -62,7 +52,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authwebapp5b730c32"
+              "userPoolId": "authWebAppAuth"
             }
           },
           "additionalAuthenticationProviders": []

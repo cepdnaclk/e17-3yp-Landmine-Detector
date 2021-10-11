@@ -1,42 +1,42 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateSearch = /* GraphQL */ `
-  subscription OnCreateSearch($owner: String!) {
-    onCreateSearch(owner: $owner) {
+export const onCreateTodo = /* GraphQL */ `
+  subscription OnCreateTodo {
+    onCreateTodo {
       id
       name
       description
-      startLoc
+      searchLoc
+      searchArea
       createdAt
       updatedAt
-      owner
     }
   }
 `;
-export const onUpdateSearch = /* GraphQL */ `
-  subscription OnUpdateSearch($owner: String!) {
-    onUpdateSearch(owner: $owner) {
+export const onUpdateTodo = /* GraphQL */ `
+  subscription OnUpdateTodo {
+    onUpdateTodo {
       id
       name
       description
-      startLoc
+      searchLoc
+      searchArea
       createdAt
       updatedAt
-      owner
     }
   }
 `;
-export const onDeleteSearch = /* GraphQL */ `
-  subscription OnDeleteSearch($owner: String!) {
-    onDeleteSearch(owner: $owner) {
+export const onDeleteTodo = /* GraphQL */ `
+  subscription OnDeleteTodo {
+    onDeleteTodo {
       id
       name
       description
-      startLoc
+      searchLoc
+      searchArea
       createdAt
       updatedAt
-      owner
     }
   }
 `;
