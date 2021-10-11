@@ -16,8 +16,8 @@ function Profile() {
   }
 
 
-  const [lan, setLan] = useState(0);
-  const [lat, setLat] = useState(0);
+  const [lan, setLan] = useState(6.0535);
+  const [lat, setLat] = useState(80.2210);
   const [area, setArea] = useState(0);
   const [des, setDes] = useState(0);
 
