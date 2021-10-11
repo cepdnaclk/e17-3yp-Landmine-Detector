@@ -8,7 +8,7 @@ import Amplify, {API, graphqlOperation} from 'aws-amplify';
 import config from './aws-exports';
 
 
-const initialFormState = { name: '', description: '', startLoc: 0 }
+const initialFormState = { name: '', description: '', searchLoc: 0.0, searchArea: 0, LocationData: 0}
 
 
 Amplify.configure(config);
@@ -33,7 +33,7 @@ function App() {
 
   async function createNote() {
     try{
-    if (!formData.name || !formData.description || !formData.startLoc) return;
+    if (!formData.name || !formData.description || !formData.searchLoc) return;
     await API.graphql({ query: createSearch, variables: { input: formData } });
     setNotes([ ...notes, formData ]);
     setFormData(initialFormState);
@@ -67,9 +67,14 @@ function App() {
         value={formData.description}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'startLoc': e.target.value})}
+        onChange={e => setFormData({ ...formData, 'searchLoc': e.target.value})}
         placeholder= "123"
-        value={formData.startLoc}
+        value={formData.searchLoc}
+      />
+      <input
+        onChange={e => setFormData({ ...formData, 'searchArea': e.target.value})}
+        placeholder= "50.0"
+        value={formData.searchArea}
       />
       <button onClick={createNote}>Create Note</button>
       <div style={{marginBottom: 30}}>
@@ -78,7 +83,8 @@ function App() {
             <div key={note.id || note.name }>
               <h2>{note.name}</h2>
               <p>{note.description}</p>
-              <p>{note.startLoc}</p>
+              <p>{note.searchLoc}</p>
+              <p>{note.searchArea}</p>
               <button onClick={() => deleteNote(note)}>Delete note</button>
             </div>
           ))

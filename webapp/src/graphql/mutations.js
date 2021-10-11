@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
+export const createSearch = /* GraphQL */ `
   mutation CreateTodo(
     $input: CreateTodoInput!
     $condition: ModelTodoConditionInput
@@ -12,12 +12,13 @@ export const createTodo = /* GraphQL */ `
       description
       searchLoc
       searchArea
+      LoacationData
       createdAt
       updatedAt
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
+export const updateSearch = /* GraphQL */ `
   mutation UpdateTodo(
     $input: UpdateTodoInput!
     $condition: ModelTodoConditionInput
@@ -28,12 +29,13 @@ export const updateTodo = /* GraphQL */ `
       description
       searchLoc
       searchArea
+      LoacationData
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
+export const deleteSearch = /* GraphQL */ `
   mutation DeleteTodo(
     $input: DeleteTodoInput!
     $condition: ModelTodoConditionInput
@@ -44,6 +46,7 @@ export const deleteTodo = /* GraphQL */ `
       description
       searchLoc
       searchArea
+      LoacationData
       createdAt
       updatedAt
     }

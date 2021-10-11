@@ -9,6 +9,7 @@ export const onCreateTodo = /* GraphQL */ `
       description
       searchLoc
       searchArea
+      LoacationData
       createdAt
       updatedAt
     }
@@ -22,6 +23,7 @@ export const onUpdateTodo = /* GraphQL */ `
       description
       searchLoc
       searchArea
+      LoacationData
       createdAt
       updatedAt
     }
@@ -35,6 +37,7 @@ export const onDeleteTodo = /* GraphQL */ `
       description
       searchLoc
       searchArea
+      LoacationData
       createdAt
       updatedAt
     }

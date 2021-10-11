@@ -1,0 +1,9 @@
+type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+  searchLoc: Float
+  searchArea: Int
+  LoacationData : Int
+}
+
