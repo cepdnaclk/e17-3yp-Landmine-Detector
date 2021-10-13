@@ -51,54 +51,44 @@ Returned data from the robot will be published using MQTT and using IoT rule by 
         <h1 className='sub-topic-ha'>UI designs</h1>
           <div className="slide-container">
           <Fade>
+
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-1.JPG"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI-2.png"} />
             </div>
             <p>Login UI</p>
           </div>
           <div className="each-fade">
             <p>two-step verification</p>
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-2.JPG"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI-3.png"} />
             </div>
           </div>
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-3.JPG"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI-4.png"} />
             </div>
             <p>User Interface</p>
           </div>
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-4.JPG"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI-5.png"} />
             </div>
             <p>User Interface</p>
           </div>
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-5.JPG"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI-6.png"} />
             </div>
-            <p>Admin Interface</p>
+            <p>History</p>
           </div>
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-6.JPG"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI-1.png"} />
             </div>
-            <p>Admin Interface</p>
+            <p>History</p>
           </div>
-          <div className="each-fade">
-            <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-7.JPG"} />
-            </div>
-            <p>Admin Interface</p>
-          </div>
-          <div className="each-fade">
-            <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-8.JPG"} />
-            </div>
-            <p>Super Admin</p>
-          </div>
+
         </Fade>
           </div>
 
