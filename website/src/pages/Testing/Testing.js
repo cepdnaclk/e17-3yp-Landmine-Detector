@@ -2,11 +2,11 @@ import './Testing.css'
 
 function Testing(){
     return(
-        <div className="slide-show">
+        <div className="each-slide-sa">
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Testing</h1>  
             <br></br> 
 
-            <div className="each-slide-sa">
+            
                 <h1 className='sub-topic-hd'>User Interface & login Testing </h1>
 
 
@@ -28,7 +28,7 @@ function Testing(){
 
             </div>
 
-        </div>
+
     )
 }
 

@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Software from '../pages/Software/Software'
 import Budget from '../pages/Budget/Budget';
 import Testing from '../pages/Testing/Testing';
+import Video from '../pages/Video/Video';
 
 
 function Navbar() {
@@ -34,6 +35,10 @@ function Navbar() {
         <h1>Landmine Detection Robot</h1>
         {/* <div className='banner-area' id="home"></div> */}
         <Home id='home'></Home>
+        <div className='video-area'>
+            <Video />
+        </div>
+        <hr/>
         <div className='intro-area' id='intro'>
             <Introduction />
         </div>
