@@ -10,6 +10,7 @@ import SolutionArchitecture from '../pages/SolutionArchitecture/SolutionArchitec
 import Footer from './Footer';
 import Software from '../pages/Software/Software'
 import Budget from '../pages/Budget/Budget';
+import Testing from '../pages/Testing/Testing';
 
 
 function Navbar() {
@@ -24,6 +25,7 @@ function Navbar() {
                 <li><a href='#ha'>Solution Architecture</a></li>
                 <li><a href='#hd'>Hardware Design</a></li>
                 <li><a href='#sd'>Software Design</a></li>
+                <li><a href='#testing'>Testing</a></li>
                 <li><a href='#budget'>Budget</a></li>
                 <li><a href='#time'>Timeline</a></li>
                 <li><a href='#team'>Team</a></li>
@@ -51,6 +53,10 @@ function Navbar() {
         <hr/>
         <div className='sd-area' id='sd'>
             <Software />
+        </div>
+        <hr/>
+        <div className='testing-area' id='testing'>
+            <Testing />
         </div>
         <hr/>
         <div className='budget-area' id='budget'>
