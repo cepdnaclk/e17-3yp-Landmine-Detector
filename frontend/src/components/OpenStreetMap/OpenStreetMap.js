@@ -3,6 +3,46 @@ import React, { useState } from "react";
 import { geolocated } from "react-geolocated";
 import { MapContainer, Popup, TileLayer, Marker, Circle, MapConsumer, useMapEvent } from 'react-leaflet'
 
+
+
+function CallMap(lan ,lat) {
+    return(
+        <MapContainer center={[lan, lat]} zoom={20}>
+            {console.log('hey '+lan+' '+lat)}
+
+            <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+            <Circle
+                center={[lan, lat]} fillColor="blue" radius={200}
+            />
+        
+            <Marker
+                // position={[this.state.lan,this.state.lat]}
+                // position={[this.state.lan,this.state.lat]}
+                position={[lan, lat]}
+            >
+            <Popup>
+                {[lan, lan]}
+            </Popup>
+
+            </Marker>
+        
+
+        </MapContainer>
+    )
+}
+
+
+
+
+
+
+
+
+
 function OpenStreetMap() {
     
     const [lan, setLan] = useState(6.0535);
@@ -13,6 +53,18 @@ function OpenStreetMap() {
     // const map = useMapEvent('click', () => {
     //         map.setCenter([lan, lat])
     // })
+
+    const [show, setShow] = useState(false);
+
+    const enableMap = ()=>{
+        setShow(true)
+        console.log(show);
+    };
+
+    const disableMap = ()=>{
+        setShow(false)
+        console.log(show);
+    }
 
     return(
         // console.log('rerendered');
@@ -41,16 +93,14 @@ function OpenStreetMap() {
             </div>
             <br/>
 
+            <button onClick={enableMap}>View on map</button>
+            <button onClick={disableMap}>Reset</button>
 
-            <MapContainer center={[lan, lat]} zoom={20}>
-            {/* <MapContainer center={[this.state.lan,this.state.lat]} zoom={12}></MapContainer> */}
+            { show ? CallMap(lan, lat) : null}
 
-            {/* <MapConsumer>
-                {(map) => {
-                console.log('map center:', map.getCenter())
-                return null
-                }}
-            </MapConsumer> */}
+            
+            {/* <MapContainer center={[lan, lat]} zoom={20}>
+            {console.log('hey '+lan+' '+lat)}
 
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -73,7 +123,7 @@ function OpenStreetMap() {
             </Marker>
         
 
-        </MapContainer>
+        </MapContainer> */}
         </div>
     )
     
