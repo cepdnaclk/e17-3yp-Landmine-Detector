@@ -1,93 +1,89 @@
 import React, {useState, useEffect} from 'react';
 // import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-import { listSearches } from './graphql/queries';
-import { createSearch, deleteSearch } from './graphql/mutations';
+import { getSearch, listSearches } from './graphql/queries';
+import { createSearch, updateSearch , deleteSearch } from './graphql/mutations';
 import './App.css';
 import Amplify, {API, graphqlOperation} from 'aws-amplify';
 import config from './aws-exports';
 
-
-const initialFormState = { name: '', description: '', searchLoc: 0.0, searchArea: 0, LocationData: 0}
-
+const initialFormState = {name: 'asd', description: '', SerachLoc: 0.0, SearchArea: 0.0 ,LocationData: {Lat: 0.0 , Lon: 0.0, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
 
-
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [searches, setSearches] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
-    fetchNotes();
+    fetchSearches();
   }, []);
 
-  async function fetchNotes() {
+  async function fetchSearches() {
     try{
-    const apiData = await API.graphql(graphqlOperation(listSearches ));
-    setNotes(apiData.data.listSearches.items);
+    const apiData = await API.graphql(graphqlOperation(listSearches));
+	console.log(apiData)
+    setSearches(apiData.data.listSearches.items);
     } catch (err) {
     console.log('error creating todo:', err)
   }
   }
 
-  async function createNote() {
-    try{
-    if (!formData.name || !formData.description || !formData.searchLoc) return;
+  async function create() {
+    
+    if (!formData.name || !formData.description || !formData.SerachLoc) return;
+//	setFormData({ ...formData, 'id': formData.SerachLoc})
+//	formData.id = fromData.SerachLoc + formData.name
+	console.log(formData)
     await API.graphql({ query: createSearch, variables: { input: formData } });
-    setNotes([ ...notes, formData ]);
+    setSearches([ ...searches, formData ]);
     setFormData(initialFormState);
-  } catch (err) {
-    console.log('error creating todo:', err)
-  }
   }
 
-  async function deleteNote({ id }) {
-    try {
-    const newNotesArray = notes.filter(note => note.id !== id);
-    setNotes(newNotesArray);
+  async function deleteS({ id }) {
+    const newSearchesArray = searches.filter(search => search.id !== id);
+    setSearches(newSearchesArray);
     await API.graphql({ query: deleteSearch, variables: { input: { id } }});
-    } catch (err) {
-    console.log('error creating todo:', err)
   }
-  }
-
 
   return (
+
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>My searches App</h1>
+
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
+        placeholder="search name"
         value={formData.name}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
+        placeholder="search description"
         value={formData.description}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'searchLoc': e.target.value})}
+        onChange={e => setFormData({ ...formData, 'SerachLoc': e.target.value})}
         placeholder= "123"
-        value={formData.searchLoc}
+        value={formData.SerachLoc}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'searchArea': e.target.value})}
+        onChange={e => setFormData({ ...formData, 'SearchArea': e.target.value})}
         placeholder= "50.0"
-        value={formData.searchArea}
+        value={formData.SearchArea}
       />
-      <button onClick={createNote}>Create Note</button>
+      <button onClick={create}>Create search</button>
       <div style={{marginBottom: 30}}>
         {
-          notes.map(note => (
-            <div key={note.id || note.name }>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <p>{note.searchLoc}</p>
-              <p>{note.searchArea}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+          searches.map(search => (
+            <div key={search.id || search.name }>
+              <h2>{search.name}</h2>
+              <p>{search.description}</p>
+              <p>{search.SerachLoc}</p>
+              <p>{search.SearchArea}</p>
+			  <button onClick={() => deleteS(search)}>Delete</button>
             </div>
           ))
+
         }
       </div>
       <AmplifySignOut />

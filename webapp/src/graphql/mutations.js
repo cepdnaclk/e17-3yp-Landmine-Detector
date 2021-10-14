@@ -2,51 +2,72 @@
 // this is an auto generated file. This will be overwritten
 
 export const createSearch = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+  mutation CreateSearch(
+    $input: CreateSearchInput!
+    $condition: ModelSearchConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createSearch(input: $input, condition: $condition) {
       id
       name
       description
-      searchLoc
-      searchArea
-      LoacationData
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
     }
   }
 `;
 export const updateSearch = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+  mutation UpdateSearch(
+    $input: UpdateSearchInput!
+    $condition: ModelSearchConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateSearch(input: $input, condition: $condition) {
       id
       name
       description
-      searchLoc
-      searchArea
-      LoacationData
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
     }
   }
 `;
 export const deleteSearch = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+  mutation DeleteSearch(
+    $input: DeleteSearchInput!
+    $condition: ModelSearchConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteSearch(input: $input, condition: $condition) {
       id
       name
       description
-      searchLoc
-      searchArea
-      LoacationData
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
     }
