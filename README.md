@@ -47,7 +47,7 @@ The whole set of tasks are designed to be done with minimum human interactions m
 - Automated path finding
 - GPS based navigation
 - Landmine detection using Pulse Induction
-- Visualization of data maps
+- Visualization of data as an overlay on maps
 - Scalability for multiple bots
 
 

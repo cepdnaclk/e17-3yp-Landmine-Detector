@@ -1,0 +1,111 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-webapp-dev-190355-authRole",
+      "UnauthRoleArn": "arn:aws:iam::326807654214:role/amplify-webapp-dev-190355-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::326807654214:role/amplify-webapp-dev-190355-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-webapp-dev-190355-deployment",
+      "UnauthRoleName": "amplify-webapp-dev-190355-unauthRole",
+      "StackName": "amplify-webapp-dev-190355",
+      "StackId": "arn:aws:cloudformation:us-east-1:326807654214:stack/amplify-webapp-dev-190355/c176ae40-16f2-11ec-9e62-0a596c25fead",
+      "AmplifyAppId": "dvdq5iyopxt6p"
+    }
+  },
+  "function": {},
+  "auth": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "WebAppAuth",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "UserGroupRole": "arn:aws:iam::326807654214:role/us-east-1_2OSL5ulWl-UserGroupRole",
+        "SuperAdminGroupRole": "arn:aws:iam::326807654214:role/us-east-1_2OSL5ulWl-SuperAdminGroupRole",
+        "AdminGroupRole": "arn:aws:iam::326807654214:role/us-east-1_2OSL5ulWl-AdminGroupRole"
+      },
+      "lastPushTimeStamp": "2021-10-11T16:22:50.782Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-webapp-dev-190355-deployment/amplify-cfn-templates/auth/template.json",
+        "logicalId": "authuserPoolGroups"
+      },
+      "lastPushDirHash": "43Dghq+oiz7hkYQFsapoELSGjRg="
+    },
+    "WebAppAuth": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "PREFERRED_USERNAME"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OPTIONAL",
+        "mfaTypes": [
+          "TOTP"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::326807654214:role/sns53093e1f190355-dev",
+        "UserPoolId": "us-east-1_2OSL5ulWl",
+        "AppClientIDWeb": "7cvt34vb8bkueil1cv8fura4tm",
+        "AppClientID": "3793ngsgb6bg9e7n715kldkjq7",
+        "IdentityPoolId": "us-east-1:5948f882-018a-41f0-ae16-757d75051e6e",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:326807654214:userpool/us-east-1_2OSL5ulWl",
+        "IdentityPoolName": "WebAppIdentity__dev",
+        "UserPoolName": "WebAppUserPool"
+      },
+      "lastPushTimeStamp": "2021-10-11T16:22:50.793Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-webapp-dev-190355-deployment/amplify-cfn-templates/auth/WebAppAuth-cloudformation-template.yml",
+        "logicalId": "authWebAppAuth"
+      },
+      "lastPushDirHash": "v67gsROf08JvOC/7N2xXFTowtC0="
+    }
+  },
+  "api": {
+    "WebAppAPI": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authWebAppAuth"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "ph7ydp2pmrcxbm7l3q5menn5ii",
+        "GraphQLAPIEndpointOutput": "https://wm7z3yejwvgprn4dilsed5ebzi.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-webapp-dev-190355-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiWebAppAPI"
+      },
+      "lastPushTimeStamp": "2021-10-11T16:22:52.646Z",
+      "lastPushDirHash": "epY7gJ8XgbdJVFTvG/czTaDZyjg="
+    }
+  }
+}

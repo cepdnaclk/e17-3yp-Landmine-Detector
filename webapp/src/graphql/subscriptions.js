@@ -2,41 +2,65 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateSearch = /* GraphQL */ `
-  subscription OnCreateSearch($owner: String!) {
-    onCreateSearch(owner: $owner) {
+  subscription OnCreateSearch {
+    onCreateSearch {
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateSearch = /* GraphQL */ `
-  subscription OnUpdateSearch($owner: String!) {
-    onUpdateSearch(owner: $owner) {
+  subscription OnUpdateSearch {
+    onUpdateSearch {
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteSearch = /* GraphQL */ `
-  subscription OnDeleteSearch($owner: String!) {
-    onDeleteSearch(owner: $owner) {
+  subscription OnDeleteSearch {
+    onDeleteSearch {
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;

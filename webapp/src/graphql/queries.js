@@ -7,10 +7,18 @@ export const getSearch = /* GraphQL */ `
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -25,10 +33,18 @@ export const listSearches = /* GraphQL */ `
         id
         name
         description
-        startLoc
+        SerachLoc
+        SearchArea
+        LocationData {
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+        }
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }

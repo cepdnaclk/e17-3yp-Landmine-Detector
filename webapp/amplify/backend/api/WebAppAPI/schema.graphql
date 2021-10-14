@@ -1,0 +1,17 @@
+type Search @model {
+  id: ID!
+  name: String!
+  description: String
+  SerachLoc: Float
+  SearchArea: Float
+  LocationData: [Data]
+}
+
+type Data {
+  Lat: Float
+  Lon: Float
+  Elev: Float
+  isMine: Boolean
+  isObs : Boolean
+  isClear: Boolean
+}

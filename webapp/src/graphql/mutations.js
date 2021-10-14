@@ -10,10 +10,18 @@ export const createSearch = /* GraphQL */ `
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -26,10 +34,18 @@ export const updateSearch = /* GraphQL */ `
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -42,10 +58,18 @@ export const deleteSearch = /* GraphQL */ `
       id
       name
       description
-      startLoc
+      SerachLoc
+      SearchArea
+      LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
       createdAt
       updatedAt
-      owner
     }
   }
 `;

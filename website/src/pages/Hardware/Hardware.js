@@ -98,8 +98,8 @@ function Hardware() {
                     </div>
             </Slide>
             <br/><br/>
-            <div>
-                    <div className="each-slide-sa">
+            
+                    <div className="each-slide">
                     <h1 className='sub-topic-ha'>Connections</h1>
                         <div className="left-sa">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/connection.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
@@ -112,12 +112,12 @@ function Hardware() {
                             </div>
                         </div>
                     </div>
-            </div>
+           
             <div>
-                    <div className="each-slide-sa">
+                    <div className="each-slide">
                     <h1 className='sub-topic-ha'>Power</h1>
-                        <div className="left-sa">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/power.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
+                        <div className="left">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/power.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
                             <div  className='hd-text'>
                                 <p>There are three main power lines within the robot. A 5V power line for some sensors that require it and a 3.3V power line 
                                     for specific components which needs it for optimum performance. Such as the ESP32 , GY80 and the NEO8M. The dedicated
