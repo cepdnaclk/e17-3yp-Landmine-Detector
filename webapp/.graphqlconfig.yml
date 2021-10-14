@@ -2,7 +2,7 @@ projects:
   WebAppAPI:
     schemaPath: src/graphql/schema.json
     includes:
-      - src/graphql/**/*.js
+      - src/graphql/*.js
     excludes:
       - ./amplify/**
     extensions:

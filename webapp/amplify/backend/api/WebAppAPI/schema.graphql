@@ -1,9 +1,17 @@
-type Todo @model {
+type Search @model {
   id: ID!
   name: String!
   description: String
-  searchLoc: Float
-  searchArea: Int
-  LoacationData : Int
+  SerachLoc: Float
+  SearchArea: Float
+  LocationData: [Data]
 }
 
+type Data {
+  Lat: Float
+  Lon: Float
+  Elev: Float
+  isMine: Boolean
+  isObs : Boolean
+  isClear: Boolean
+}
