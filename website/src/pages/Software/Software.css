@@ -60,7 +60,7 @@
   .hd-text{
     /* margin-right: auto; */
     width:100%;
-    text-align: center;
+    text-align:justify;
     font-family: 'Montserrat', sans-serif;
     color: rgb(134, 214, 174);
     font-size: 18px;
