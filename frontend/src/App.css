@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: #5fb82d;
+}
+
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #173904;
+}
+
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+
+ul li:hover a {
+  padding-left: 50px;
+}
+
+section header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: right;
+  background: #173904;
+  padding-right: 50px;
+}
