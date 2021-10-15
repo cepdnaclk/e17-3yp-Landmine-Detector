@@ -8,11 +8,23 @@ export const createSearch = /* GraphQL */ `
   ) {
     createSearch(input: $input, condition: $condition) {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev
@@ -32,11 +44,23 @@ export const updateSearch = /* GraphQL */ `
   ) {
     updateSearch(input: $input, condition: $condition) {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev
@@ -56,11 +80,23 @@ export const deleteSearch = /* GraphQL */ `
   ) {
     deleteSearch(input: $input, condition: $condition) {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev
