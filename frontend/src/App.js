@@ -4,6 +4,9 @@ import Profile from './components/Profile/Profile';
 import { Route, Router, Link, BrowserRouter } from 'react-router-dom';
 import Current from './components/Current/Current';
 import OpenStreetMap from './components/OpenStreetMap/OpenStreetMap';
+import History from './components/History/History';
+import Tasks from './components/Tasks/Tasks';
+import Reports from './components/Reports/Reports';
 
 function App() {
   return(
@@ -17,7 +20,7 @@ function App() {
       <ul>
         <li><Link to='/' className='nav-link'>Profile</Link></li>
         <li><Link to='/current' className='nav-link'>Current</Link></li>
-        <li><Link to='/history' className='nav-link'>Hostory</Link></li>
+        <li><Link to='/history' className='nav-link'>History</Link></li>
         <li><Link to='/tasks' className='nav-link'>Tasks</Link></li>
         <li><Link to='/reports' className='nav-link'>Reports</Link></li>
         <br/>
@@ -29,6 +32,9 @@ function App() {
           <br/>
           <Route path="/" exact component={OpenStreetMap} />
           <Route path="/current" component={Current} />
+          <Route path="/history" component={History} />
+          <Route path="/tasks" component={Tasks} />
+          <Route path="/reports" component={Reports} />
           {/* <Route path="/create" component={CreateExercise} />
           <Route path="/user" component={CreateUser} /> */}
         </div>
