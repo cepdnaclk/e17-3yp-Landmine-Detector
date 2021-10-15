@@ -5,11 +5,23 @@ export const onCreateSearch = /* GraphQL */ `
   subscription OnCreateSearch {
     onCreateSearch {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev
@@ -26,11 +38,23 @@ export const onUpdateSearch = /* GraphQL */ `
   subscription OnUpdateSearch {
     onUpdateSearch {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev
@@ -47,11 +71,23 @@ export const onDeleteSearch = /* GraphQL */ `
   subscription OnDeleteSearch {
     onDeleteSearch {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev

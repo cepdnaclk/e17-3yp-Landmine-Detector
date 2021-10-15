@@ -5,11 +5,23 @@ export const getSearch = /* GraphQL */ `
   query GetSearch($id: ID!) {
     getSearch(id: $id) {
       id
+      RobotID
+      UserID
       name
       description
-      SerachLoc
-      SearchArea
+      searchLat
+      searchLon
+      startLot
+      startLon
       LocationData {
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+      }
+      PathData {
         Lat
         Lon
         Elev
@@ -31,11 +43,23 @@ export const listSearches = /* GraphQL */ `
     listSearches(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        RobotID
+        UserID
         name
         description
-        SerachLoc
-        SearchArea
+        searchLat
+        searchLon
+        startLot
+        startLon
         LocationData {
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+        }
+        PathData {
           Lat
           Lon
           Elev

@@ -7,7 +7,7 @@ import './App.css';
 import Amplify, {API, graphqlOperation} from 'aws-amplify';
 import config from './aws-exports';
 
-const initialFormState = {name: 'asd', description: '', SerachLoc: 0.0, SearchArea: 0.0 ,LocationData: {Lat: 0.0 , Lon: 0.0, Elev:0.0, isMine:false, isObs:false,isClear:true}}
+const initialFormState = {name: 'asd', description: '', SearchLocLoc: 0.0, SearchArea: 0.0 ,LocationData: {Lat: 0.0 , Lon: 0.0, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
 
@@ -31,9 +31,9 @@ function App() {
 
   async function create() {
     
-    if (!formData.name || !formData.description || !formData.SerachLoc) return;
-//	setFormData({ ...formData, 'id': formData.SerachLoc})
-//	formData.id = fromData.SerachLoc + formData.name
+    if (!formData.name || !formData.description || !formData.SearchLocLoc) return;
+//	setFormData({ ...formData, 'id': formData.SearchLocLoc})
+//	formData.id = fromData.SearchLocLoc + formData.name
 	console.log(formData)
     await API.graphql({ query: createSearch, variables: { input: formData } });
     setSearches([ ...searches, formData ]);
@@ -62,9 +62,9 @@ function App() {
         value={formData.description}
       />
       <input
-        onChange={e => setFormData({ ...formData, 'SerachLoc': e.target.value})}
+        onChange={e => setFormData({ ...formData, 'SearchLocLoc': e.target.value})}
         placeholder= "123"
-        value={formData.SerachLoc}
+        value={formData.SearchLocLoc}
       />
       <input
         onChange={e => setFormData({ ...formData, 'SearchArea': e.target.value})}
@@ -78,7 +78,7 @@ function App() {
             <div key={search.id || search.name }>
               <h2>{search.name}</h2>
               <p>{search.description}</p>
-              <p>{search.SerachLoc}</p>
+              <p>{search.SearchLocLoc}</p>
               <p>{search.SearchArea}</p>
 			  <button onClick={() => deleteS(search)}>Delete</button>
             </div>
