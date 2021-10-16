@@ -136,7 +136,7 @@ function App() {
     </div>
 
        </BrowserRouter>
-        <AmplifySignOut />
+        {/* <AmplifySignOut /> */}
         </div>
 
 
