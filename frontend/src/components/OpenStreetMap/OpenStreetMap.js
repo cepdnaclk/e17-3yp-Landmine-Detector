@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import { geolocated } from "react-geolocated";
 import { MapContainer, Popup, TileLayer, Marker, Circle, MapConsumer, useMapEvent } from 'react-leaflet'
-
-
+import './OpenStreetMap.css'
 
 function CallMap(lan ,lat) {
     return(
@@ -77,24 +76,50 @@ function OpenStreetMap() {
         // const center = [this.props.lan,this.props.lat]
 
             
+        //Inputs and buttons
             <div>
             {console.log(lan)}
             
             {console.log(lat)}
-            
-            <div style={{display:'flex', justifyContent:'space-around'}}>
-            LAN: <input type="text" class="" id="xx" onChange={e=>setLan(e.target.value)} value={lan} />
-            LAT: <input type="text" class="" id="" onChange={e=>setLat(e.target.value)} value={lat} />
-            </div>
-            <br/>
-            <div style={{display:'flex', justifyContent:'space-around'}}>
-                Area: <input type="text" class="" id="" />
-                Des: <input type="text" class="" id="" />
-            </div>
-            <br/>
 
-            <button onClick={enableMap}>View on map</button>
-            <button onClick={disableMap}>Reset</button>
+            <h3>GPS Coordinates</h3>
+           
+            <label for="name">Longitude
+            <br></br>
+                <input required type="text" class="type-2" id="xx" onChange={e=>setLan(e.target.value)} value={lan} />
+            </label>
+            <br></br>
+
+            <label for="name">Latitude
+            <br></br>
+                <input required type="text" class="type-2" id="" onChange={e=>setLat(e.target.value)} value={lat} />
+            </label>
+            
+
+            <br></br>
+
+            <label for="name">Select your robot
+            <br></br>
+                <input type="text" class="type-2" id="" placeholder="Robot ID" />
+            </label>
+            <br></br>
+
+            <label for="name">Please Input the area
+            <br></br>
+                <input type="text" class="type-2" id="" placeholder="Area"/>
+            </label>
+            
+
+            <br></br>
+
+            <br></br>
+
+            <div style={{display:'flex', justifyContent:'left'}}>
+                <button class="button-37"  onClick={enableMap}>View on map</button>
+                <button class="button-37"  onClick={disableMap}>Reset</button>
+            </div>
+
+            
 
             { show ? CallMap(lan, lat) : null}
 

@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
     <div>
     <div className='sidebar'>
-      <header>Landmine detector</header>
+      <header>LANDMINE DETECTOR</header>
       <ul>
         <li><Link to='/' className='nav-link'>Profile</Link></li>
         <li><Link to='/current' className='nav-link'>Current</Link></li>
