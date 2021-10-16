@@ -1,6 +1,6 @@
 #include<SFML/Graphics.hpp>
 #include<vector>
-#incude<iostream>
+#include<iostream>
 #include<string>
 using namespace sf;
 
