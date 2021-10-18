@@ -116,9 +116,6 @@ function OpenStreetMap() {
 
 
 
-
-
-
     
     const [lan, setLan] = useState(6.0535);
     const [lat, setLat] = useState(80.2210);
