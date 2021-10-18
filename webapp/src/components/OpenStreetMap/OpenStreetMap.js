@@ -26,7 +26,8 @@ Amplify.configure(config);
 
 
 
-function CallMap(lan ,lat) {
+function CallMap(lan ,lat, rad) {
+  console.log('rad is '+rad);
     return(
         <MapContainer center={[lan, lat]} zoom={20}>
             {console.log('hey '+lan+' '+lat)}
@@ -37,7 +38,7 @@ function CallMap(lan ,lat) {
             />
 
             <Circle
-                center={[lan, lat]} fillColor="blue" radius={200}
+                center={[lan, lat]} fillColor="blue" radius={rad}
             />
         
             <Marker
@@ -115,12 +116,14 @@ function OpenStreetMap() {
 
 
 
-
     
     const [lan, setLan] = useState(6.0535);
     const [lat, setLat] = useState(80.2210);
     const [area, setArea] = useState(0);
     const [des, setDes] = useState(0);
+
+
+    const radius = Math.sqrt(area / Math.PI)
 
     // const map = useMapEvent('click', () => {
     //         map.setCenter([lan, lat])
@@ -180,6 +183,13 @@ function OpenStreetMap() {
         value={formData.startLon}
       />
 
+      <input
+        // onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
+        onChange={e=>setArea(e.target.value)}
+        placeholder= "Area"
+        value={area}
+      />
+
 
       <button onClick={create}>Create search</button>
       <div style={{marginBottom: 30}}>
@@ -204,7 +214,7 @@ function OpenStreetMap() {
 
             
 
-        { show ? CallMap(lan, lat) : null}
+        { show ? CallMap(lan, lat, radius) : null}
 
 
       <AmplifySignOut />
