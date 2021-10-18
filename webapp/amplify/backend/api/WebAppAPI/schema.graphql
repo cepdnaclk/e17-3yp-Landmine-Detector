@@ -1,4 +1,7 @@
-type Search @model{
+type Search
+	@model
+	@auth(
+    rules: [{ allow: owner }, {allow: private, provider: iam}]){
 	id : ID!
 	RobotID : String
 	UserID : String

@@ -1,5 +1,21 @@
 {
-  "function": {},
+  "function": {
+    "GetData": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "WebAppAPI",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ]
+        }
+      ]
+    }
+  },
   "auth": {
     "userPoolGroups": {
       "service": "Cognito-UserPool-Groups",
@@ -55,7 +71,11 @@
               "userPoolId": "authWebAppAuth"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
     }
