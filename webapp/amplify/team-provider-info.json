@@ -15,6 +15,12 @@
       "auth": {
         "WebAppAuth": {},
         "userPoolGroups": {}
+      },
+      "function": {
+        "GetData": {
+          "deploymentBucketName": "amplify-webapp-dev-190355-deployment",
+          "s3Key": "amplify-builds/GetData-71616f5535634e663556-build.zip"
+        }
       }
     }
   }
