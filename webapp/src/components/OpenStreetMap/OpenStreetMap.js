@@ -144,54 +144,85 @@ function OpenStreetMap() {
     return(
 
 
-    <div className="App">
+    <div className="App" className="each-slide">
       <h1>My searches App</h1>
+      
+      <div class="center">
+        { show ? CallMap(lan, lat, radius) : null}
+      </div>
+      
         
       <input
+        type="text"
+        class="type-2"
         onChange={e => setFormData({ ...formData, 'id': e.target.value})}
         placeholder= "id"
         value={formData.id}
       />
-
+      <br></br>
 
       <input
+        type="text"
+        class="type-2"
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="search name"
         value={formData.name}
       />
+      <br></br>
+
       <input
+        type="text"
+        class="type-2"
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="search description"
         value={formData.description}
       />
+      <br></br>
+
       <input
+        type="text"
+        class="type-2"
         onChange={e => setFormData({ ...formData, 'searchLat': e.target.value})}
         placeholder= "searchLat"
         value={formData.searchLat}
       />
+      <br></br>
+
       <input
+        type="text"
+        class="type-2"
         onChange={e => setFormData({ ...formData, 'searchLon': e.target.value})}
         placeholder= "searchLon"
         value={formData.searchLon}
       />
-      <br/>
+      <br></br>
 
       
       <input
+        type="text"
+        class="type-2"
         onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
         placeholder= "startLon"
         value={formData.startLon}
       />
+      <br></br>
 
       <input
+        type="text"
+        class="type-2"
         // onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
         onChange={e=>setArea(e.target.value)}
         placeholder= "Area"
         value={area}
       />
-
+      <br></br>
 
       <button onClick={create}>Create search</button>
+      <br></br>
+      <br></br>
+      <button class="button-37"  onClick={enableMap}>View on map</button>
+      <button class="button-37"  onClick={disableMap}>Reset</button>
+
       <div style={{marginBottom: 30}}>
         {
           searches.map(search => (
@@ -206,15 +237,19 @@ function OpenStreetMap() {
 
         }
       </div>
+      
+      
+      
 
-        <div style={{display:'flex', justifyContent:'left'}}>
+      
+        {/* <div class="center" style={{display:'flex', justifyContent:'left'}}>
             <button class="button-37"  onClick={enableMap}>View on map</button>
             <button class="button-37"  onClick={disableMap}>Reset</button>
-        </div>
+        </div> */}
 
             
 
-        { show ? CallMap(lan, lat, radius) : null}
+        {/* { show ? CallMap(lan, lat, radius) : null} */}
 
 
       <AmplifySignOut />
