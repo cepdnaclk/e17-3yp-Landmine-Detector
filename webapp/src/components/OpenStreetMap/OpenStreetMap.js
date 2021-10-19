@@ -54,7 +54,7 @@ function CallMap(lat ,lan, rad) {
                 // position={[this.state.lan,this.state.lat]}
                 position={[lat, lan]}
             >
-              {createCoodinatesArray(6.0512, 80.2405, rad)}
+              {createCoodinatesArray(lat, lan, rad)}
             <Popup>
                 {[lat, lan]}
             </Popup>
@@ -70,19 +70,102 @@ function CallMap(lat ,lan, rad) {
 
 
 function createCoodinatesArray(lat, lan, rad) {
-  console.log('secondary point is '+lat+' '+lan);
+  // console.log('secondary point is '+lat+' '+lan);
   const arraySize = parseInt((2 * rad) / 1.1);
+  // console.log(rad);
 
-  //if arraysize is odd
-  //go to top left
-  const topLeftLat = lat - ((arraySize-1)*0.000005);
-  const topLeftLan = lan + ((arraySize-1)*0.000005);
+
+  // //In reacl case
+  // const coordinates = []
+  // //if arraysize is odd
+  // //go to top left
+  // const topLeftLat = lat - ((arraySize-1)*0.000005);
+  // const topLeftLan = lan + ((arraySize-1)*0.000005);
+
+  // for(let row=0; row<arraySize-1; row++) {
+  //   for(let col=0; col<arraySize-1; col++) {
+  //     let current;
+  //     current = [topLeftLat-topLeftLat*row*0.000005, topLeftLan+topLeftLan*col*0.000005]
+  //     // console.log('current is '+current);
+  //     coordinates.push(current)
+  //   }
+  // }
+
+
+  // //to display
+  // const coordinates = []
+  // //if arraysize is odd
+  // //go to top left
+  // const topLeftLat = lat - ((arraySize-1)*0.0005);
+  // const topLeftLan = lan + ((arraySize-1)*0.0005);
+
+  // for(let row=0; row<arraySize-1; row++) {
+  //   for(let col=0; col<arraySize-1; col++) {
+  //     let current;
+  //     current = [topLeftLat-topLeftLat*row*0.0001, topLeftLan+topLeftLan*col*0.0001]
+  //     // console.log('current is '+current);
+  //     coordinates.push(current)
+  //   }
+  // }
+
+  // console.log('here is the cordinates array');
+  // console.log(coordinates);
+
+  // const displayMarker = (pos)=>{
+  //   console.log('now im going to draw '+ pos);
+  //   return(
+  //   <Marker
+  //     position={pos}>
+  //   </Marker>
+  // );
+  // }
+
+  const test = [[lat-0.0001, lan+0.0001], [lat-0.0002, lan+0.0002]];
 
   return(
-    <Marker
-      position={[lat, lan]}>
-    </Marker>
-  );
+    <div>
+      {
+        
+        test.map((item, index)=>{
+          // console.log(index);
+          return(
+            <div key={index}>
+            <Marker
+              position={item}>
+            </Marker>
+          </div>
+          )
+        })
+
+
+
+        // test.forEach(item=>{
+        //   console.log(item[0]);
+        //   <div key={item[0]}>
+        //     <Marker
+        //     position={item}>
+        //   </Marker>
+        //   </div>
+        // })
+      }
+        {/* <div>
+        <Marker
+          position={test[1]}>
+        </Marker>
+        </div>
+        <div>
+        <Marker
+          position={test[0]}>
+        </Marker>
+        </div> */}
+    </div>
+  )
+
+  // return(
+  //   <Marker
+  //     position={[lat-0.0001, lan+0.0001]}>
+  //   </Marker>
+  // );
 }
 
 
@@ -144,7 +227,7 @@ function OpenStreetMap() {
     
     const [lan, setLan] = useState(80.2405);
     const [lat, setLat] = useState(6.0513);
-    const [area, setArea] = useState(0);
+    const [area, setArea] = useState(2000);
     const [des, setDes] = useState(0);
 
 
