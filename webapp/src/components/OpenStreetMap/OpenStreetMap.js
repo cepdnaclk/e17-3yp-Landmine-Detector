@@ -12,7 +12,7 @@ import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.345, searchLon: 34.034, startLot: 34.342, startLon: 23.345, LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
+const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLot: 34.342, startLon: 23.345, LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
 
@@ -29,6 +29,12 @@ Amplify.configure(config);
 
 
 function CallMap(lat ,lan, rad) {
+
+  console.log('main point is '+lat+' '+lan);
+
+  // createCoodinatesArray(6.0512, 80.2405, rad);
+
+
   console.log('rad is '+rad);
     return(
         <MapContainer center={[lat, lan]} zoom={20}>
@@ -48,6 +54,7 @@ function CallMap(lat ,lan, rad) {
                 // position={[this.state.lan,this.state.lat]}
                 position={[lat, lan]}
             >
+              {createCoodinatesArray(6.0512, 80.2405, rad)}
             <Popup>
                 {[lat, lan]}
             </Popup>
@@ -62,7 +69,8 @@ function CallMap(lat ,lan, rad) {
 
 
 
-function createCoodinatesArray(lan, lat, rad) {
+function createCoodinatesArray(lat, lan, rad) {
+  console.log('secondary point is '+lat+' '+lan);
   const arraySize = parseInt((2 * rad) / 1.1);
 
   //if arraysize is odd
@@ -70,8 +78,11 @@ function createCoodinatesArray(lan, lat, rad) {
   const topLeftLat = lat - ((arraySize-1)*0.000005);
   const topLeftLan = lan + ((arraySize-1)*0.000005);
 
-
-
+  return(
+    <Marker
+      position={[lat, lan]}>
+    </Marker>
+  );
 }
 
 
@@ -131,8 +142,8 @@ function OpenStreetMap() {
 
 
     
-    const [lan, setLan] = useState(6.0535);
-    const [lat, setLat] = useState(80.2210);
+    const [lan, setLan] = useState(80.2405);
+    const [lat, setLat] = useState(6.0513);
     const [area, setArea] = useState(0);
     const [des, setDes] = useState(0);
 
