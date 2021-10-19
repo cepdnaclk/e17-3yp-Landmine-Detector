@@ -9,6 +9,8 @@ import { getSearch, listSearches } from '../../graphql/queries';
 import { createSearch, updateSearch , deleteSearch } from '../../graphql/mutations';
 import Amplify, {API, graphqlOperation} from 'aws-amplify';
 import config from '../../aws-exports';
+import { BrowserRouter, Link, Route } from "react-router-dom";
+import Proceed from "../Proceed/Proceed";
 
 const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.345, searchLon: 34.034, startLot: 34.342, startLon: 23.345, LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
@@ -145,10 +147,11 @@ function OpenStreetMap() {
 
 
     <div className="App" className="each-slide">
+
       <h1>My searches App</h1>
       
       <div class="center">
-        { show ? CallMap(lan, lat, radius) : null}
+        { show ? CallMap(lat, lan, radius) : null}
       </div>
       
         
@@ -179,22 +182,34 @@ function OpenStreetMap() {
       />
       <br></br>
 
+
+{/* for map conatiner */}
       <input
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'searchLat': e.target.value})}
+        onChange={e => {
+          setFormData({ ...formData, 'searchLon': e.target.value})
+          setLan(e.target.value)
+        }
+      
+      }
         placeholder= "searchLat"
-        value={formData.searchLat}
+        //value={formData.searchLat}
+        value={lan}
       />
       <br></br>
 
       <input
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'searchLon': e.target.value})}
+        onChange={e => {setFormData({ ...formData, 'searchLat': e.target.value})
+        setLat(e.target.value)  
+      }}
         placeholder= "searchLon"
-        value={formData.searchLon}
+        //value={formData.searchLon}
+        value={lat}
       />
+      {/* ending for map container */}
       <br></br>
 
       
@@ -222,8 +237,19 @@ function OpenStreetMap() {
       <br></br>
       <button class="button-37"  onClick={enableMap}>View on map</button>
       <button class="button-37"  onClick={disableMap}>Reset</button>
+      
+      <BrowserRouter>
+      <Link to='/proceed'>
+        <button class="button-37">Proceed</button>
+      </Link>
 
-      <button class="button-37"  >Proceed</button>
+        <Route path='/proceed' component={Proceed} />
+      
+        </BrowserRouter>
+      
+
+
+      
 
       {/* <div style={{marginBottom: 30}}>
         {
@@ -255,6 +281,11 @@ function OpenStreetMap() {
 
 
       <AmplifySignOut />
+
+      
+
+      
+
     </div>
 
 
