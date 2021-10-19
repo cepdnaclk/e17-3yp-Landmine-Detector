@@ -55,3 +55,29 @@ input[type=text] {
 .type-2:hover {
   box-shadow:0 0 4px rgba(0,0,0,0.5);
 }
+
+.left {
+  position: absolute;
+  left: 300px;
+  width: 300px;
+  border: 0px solid #ffffff;
+  padding: 10px;
+}
+
+.center{
+  position: absolute;
+  left: 650px;
+  width: 600px;
+  border: 0px solid #064d18;
+  padding: 10px;
+}
+
+.right{
+  position: absolute;
+  left: 900px;
+  width: 300px;
+  border: 0px solid #014716;
+  padding: 10px;
+}
+
+
