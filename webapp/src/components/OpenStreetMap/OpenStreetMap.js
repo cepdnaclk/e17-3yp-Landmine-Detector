@@ -28,11 +28,11 @@ Amplify.configure(config);
 
 
 
-function CallMap(lan ,lat, rad) {
+function CallMap(lat ,lan, rad) {
   console.log('rad is '+rad);
     return(
-        <MapContainer center={[lan, lat]} zoom={20}>
-            {console.log('hey '+lan+' '+lat)}
+        <MapContainer center={[lat, lan]} zoom={20}>
+            {console.log('hey '+lat+' '+lan)}
 
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -40,16 +40,16 @@ function CallMap(lan ,lat, rad) {
             />
 
             <Circle
-                center={[lan, lat]} fillColor="blue" radius={rad}
+                center={[lat, lan]} fillColor="blue" radius={rad}
             />
         
             <Marker
                 // position={[this.state.lan,this.state.lat]}
                 // position={[this.state.lan,this.state.lat]}
-                position={[lan, lat]}
+                position={[lat, lan]}
             >
             <Popup>
-                {[lan, lan]}
+                {[lat, lan]}
             </Popup>
 
             </Marker>
@@ -61,6 +61,18 @@ function CallMap(lan ,lat, rad) {
 
 
 
+
+function createCoodinatesArray(lan, lat, rad) {
+  const arraySize = parseInt((2 * rad) / 1.1);
+
+  //if arraysize is odd
+  //go to top left
+  const topLeftLat = lat - ((arraySize-1)*0.000005);
+  const topLeftLan = lan + ((arraySize-1)*0.000005);
+
+
+
+}
 
 
 
@@ -184,6 +196,16 @@ function OpenStreetMap() {
 
 
 {/* for map conatiner */}
+
+      {/* 1 - lan
+      
+          2 - lat
+      
+      */}
+
+
+
+
       <input
         type="text"
         class="type-2"
@@ -193,7 +215,7 @@ function OpenStreetMap() {
         }
       
       }
-        placeholder= "searchLat"
+        placeholder= "searchLan"
         //value={formData.searchLat}
         value={lan}
       />
@@ -205,7 +227,7 @@ function OpenStreetMap() {
         onChange={e => {setFormData({ ...formData, 'searchLat': e.target.value})
         setLat(e.target.value)  
       }}
-        placeholder= "searchLon"
+        placeholder= "searchLat"
         //value={formData.searchLon}
         value={lat}
       />
