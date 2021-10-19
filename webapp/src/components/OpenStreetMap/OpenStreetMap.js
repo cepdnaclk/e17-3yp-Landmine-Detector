@@ -223,7 +223,9 @@ function OpenStreetMap() {
       <button class="button-37"  onClick={enableMap}>View on map</button>
       <button class="button-37"  onClick={disableMap}>Reset</button>
 
-      <div style={{marginBottom: 30}}>
+      <button class="button-37"  >Proceed</button>
+
+      {/* <div style={{marginBottom: 30}}>
         {
           searches.map(search => (
             <div key={search.id || search.name }>
@@ -236,7 +238,7 @@ function OpenStreetMap() {
           ))
 
         }
-      </div>
+      </div> */}
       
       
       
