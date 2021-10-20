@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "api": {
+      "WebAppAPI": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
