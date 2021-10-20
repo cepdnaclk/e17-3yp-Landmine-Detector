@@ -9,8 +9,10 @@ import { getSearch, listSearches } from '../../graphql/queries';
 import { createSearch, updateSearch , deleteSearch } from '../../graphql/mutations';
 import Amplify, {API, graphqlOperation} from 'aws-amplify';
 import config from '../../aws-exports';
+import { BrowserRouter, Link, Route } from "react-router-dom";
+import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.345, searchLon: 34.034, startLot: 34.342, startLon: 23.345, LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
+const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLot: 34.342, startLon: 23.345, LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
 
@@ -26,11 +28,17 @@ Amplify.configure(config);
 
 
 
-function CallMap(lan ,lat, rad) {
+function CallMap(lat ,lan, rad) {
+
+  console.log('main point is '+lat+' '+lan);
+
+  // createCoodinatesArray(6.0512, 80.2405, rad);
+
+
   console.log('rad is '+rad);
     return(
-        <MapContainer center={[lan, lat]} zoom={20}>
-            {console.log('hey '+lan+' '+lat)}
+        <MapContainer center={[lat, lan]} zoom={20}>
+            {console.log('hey '+lat+' '+lan)}
 
             <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -38,16 +46,17 @@ function CallMap(lan ,lat, rad) {
             />
 
             <Circle
-                center={[lan, lat]} fillColor="blue" radius={rad}
+                center={[lat, lan]} fillColor="blue" radius={rad}
             />
         
             <Marker
                 // position={[this.state.lan,this.state.lat]}
                 // position={[this.state.lan,this.state.lat]}
-                position={[lan, lat]}
+                position={[lat, lan]}
             >
+              {createCoodinatesArray(lat, lan, rad)}
             <Popup>
-                {[lan, lan]}
+                {[lat, lan]}
             </Popup>
 
             </Marker>
@@ -59,6 +68,105 @@ function CallMap(lan ,lat, rad) {
 
 
 
+
+function createCoodinatesArray(lat, lan, rad) {
+  // console.log('secondary point is '+lat+' '+lan);
+  const arraySize = parseInt((2 * rad) / 1.1);
+  // console.log(rad);
+
+
+  // //In reacl case
+  // const coordinates = []
+  // //if arraysize is odd
+  // //go to top left
+  // const topLeftLat = lat - ((arraySize-1)*0.000005);
+  // const topLeftLan = lan + ((arraySize-1)*0.000005);
+
+  // for(let row=0; row<arraySize-1; row++) {
+  //   for(let col=0; col<arraySize-1; col++) {
+  //     let current;
+  //     current = [topLeftLat-topLeftLat*row*0.000005, topLeftLan+topLeftLan*col*0.000005]
+  //     // console.log('current is '+current);
+  //     coordinates.push(current)
+  //   }
+  // }
+
+
+  // //to display
+  // const coordinates = []
+  // //if arraysize is odd
+  // //go to top left
+  // const topLeftLat = lat - ((arraySize-1)*0.0005);
+  // const topLeftLan = lan + ((arraySize-1)*0.0005);
+
+  // for(let row=0; row<arraySize-1; row++) {
+  //   for(let col=0; col<arraySize-1; col++) {
+  //     let current;
+  //     current = [topLeftLat-topLeftLat*row*0.0001, topLeftLan+topLeftLan*col*0.0001]
+  //     // console.log('current is '+current);
+  //     coordinates.push(current)
+  //   }
+  // }
+
+  // console.log('here is the cordinates array');
+  // console.log(coordinates);
+
+  // const displayMarker = (pos)=>{
+  //   console.log('now im going to draw '+ pos);
+  //   return(
+  //   <Marker
+  //     position={pos}>
+  //   </Marker>
+  // );
+  // }
+
+  const test = [[lat-0.0001, lan+0.0001], [lat-0.0002, lan+0.0002]];
+
+  return(
+    <div>
+      {
+        
+        test.map((item, index)=>{
+          // console.log(index);
+          return(
+            <div key={index}>
+            <Marker
+              position={item}>
+            </Marker>
+          </div>
+          )
+        })
+
+
+
+        // test.forEach(item=>{
+        //   console.log(item[0]);
+        //   <div key={item[0]}>
+        //     <Marker
+        //     position={item}>
+        //   </Marker>
+        //   </div>
+        // })
+      }
+        {/* <div>
+        <Marker
+          position={test[1]}>
+        </Marker>
+        </div>
+        <div>
+        <Marker
+          position={test[0]}>
+        </Marker>
+        </div> */}
+    </div>
+  )
+
+  // return(
+  //   <Marker
+  //     position={[lat-0.0001, lan+0.0001]}>
+  //   </Marker>
+  // );
+}
 
 
 
@@ -117,9 +225,9 @@ function OpenStreetMap() {
 
 
     
-    const [lan, setLan] = useState(6.0535);
-    const [lat, setLat] = useState(80.2210);
-    const [area, setArea] = useState(0);
+    const [lan, setLan] = useState(80.2405);
+    const [lat, setLat] = useState(6.0513);
+    const [area, setArea] = useState(2000);
     const [des, setDes] = useState(0);
 
 
@@ -145,10 +253,11 @@ function OpenStreetMap() {
 
 
     <div className="App" className="each-slide">
+
       <h1>My searches App</h1>
       
       <div class="center">
-        { show ? CallMap(lan, lat, radius) : null}
+        { show ? CallMap(lat, lan, radius) : null}
       </div>
       
         
@@ -179,22 +288,44 @@ function OpenStreetMap() {
       />
       <br></br>
 
+
+{/* for map conatiner */}
+
+      {/* 1 - lan
+      
+          2 - lat
+      
+      */}
+
+
+
+
       <input
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'searchLat': e.target.value})}
-        placeholder= "searchLat"
-        value={formData.searchLat}
+        onChange={e => {
+          setFormData({ ...formData, 'searchLon': e.target.value})
+          setLan(e.target.value)
+        }
+      
+      }
+        placeholder= "searchLan"
+        //value={formData.searchLat}
+        value={lan}
       />
       <br></br>
 
       <input
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'searchLon': e.target.value})}
-        placeholder= "searchLon"
-        value={formData.searchLon}
+        onChange={e => {setFormData({ ...formData, 'searchLat': e.target.value})
+        setLat(e.target.value)  
+      }}
+        placeholder= "searchLat"
+        //value={formData.searchLon}
+        value={lat}
       />
+      {/* ending for map container */}
       <br></br>
 
       
@@ -222,8 +353,21 @@ function OpenStreetMap() {
       <br></br>
       <button class="button-37"  onClick={enableMap}>View on map</button>
       <button class="button-37"  onClick={disableMap}>Reset</button>
+      
+      <BrowserRouter>
+      <Link to='/proceed'>
+        <button class="button-37">Proceed</button>
+      </Link>
 
-      <div style={{marginBottom: 30}}>
+        <Route path='/proceed' component={Proceed} />
+      
+        </BrowserRouter>
+      
+
+
+      
+
+      {/* <div style={{marginBottom: 30}}>
         {
           searches.map(search => (
             <div key={search.id || search.name }>
@@ -236,7 +380,7 @@ function OpenStreetMap() {
           ))
 
         }
-      </div>
+      </div> */}
       
       
       
@@ -253,6 +397,11 @@ function OpenStreetMap() {
 
 
       <AmplifySignOut />
+
+      
+
+      
+
     </div>
 
 
