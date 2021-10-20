@@ -3,8 +3,8 @@ type Search
 	@auth(
     rules: [{ allow: owner }, {allow: private, provider: iam}]){
 	id : ID!
-	RobotID : String
-	UserID : String
+	RobotID : ID
+	UserID : ID
 	name : String
 	description: String
 	searchLat: Float
@@ -24,3 +24,21 @@ type Data {
 	isClear: Boolean
 }
 
+type Robot 
+	@model
+	@auth(
+	rules: [{allow: private, provider: iam}])
+	{
+	id: ID!
+	status : Int
+}
+
+
+type User
+	@model
+	@auth(
+	rules: [{allow: owner}]){
+	id: ID!
+	username: String
+	GroupID: ID
+}
