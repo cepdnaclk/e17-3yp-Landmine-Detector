@@ -23,7 +23,7 @@
         },
         "CheckRobot": {
           "deploymentBucketName": "amplify-webapp-dev-190355-deployment",
-          "s3Key": "amplify-builds/CheckRobot-2b673472355a63347a46-build.zip"
+          "s3Key": "amplify-builds/CheckRobot-656c734a77666d30754e-build.zip"
         }
       }
     }

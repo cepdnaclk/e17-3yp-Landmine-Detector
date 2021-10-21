@@ -4,17 +4,18 @@ type Search
     rules: [{ allow: owner }, {allow: private, provider: iam}]){
 	id : ID!
 	RobotID : Robot 
-	UserID : User
+	UserID : User 
 	name : String
 	description: String
 	searchLat: Float
 	searchLon: Float
-	startLot : Float
+	startLat : Float
 	startLon : Float
-	LocationData: [Data]! @connection
+	LocationData: [Data!] @connection
 }
 
 type Data @model {
+	id : ID!
 	Lat: Float
 	Lon: Float
 	Elev: Float
@@ -39,6 +40,13 @@ type User
 	rules: [{allow: owner}]){
 	id: ID!
 	username: String
-	GroupID: ID
+	
 }
 
+type Org @model{
+	id : ID!
+	name: String
+	description: String
+	fleet: [Robot!] @connection
+	team : [User!] @connection
+}
