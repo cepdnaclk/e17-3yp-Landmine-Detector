@@ -72,25 +72,35 @@ function CallMap(lat ,lan, rad) {
 function createCoodinatesArray(lat, lan, rad) {
   // console.log('secondary point is '+lat+' '+lan);
   const arraySize = parseInt((2 * rad) / 1.1);
+  console.log(rad*2);
+  console.log(arraySize);
   // console.log(rad);
 
 
   // //In reacl case
-  // const coordinates = []
-  // //if arraysize is odd
-  // //go to top left
-  // const topLeftLat = lat - ((arraySize-1)*0.000005);
-  // const topLeftLan = lan + ((arraySize-1)*0.000005);
+  const coordinates = []
+  //if arraysize is odd
+  //go to top left
+  const topLeftLat = lat + (((arraySize/2)-1)*0.00001);
+  const topLeftLan = lan - (((arraySize/2)-1)*0.00001);
 
-  // for(let row=0; row<arraySize-1; row++) {
-  //   for(let col=0; col<arraySize-1; col++) {
-  //     let current;
-  //     current = [topLeftLat-topLeftLat*row*0.000005, topLeftLan+topLeftLan*col*0.000005]
-  //     // console.log('current is '+current);
-  //     coordinates.push(current)
-  //   }
-  // }
+  /*** */
+  //coordinates.push([topLeftLat, topLeftLan])
+  //coordinates.push([topLeftLat-0.000005, topLeftLan+0.000005])
+/*** */
 
+
+  for(let row=0; row<arraySize; row++) {
+    for(let col=0; col<arraySize; col++) {
+      let current;
+      current = [topLeftLat-row*0.00001, topLeftLan+col*0.00001]
+      // console.log('current is '+current);
+      coordinates.push(current)
+    }
+
+  }
+
+  console.log(coordinates.length);
 
   // //to display
   // const coordinates = []
@@ -126,7 +136,7 @@ function createCoodinatesArray(lat, lan, rad) {
     <div>
       {
         
-        test.map((item, index)=>{
+        coordinates.map((item, index)=>{
           // console.log(index);
           return(
             <div key={index}>
