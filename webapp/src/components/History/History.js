@@ -42,6 +42,7 @@ function History() {
           <p>{search.description}</p>
           <p>{search.searchLat}</p>
           <p>{search.searchLon}</p>
+          <p>{search.id}</p>
     <button onClick={() => deleteS(search)}>Delete</button>
         </div>
       ))
