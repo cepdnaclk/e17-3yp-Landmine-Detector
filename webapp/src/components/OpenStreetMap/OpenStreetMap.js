@@ -12,19 +12,10 @@ import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLot: 34.342, startLon: 23.345, LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
+const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+//LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
-
-
-
-
-
-
-
-
-
-
 
 
 
