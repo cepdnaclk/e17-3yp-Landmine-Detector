@@ -161,19 +161,8 @@ export const createSearch = /* GraphQL */ `
   ) {
     createSearch(input: $input, condition: $condition) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat
@@ -207,19 +196,8 @@ export const updateSearch = /* GraphQL */ `
   ) {
     updateSearch(input: $input, condition: $condition) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat
@@ -253,19 +231,8 @@ export const deleteSearch = /* GraphQL */ `
   ) {
     deleteSearch(input: $input, condition: $condition) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat

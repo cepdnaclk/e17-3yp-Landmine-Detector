@@ -96,19 +96,8 @@ export const getSearch = /* GraphQL */ `
   query GetSearch($id: ID!) {
     getSearch(id: $id) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat
@@ -144,19 +133,8 @@ export const listSearches = /* GraphQL */ `
     listSearches(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        RobotID {
-          id
-          status
-          createdAt
-          updatedAt
-        }
-        UserID {
-          id
-          username
-          createdAt
-          updatedAt
-          owner
-        }
+        RobotID
+        UserID
         name
         description
         searchLat

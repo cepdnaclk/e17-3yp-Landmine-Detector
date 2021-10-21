@@ -140,19 +140,8 @@ export const onCreateSearch = /* GraphQL */ `
   subscription OnCreateSearch($owner: String) {
     onCreateSearch(owner: $owner) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat
@@ -183,19 +172,8 @@ export const onUpdateSearch = /* GraphQL */ `
   subscription OnUpdateSearch($owner: String) {
     onUpdateSearch(owner: $owner) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat
@@ -226,19 +204,8 @@ export const onDeleteSearch = /* GraphQL */ `
   subscription OnDeleteSearch($owner: String) {
     onDeleteSearch(owner: $owner) {
       id
-      RobotID {
-        id
-        status
-        createdAt
-        updatedAt
-      }
-      UserID {
-        id
-        username
-        createdAt
-        updatedAt
-        owner
-      }
+      RobotID
+      UserID
       name
       description
       searchLat
