@@ -14,6 +14,7 @@ import OpenStreetMap from './components/OpenStreetMap/OpenStreetMap';
 import History from './components/History/History';
 import Tasks from './components/Tasks/Tasks';
 import Reports from './components/Reports/Reports';
+import Profile from './components/Profile/Profile';
 
 
 
@@ -110,9 +111,15 @@ function App() {
     <div>
     <div className='sidebar'>
       <header>LANDMINE DETECTOR</header>
-      <ul>
-        <li><Link to='/' className='nav-link'>Profile</Link></li>
+      <ul >
+        {/* <li><Link to='/' className='nav-link'>Profile</Link></li>
         <li><Link to='/current' className='nav-link'>Current</Link></li>
+        <li><Link to='/history' className='nav-link'>History</Link></li>
+        <li><Link to='/tasks' className='nav-link'>Tasks</Link></li>
+        <li><Link to='/reports' className='nav-link'>Reports</Link></li>
+        <br/> */}
+        <li><Link to='/' className='nav-link'>Current</Link></li>
+        <li><Link to='/profile' className='nav-link'>Profile</Link></li>
         <li><Link to='/history' className='nav-link'>History</Link></li>
         <li><Link to='/tasks' className='nav-link'>Tasks</Link></li>
         <li><Link to='/reports' className='nav-link'>Reports</Link></li>
@@ -125,6 +132,7 @@ function App() {
           <br/>
           <Route path="/" exact component={OpenStreetMap} />
           <Route path="/current" component={Current} />
+          <Route path="/profile" component={Profile} />
           <Route path="/history" component={History} />
           <Route path="/tasks" component={Tasks} />
           <Route path="/reports" component={Reports} />
