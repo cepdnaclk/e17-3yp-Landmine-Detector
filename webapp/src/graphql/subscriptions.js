@@ -1,12 +1,138 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateData = /* GraphQL */ `
+  subscription OnCreateData {
+    onCreateData {
+      id
+      Lat
+      Lon
+      Elev
+      isMine
+      isObs
+      isClear
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateData = /* GraphQL */ `
+  subscription OnUpdateData {
+    onUpdateData {
+      id
+      Lat
+      Lon
+      Elev
+      isMine
+      isObs
+      isClear
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteData = /* GraphQL */ `
+  subscription OnDeleteData {
+    onDeleteData {
+      id
+      Lat
+      Lon
+      Elev
+      isMine
+      isObs
+      isClear
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateDataSet = /* GraphQL */ `
+  subscription OnCreateDataSet {
+    onCreateDataSet {
+      id
+      Set {
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateDataSet = /* GraphQL */ `
+  subscription OnUpdateDataSet {
+    onUpdateDataSet {
+      id
+      Set {
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteDataSet = /* GraphQL */ `
+  subscription OnDeleteDataSet {
+    onDeleteDataSet {
+      id
+      Set {
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateSearch = /* GraphQL */ `
   subscription OnCreateSearch($owner: String) {
     onCreateSearch(owner: $owner) {
       id
-      RobotID
-      UserID
+      RobotID {
+        id
+        status
+        createdAt
+        updatedAt
+      }
+      UserID {
+        id
+        username
+        GroupID
+        createdAt
+        updatedAt
+        owner
+      }
       name
       description
       searchLat
@@ -14,20 +140,12 @@ export const onCreateSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
-      }
-      PathData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
+        id
+        Set {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt
@@ -39,8 +157,20 @@ export const onUpdateSearch = /* GraphQL */ `
   subscription OnUpdateSearch($owner: String) {
     onUpdateSearch(owner: $owner) {
       id
-      RobotID
-      UserID
+      RobotID {
+        id
+        status
+        createdAt
+        updatedAt
+      }
+      UserID {
+        id
+        username
+        GroupID
+        createdAt
+        updatedAt
+        owner
+      }
       name
       description
       searchLat
@@ -48,20 +178,12 @@ export const onUpdateSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
-      }
-      PathData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
+        id
+        Set {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt
@@ -73,8 +195,20 @@ export const onDeleteSearch = /* GraphQL */ `
   subscription OnDeleteSearch($owner: String) {
     onDeleteSearch(owner: $owner) {
       id
-      RobotID
-      UserID
+      RobotID {
+        id
+        status
+        createdAt
+        updatedAt
+      }
+      UserID {
+        id
+        username
+        GroupID
+        createdAt
+        updatedAt
+        owner
+      }
       name
       description
       searchLat
@@ -82,20 +216,12 @@ export const onDeleteSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
-      }
-      PathData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
+        id
+        Set {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt

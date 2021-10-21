@@ -3,19 +3,18 @@ type Search
 	@auth(
     rules: [{ allow: owner }, {allow: private, provider: iam}]){
 	id : ID!
-	RobotID : ID
-	UserID : ID
+	RobotID : Robot 
+	UserID : User
 	name : String
 	description: String
 	searchLat: Float
 	searchLon: Float
 	startLot : Float
 	startLon : Float
-	LocationData: [Data]
-	PathData: [Data]
+	LocationData: DataSet! @connection
 }
 
-type Data {
+type Data @model {
 	Lat: Float
 	Lon: Float
 	Elev: Float
@@ -41,4 +40,9 @@ type User
 	id: ID!
 	username: String
 	GroupID: ID
+}
+
+type DataSet @model {
+	id : ID!
+	Set : [Data!] @connection
 }
