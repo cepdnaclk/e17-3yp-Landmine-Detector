@@ -2,20 +2,33 @@ import { geolocated } from "react-geolocated";
 import { MapContainer, Popup, TileLayer, Marker, Circle, MapConsumer, useMapEvent } from 'react-leaflet'
 import './OpenStreetMap.css'
 
+
+
 /********************* */
 import React, {useState, useEffect} from 'react';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { getSearch, listSearches } from '../../graphql/queries';
-import { createSearch, updateSearch , deleteSearch } from '../../graphql/mutations';
-import Amplify, {API, graphqlOperation} from 'aws-amplify';
+import { createSearch, updateSearch , deleteSearch, createData } from '../../graphql/mutations';
+import Amplify, {API, graphqlOperation, Auth} from 'aws-amplify';
 import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id:'akila154', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+const initialFormState = { id: '', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
 //LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
+
+
+
+
+//   { }   [ ]
+
+
+// const [x, setX] = useState(0);
+
+
+
 
 
 
@@ -60,11 +73,32 @@ function CallMap(lat ,lan, rad) {
 
 
 
+
+ var searchID = '';
+
+
+
 function createCoodinatesArray(lat, lan, rad) {
+  const currentdate = new Date(); 
+
+  // console.log('Auth '+Auth.currentUserPoolUser);
+  searchID = Auth.UserID + 
+
+
+  Auth.currentUserPoolUser()
+  .then(user=>{
+    // console.log(user);
+    searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
+    // setFormData({ ...formData, 'id': searchID})
+    initialFormState.id = searchID
+    console.log(searchID);
+  } )
+
   // console.log('secondary point is '+lat+' '+lan);
   const arraySize = parseInt((2 * rad) / 1.1);
   console.log(rad*2);
   console.log(arraySize);
+  console.log('seacrId ' + initialFormState.id);
   // console.log(rad);
 
 
@@ -85,6 +119,7 @@ function createCoodinatesArray(lat, lan, rad) {
     for(let col=0; col<arraySize; col++) {
       let current;
       current = [topLeftLat-row*0.00001, topLeftLan+col*0.00001]
+      //create_data(current, row, col, searchID)
       // console.log('current is '+current);
       coordinates.push(current)
     }
@@ -167,6 +202,13 @@ function createCoodinatesArray(lat, lan, rad) {
   //     position={[lat-0.0001, lan+0.0001]}>
   //   </Marker>
   // );
+}
+
+
+async function create_data(pair, i, j, searchID) {
+    
+  await API.graphql({ query: createData, variables: { input: {searchLocationDataId: searchID, Lon: pair[1], Lat: pair[0], Elev: 0.001, isMine: false, isObs: false, isClear: false, id: searchID+ i.toString()+j.toString()} } });
+
 }
 
 
@@ -262,13 +304,13 @@ function OpenStreetMap() {
       </div>
       
         
-      <input
+      {/* <input
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'id': e.target.value})}
+        // onChange={e => setFormData({ ...formData, 'id': e.target.value})}
         placeholder= "id"
         value={formData.id}
-      />
+      /> */}
       <br></br>
 
       <input
