@@ -38,6 +38,60 @@ export const listData = /* GraphQL */ `
     }
   }
 `;
+export const getOrg = /* GraphQL */ `
+  query GetOrg($id: ID!) {
+    getOrg(id: $id) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      fleet {
+        items {
+          id
+          status
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      team {
+        items {
+          id
+          username
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const listOrgs = /* GraphQL */ `
+  query ListOrgs(
+    $filter: ModelOrgFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listOrgs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+        fleet {
+          nextToken
+        }
+        team {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;
 export const getSearch = /* GraphQL */ `
   query GetSearch($id: ID!) {
     getSearch(id: $id) {
@@ -51,7 +105,6 @@ export const getSearch = /* GraphQL */ `
       UserID {
         id
         username
-        GroupID
         createdAt
         updatedAt
         owner
@@ -60,7 +113,7 @@ export const getSearch = /* GraphQL */ `
       description
       searchLat
       searchLon
-      startLot
+      startLat
       startLon
       LocationData {
         items {
@@ -100,7 +153,6 @@ export const listSearches = /* GraphQL */ `
         UserID {
           id
           username
-          GroupID
           createdAt
           updatedAt
           owner
@@ -109,7 +161,7 @@ export const listSearches = /* GraphQL */ `
         description
         searchLat
         searchLon
-        startLot
+        startLat
         startLon
         LocationData {
           nextToken
@@ -154,7 +206,6 @@ export const getUser = /* GraphQL */ `
     getUser(id: $id) {
       id
       username
-      GroupID
       createdAt
       updatedAt
       owner
@@ -171,7 +222,6 @@ export const listUsers = /* GraphQL */ `
       items {
         id
         username
-        GroupID
         createdAt
         updatedAt
         owner

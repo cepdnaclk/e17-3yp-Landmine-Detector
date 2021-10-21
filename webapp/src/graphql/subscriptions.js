@@ -46,6 +46,96 @@ export const onDeleteData = /* GraphQL */ `
     }
   }
 `;
+export const onCreateOrg = /* GraphQL */ `
+  subscription OnCreateOrg {
+    onCreateOrg {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      fleet {
+        items {
+          id
+          status
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      team {
+        items {
+          id
+          username
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const onUpdateOrg = /* GraphQL */ `
+  subscription OnUpdateOrg {
+    onUpdateOrg {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      fleet {
+        items {
+          id
+          status
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      team {
+        items {
+          id
+          username
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const onDeleteOrg = /* GraphQL */ `
+  subscription OnDeleteOrg {
+    onDeleteOrg {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      fleet {
+        items {
+          id
+          status
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      team {
+        items {
+          id
+          username
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+    }
+  }
+`;
 export const onCreateSearch = /* GraphQL */ `
   subscription OnCreateSearch($owner: String) {
     onCreateSearch(owner: $owner) {
@@ -59,7 +149,6 @@ export const onCreateSearch = /* GraphQL */ `
       UserID {
         id
         username
-        GroupID
         createdAt
         updatedAt
         owner
@@ -68,7 +157,7 @@ export const onCreateSearch = /* GraphQL */ `
       description
       searchLat
       searchLon
-      startLot
+      startLat
       startLon
       LocationData {
         items {
@@ -103,7 +192,6 @@ export const onUpdateSearch = /* GraphQL */ `
       UserID {
         id
         username
-        GroupID
         createdAt
         updatedAt
         owner
@@ -112,7 +200,7 @@ export const onUpdateSearch = /* GraphQL */ `
       description
       searchLat
       searchLon
-      startLot
+      startLat
       startLon
       LocationData {
         items {
@@ -147,7 +235,6 @@ export const onDeleteSearch = /* GraphQL */ `
       UserID {
         id
         username
-        GroupID
         createdAt
         updatedAt
         owner
@@ -156,7 +243,7 @@ export const onDeleteSearch = /* GraphQL */ `
       description
       searchLat
       searchLon
-      startLot
+      startLat
       startLon
       LocationData {
         items {
@@ -213,7 +300,6 @@ export const onCreateUser = /* GraphQL */ `
     onCreateUser(owner: $owner) {
       id
       username
-      GroupID
       createdAt
       updatedAt
       owner
@@ -225,7 +311,6 @@ export const onUpdateUser = /* GraphQL */ `
     onUpdateUser(owner: $owner) {
       id
       username
-      GroupID
       createdAt
       updatedAt
       owner
@@ -237,7 +322,6 @@ export const onDeleteUser = /* GraphQL */ `
     onDeleteUser(owner: $owner) {
       id
       username
-      GroupID
       createdAt
       updatedAt
       owner
