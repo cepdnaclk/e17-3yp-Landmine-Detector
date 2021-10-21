@@ -38,48 +38,6 @@ export const listData = /* GraphQL */ `
     }
   }
 `;
-export const getDataSet = /* GraphQL */ `
-  query GetDataSet($id: ID!) {
-    getDataSet(id: $id) {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listDataSets = /* GraphQL */ `
-  query ListDataSets(
-    $filter: ModelDataSetFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listDataSets(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        Set {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getSearch = /* GraphQL */ `
   query GetSearch($id: ID!) {
     getSearch(id: $id) {
@@ -105,12 +63,18 @@ export const getSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
@@ -148,9 +112,7 @@ export const listSearches = /* GraphQL */ `
         startLot
         startLon
         LocationData {
-          id
-          createdAt
-          updatedAt
+          nextToken
         }
         createdAt
         updatedAt

@@ -11,7 +11,7 @@ type Search
 	searchLon: Float
 	startLot : Float
 	startLon : Float
-	LocationData: DataSet! @connection
+	LocationData: [Data]! @connection
 }
 
 type Data @model {
@@ -42,7 +42,3 @@ type User
 	GroupID: ID
 }
 
-type DataSet @model {
-	id : ID!
-	Set : [Data!] @connection
-}
