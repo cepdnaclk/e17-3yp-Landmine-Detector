@@ -19,12 +19,12 @@ int main(){
 
 	std::memset(area,0,sizeof(area));
 
-	for(int i=0;i<window_size;i+=sq_size){
-		for(int j=0;j<window_size;j+=sq_size){
-			if((i>search_area && window_size-search_area>i) && (j>search_area && window_size-search_area>j))
-				area[i][j] = 1;
-		}	
-	}
+//	for(int i=0;i<window_size;i+=sq_size){
+//		for(int j=0;j<window_size;j+=sq_size){
+//			if((i>search_area && window_size-search_area>i) && (j>search_area && window_size-search_area>j))
+//				area[i][j] = 1;
+//		}	
+//	}
 
 	RenderWindow window(VideoMode(window_size,window_size), "PathFinder");
 	
@@ -36,9 +36,13 @@ int main(){
 	rect.setFillColor(Color::Red);
 
 	//robot 
-	CircleShape robot(5.f);
+	CircleShape robot(8.f);
 	robot.setFillColor(Color::Green);
 	robot.setPosition(10,window_size-10);
+
+	si = 0;
+	sj = 0;
+
 
 	while(window.isOpen()){
 		Event event;
@@ -51,14 +55,21 @@ int main(){
 		
 		for(int i=0;i<window_size;i+=sq_size){
 			for(int j=0;j<window_size;j+=sq_size){
-				if(area[i][j] == 1)
+//				if(area[i][j] == 1)
+				if((i>search_area && window_size-search_area>i) && (j>search_area && window_size-search_area>j))
 					rect.setFillColor(Color::White);
 				else
 					rect.setFillColor(Color::Black);
+			
+				
+
+
 				rect.setPosition(i,j);
 				window.draw(rect);
 			}
 		}
+
+
 		window.draw(robot);
 		window.display();
 	}
