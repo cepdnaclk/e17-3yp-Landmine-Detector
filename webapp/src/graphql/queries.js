@@ -1,12 +1,103 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getData = /* GraphQL */ `
+  query GetData($id: ID!) {
+    getData(id: $id) {
+      id
+      Lat
+      Lon
+      Elev
+      isMine
+      isObs
+      isClear
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listData = /* GraphQL */ `
+  query ListData(
+    $filter: ModelDataFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listData(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        Lat
+        Lon
+        Elev
+        isMine
+        isObs
+        isClear
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getDataSet = /* GraphQL */ `
+  query GetDataSet($id: ID!) {
+    getDataSet(id: $id) {
+      id
+      Set {
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDataSets = /* GraphQL */ `
+  query ListDataSets(
+    $filter: ModelDataSetFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDataSets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        Set {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getSearch = /* GraphQL */ `
   query GetSearch($id: ID!) {
     getSearch(id: $id) {
       id
-      RobotID
-      UserID
+      RobotID {
+        id
+        status
+        createdAt
+        updatedAt
+      }
+      UserID {
+        id
+        username
+        GroupID
+        createdAt
+        updatedAt
+        owner
+      }
       name
       description
       searchLat
@@ -14,20 +105,12 @@ export const getSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
-      }
-      PathData {
-        Lat
-        Lon
-        Elev
-        isMine
-        isObs
-        isClear
+        id
+        Set {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt
@@ -44,8 +127,20 @@ export const listSearches = /* GraphQL */ `
     listSearches(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        RobotID
-        UserID
+        RobotID {
+          id
+          status
+          createdAt
+          updatedAt
+        }
+        UserID {
+          id
+          username
+          GroupID
+          createdAt
+          updatedAt
+          owner
+        }
         name
         description
         searchLat
@@ -53,20 +148,9 @@ export const listSearches = /* GraphQL */ `
         startLot
         startLon
         LocationData {
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-        }
-        PathData {
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
+          id
+          createdAt
+          updatedAt
         }
         createdAt
         updatedAt
