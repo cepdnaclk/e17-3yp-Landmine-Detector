@@ -20,8 +20,8 @@ exports.handler = async (event) => {
 
     const item = {
         input: {
-            id: "444",
-            status: 2
+            id: event.id,
+            status: event.data.status
         }
     };
 
