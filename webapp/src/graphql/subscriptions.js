@@ -46,75 +46,6 @@ export const onDeleteData = /* GraphQL */ `
     }
   }
 `;
-export const onCreateDataSet = /* GraphQL */ `
-  subscription OnCreateDataSet {
-    onCreateDataSet {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateDataSet = /* GraphQL */ `
-  subscription OnUpdateDataSet {
-    onUpdateDataSet {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteDataSet = /* GraphQL */ `
-  subscription OnDeleteDataSet {
-    onDeleteDataSet {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onCreateSearch = /* GraphQL */ `
   subscription OnCreateSearch($owner: String) {
     onCreateSearch(owner: $owner) {
@@ -140,12 +71,18 @@ export const onCreateSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
@@ -178,12 +115,18 @@ export const onUpdateSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
@@ -216,12 +159,18 @@ export const onDeleteSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt

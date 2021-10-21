@@ -55,84 +55,6 @@ export const deleteData = /* GraphQL */ `
     }
   }
 `;
-export const createDataSet = /* GraphQL */ `
-  mutation CreateDataSet(
-    $input: CreateDataSetInput!
-    $condition: ModelDataSetConditionInput
-  ) {
-    createDataSet(input: $input, condition: $condition) {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateDataSet = /* GraphQL */ `
-  mutation UpdateDataSet(
-    $input: UpdateDataSetInput!
-    $condition: ModelDataSetConditionInput
-  ) {
-    updateDataSet(input: $input, condition: $condition) {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteDataSet = /* GraphQL */ `
-  mutation DeleteDataSet(
-    $input: DeleteDataSetInput!
-    $condition: ModelDataSetConditionInput
-  ) {
-    deleteDataSet(input: $input, condition: $condition) {
-      id
-      Set {
-        items {
-          id
-          Lat
-          Lon
-          Elev
-          isMine
-          isObs
-          isClear
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createSearch = /* GraphQL */ `
   mutation CreateSearch(
     $input: CreateSearchInput!
@@ -161,12 +83,18 @@ export const createSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
@@ -202,12 +130,18 @@ export const updateSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
@@ -243,12 +177,18 @@ export const deleteSearch = /* GraphQL */ `
       startLot
       startLon
       LocationData {
-        id
-        Set {
-          nextToken
+        items {
+          id
+          Lat
+          Lon
+          Elev
+          isMine
+          isObs
+          isClear
+          createdAt
+          updatedAt
         }
-        createdAt
-        updatedAt
+        nextToken
       }
       createdAt
       updatedAt
