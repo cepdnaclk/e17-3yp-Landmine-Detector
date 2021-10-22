@@ -1,7 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { getSearch, listSearches } from '../../graphql/queries';
-import { createSearch, updateSearch , deleteSearch } from '../../graphql/mutations';
+
+import React from 'react';
 import Amplify, {API, graphqlOperation, Auth} from 'aws-amplify';
+
+var userID   = '';
+
+function UsereDetails(){
+  
+  Auth.currentUserPoolUser()
+        .then(user=>{
+          
+          // userID = user.userID
+          console.log(user)
+          userID = user.username 
+          console.log(userID)
+        })
+
+        return userID
+}
+
+
 
 
 
@@ -9,28 +26,20 @@ const prof = {name: ''}
 
 function Tasks() {
 
-  
 
-
-  Auth.currentUserPoolUser()
-  .then(user=>{
-    // console.log(user);
-    prof.name = user.username;
-    // setFormData({ ...formData, 'id': searchID})
-
-    console.log(prof.name);
-  } )
-
-  console.log('heyyy'+prof.name);
   return(
-    <div>
-      {console.log('hi'+prof.name)}
-      <p>{prof.name}</p>
-      {/* <p>Thisara Manohara</p> */}
-    </div>
-  );
 
-  }
+    <div>
+      <button   onClick={UsereDetails}>User Details</button>
+      <h1>user ID:{userID}</h1>
+      <p>{userID}</p>
+      
+    </div>
+
+  );
+  
+  
+}
 
 
 export default Tasks;

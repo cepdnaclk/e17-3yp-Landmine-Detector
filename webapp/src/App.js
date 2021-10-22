@@ -4,7 +4,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { getSearch, listSearches } from './graphql/queries';
 import { createSearch, updateSearch , deleteSearch } from './graphql/mutations';
 import './App.css';
-import Amplify, {API, graphqlOperation} from 'aws-amplify';
+import Amplify, {API, graphqlOperation,Auth} from 'aws-amplify';
 import config from './aws-exports';
 
 /****************************************** */
@@ -16,7 +16,16 @@ import Tasks from './components/Tasks/Tasks';
 import Reports from './components/Reports/Reports';
 import Profile from './components/Profile/Profile';
 
+var userID   = '';
 
+Auth.currentUserPoolUser()
+        .then(user=>{
+          
+          // userID = user.userID
+          console.log(user)
+          userID = user.username 
+          console.log(userID)
+        })
 
 
 const signUpConfig = {
@@ -155,9 +164,15 @@ function App() {
         <li><Link to='/reports' className='nav-link'>Reports</Link></li>
         <br/>
       </ul>
+
+      <div className="left-signout "  >
+          <AmplifySignOut />
+      </div>      
+
+
       </div>
         <section >
-        <header>User</header>
+        <header>Hello ! {userID}</header>
         <div style={{paddingLeft:'25%'}}>
           <br/>
           <Route path="/" exact component={OpenStreetMap} />
@@ -168,6 +183,7 @@ function App() {
           <Route path="/reports" component={Reports} />
         </div>
         </section>
+
 
 
       
