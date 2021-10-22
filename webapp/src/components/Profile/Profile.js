@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Amplify, {API, graphqlOperation, Auth} from 'aws-amplify';
 
@@ -19,7 +20,12 @@ function UsereDetails(){
 
 
 
+
+
+const prof = {name: ''}
+
 function Tasks() {
+
 
   return(
 
@@ -34,5 +40,6 @@ function Tasks() {
   
   
 }
+
 
 export default Tasks;
