@@ -14,7 +14,7 @@ import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id: '', RobotID: '#0001', UserID: 'akila154-1', name: 'akila+R12+01:09:55', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+const initialFormState = { id: '', RobotID: '#0001', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
 //LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -270,7 +270,7 @@ function OpenStreetMap() {
     
     const [lan, setLan] = useState(80.2405);
     const [lat, setLat] = useState(6.0513);
-    const [area, setArea] = useState(2000);
+    const [area, setArea] = useState(200);
     const [des, setDes] = useState(0);
 
 
@@ -297,11 +297,13 @@ function OpenStreetMap() {
 
     <div className="App" className="each-slide">
 
-      <h1>My searches App</h1>
-      
       <div class="center">
         { show ? CallMap(lat, lan, radius) : null}
       </div>
+
+      <h1>My searches App</h1>
+      
+      
       
         
       {/* <input
@@ -372,14 +374,14 @@ function OpenStreetMap() {
       <br></br>
 
       
-      <input
+      {/* <input
         type="text"
         class="type-2"
         onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
         placeholder= "startLon"
         value={formData.startLon}
       />
-      <br></br>
+      <br></br> */}
 
       <input
         type="text"
@@ -391,7 +393,7 @@ function OpenStreetMap() {
       />
       <br></br>
 
-      <button onClick={create}>Create search</button>
+      <button  onClick={create}>Create search</button>
       <br></br>
       <br></br>
       <button class="button-37"  onClick={enableMap}>View on map</button>
@@ -439,7 +441,9 @@ function OpenStreetMap() {
         {/* { show ? CallMap(lan, lat, radius) : null} */}
 
 
-      <AmplifySignOut />
+        <div className="left-signout "  width="100px">
+          <AmplifySignOut color="red" />
+        </div>
 
       
 

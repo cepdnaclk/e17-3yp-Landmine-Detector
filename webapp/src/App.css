@@ -38,7 +38,7 @@
 }
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 20%;
   height: 100%;
@@ -77,4 +77,13 @@ section header {
   text-align: right;
   background: #173904;
   padding-right: 50px;
+}
+
+
+.left-signout {
+  position: absolute;
+  left: 0%;
+  width: 100px;
+  border: 0px solid #ffffff;
+  padding: 10px;
 }
