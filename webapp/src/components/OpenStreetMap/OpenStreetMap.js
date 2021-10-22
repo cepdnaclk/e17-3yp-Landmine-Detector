@@ -393,7 +393,7 @@ function OpenStreetMap() {
       />
       <br></br>
 
-      <button onClick={create}>Create search</button>
+      <button  onClick={create}>Create search</button>
       <br></br>
       <br></br>
       <button class="button-37"  onClick={enableMap}>View on map</button>
@@ -442,7 +442,7 @@ function OpenStreetMap() {
 
 
         <div className="left-signout "  width="100px">
-          <AmplifySignOut />
+          <AmplifySignOut color="red" />
         </div>
 
       
