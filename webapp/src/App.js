@@ -47,6 +47,18 @@ const signUpConfig = {
 
 
 
+const signOut = (e) => {
+  e.preventDefault();
+  Auth.signOut();
+  window.location.reload()
+}
+
+
+
+
+
+
+
 
 
 
@@ -162,13 +174,23 @@ function App() {
         <li><Link to='/history' className='nav-link'>History</Link></li>
         <li><Link to='/tasks' className='nav-link'>Tasks</Link></li>
         <li><Link to='/reports' className='nav-link'>Reports</Link></li>
+
         <br/>
       </ul>
 
-      <div className="left-signout "  >
-          <AmplifySignOut />
-      </div>      
 
+
+     <button className='button-38' onClick={signOut}>please s</button>
+
+
+      {/* <div className="left-signout "  >
+          <AmplifySignOut />
+      </div>       */}
+      
+
+      <div className="left-signout">
+          <AmplifySignOut />
+        </div> 
 
       </div>
         <section >
@@ -182,12 +204,18 @@ function App() {
           <Route path="/tasks" component={Tasks} />
           <Route path="/reports" component={Reports} />
         </div>
+
+        
+
+
         </section>
 
-
+        
 
       
     </div>
+
+    
 
        </BrowserRouter>
         {/* <AmplifySignOut /> */}
