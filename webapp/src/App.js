@@ -18,6 +18,36 @@ import Profile from './components/Profile/Profile';
 
 
 
+
+const signUpConfig = {
+  header: 'My Customized Sign Up',
+  hideAllDefaults: true,
+  defaultCountryCode: '1',
+  signUpFields: [
+    {
+      label: 'My custom email label',
+      key: 'email',
+      required: true,
+      displayOrder: 1,
+      type: 'string'
+    }
+  ]
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const initialFormState = {name: 'asd', description: '', SearchLocLoc: 0.0, SearchArea: 0.0 ,LocationData: {Lat: 0.0 , Lon: 0.0, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -156,4 +186,10 @@ function App() {
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  signUpConfig: {
+    hiddenDefaults: ["phone_number"],
+    signUpFields: [
+      { label: "Name", key: "name", required: true, type: "string" }
+    ]
+}});

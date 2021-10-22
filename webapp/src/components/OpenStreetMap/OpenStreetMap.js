@@ -283,6 +283,8 @@ function OpenStreetMap() {
     const [show, setShow] = useState(false);
 
     const enableMap = ()=>{
+        console.log('lat '+lat);
+        console.log('lan '+lan);
         setShow(true)
         console.log(show);
     };
@@ -300,6 +302,8 @@ function OpenStreetMap() {
       <h1>My searches App</h1>
       
       <div class="center">
+        {console.log('testing')}
+        {console.log(lat, lan)}
         { show ? CallMap(lat, lan, radius) : null}
       </div>
       
@@ -347,8 +351,8 @@ function OpenStreetMap() {
         type="text"
         class="type-2"
         onChange={e => {
-          setFormData({ ...formData, 'searchLon': e.target.value})
-          setLan(e.target.value)
+          setFormData({ ...formData, 'searchLon': parseFloat(e.target.value)})
+          setLan(parseFloat(e.target.value))
         }
       
       }
@@ -361,8 +365,9 @@ function OpenStreetMap() {
       <input
         type="text"
         class="type-2"
-        onChange={e => {setFormData({ ...formData, 'searchLat': e.target.value})
-        setLat(e.target.value)  
+        onChange={e => {setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
+        setLat(parseFloat(e.target.value))  
+        console.log(lat)
       }}
         placeholder= "searchLat"
         //value={formData.searchLon}
