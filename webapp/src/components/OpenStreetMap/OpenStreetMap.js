@@ -14,7 +14,12 @@ import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id: '', RobotID: '#0001', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+
+const initialDate = new Date(); 
+
+
+
+const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getSeconds(), RobotID: '#0001', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
 //LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -71,6 +76,19 @@ function CallMap(lat ,lan, rad) {
 }
 
 
+const validate = (text)=> {
+  var notValid = false
+  // var regex = /^[A-Za-z0-9 ]+$/
+  // var notValid = regex.test(text);
+
+  var letters = /^[0-9a-zA-Z]+$/;
+  notValid = !(letters.test(text))
+
+  console.log(notValid);
+  return notValid
+}
+
+
 
 
 
@@ -79,20 +97,20 @@ function CallMap(lat ,lan, rad) {
 
 
 function createCoodinatesArray(lat, lan, rad) {
-  const currentdate = new Date(); 
+  // const currentdate = new Date(); 
 
   // console.log('Auth '+Auth.currentUserPoolUser);
-  searchID = Auth.UserID + 
 
 
-  Auth.currentUserPoolUser()
-  .then(user=>{
-    // console.log(user);
-    searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
-    // setFormData({ ...formData, 'id': searchID})
-    initialFormState.id = searchID
-    console.log(searchID);
-  } )
+
+  // Auth.currentUserPoolUser()
+  // .then(user=>{
+  //   // console.log(user);
+  //   searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
+  //   // setFormData({ ...formData, 'id': searchID})
+  //   initialFormState.id = searchID
+  //   console.log(searchID);
+  // } )
 
   // console.log('secondary point is '+lat+' '+lan);
   const arraySize = parseInt((2 * rad) / 1.1);
@@ -238,7 +256,26 @@ function OpenStreetMap() {
 
   async function create() {
     
+
+    console.log('helooooooo');
     if (!formData.name) return;
+
+    const currentdate = new Date(); 
+
+
+    console.log('search id' +searchID);
+
+    Auth.currentUserPoolUser()
+  .then(user=>{
+    // console.log(user);
+    searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
+    setFormData({ ...formData, 'id': searchID})
+    initialFormState.id = searchID
+    console.log(searchID);
+  } )
+
+  
+
 //	setFormData({ ...formData, 'id': formData.SearchLocLoc})
 //	formData.id = fromData.SearchLocLoc + formData.name
 	console.log(formData)
@@ -320,21 +357,45 @@ function OpenStreetMap() {
       <br></br>
 
       <input
+        id='name'
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+        onChange={e => { 
+          if(validate(e.target.value)){
+         // if(e.target.value==='1'){
+            alert('Invalid input')
+          }else{
+            setFormData({ ...formData, 'name': e.target.value})
+          }
+          
+      }}
         placeholder="search name"
         value={formData.name}
       />
+      <label for='name'>Name</label>
+
+
       <br></br>
 
       <input
+      id = 'description'
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+        onChange={e => {
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'description': e.target.value})
+             }
+
+          
+          }}
         placeholder="search description"
         value={formData.description}
       />
+      <label for='description'>Description</label>
       <br></br>
 
 
@@ -350,11 +411,22 @@ function OpenStreetMap() {
 
 
       <input
+      id='lan'
         type="text"
         class="type-2"
         onChange={e => {
-          setFormData({ ...formData, 'searchLon': parseFloat(e.target.value)})
+
+
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'searchLon': parseFloat(e.target.value)})
           setLan(parseFloat(e.target.value))
+             }
+
+
+          
         }
       
       }
@@ -362,19 +434,32 @@ function OpenStreetMap() {
         //value={formData.searchLat}
         value={lan}
       />
+      <label for='lan'>Langitude</label>
       <br></br>
 
       <input
+      id='lat'
         type="text"
         class="type-2"
-        onChange={e => {setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
+        onChange={e => {
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
         setLat(parseFloat(e.target.value))  
         console.log(lat)
+             }
+          
+          
+          
       }}
         placeholder= "searchLat"
         //value={formData.searchLon}
         value={lat}
       />
+      <label for='lat'>Latitude</label>
       {/* ending for map container */}
       <br></br>
 
@@ -389,13 +474,26 @@ function OpenStreetMap() {
       <br></br> */}
 
       <input
+      id='area'
         type="text"
         class="type-2"
         // onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
-        onChange={e=>setArea(e.target.value)}
+        onChange={e=>{
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setArea(e.target.value)}}
+             }
+          
+          
+          
+          
         placeholder= "Area"
         value={area}
       />
+      <label for='area'>Area</label>
       <br></br>
 
       <button  onClick={create}>Create search</button>
