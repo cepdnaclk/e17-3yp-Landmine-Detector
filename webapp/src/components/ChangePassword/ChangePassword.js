@@ -1,58 +1,90 @@
-import Auth from '@aws-amplify/auth';
-import React from 'react';
-import { useState } from 'react/cjs/react.development';
-
-
-const password = {oldP: '', newP: ''}
-
-function passwordHandler(oldP, newP) {
-    // Auth.currentAuthenticatedUser()
-    // .then(user => {
-    //     return Auth.changePassword(user, oldP, newP);
-    // })
-    // .then(data => console.log(data))
-    // .catch(err => console.log(err));
-    console.log('hello');
-}
-
-
+import React, { useState } from "react";
+import { Auth } from "aws-amplify";
+import { useHistory } from "react-router-dom";
+import { FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import LoaderButton from "../LoaderButton/LoaderButton";
+// import { useFormFields } from "../lib/hooksLib";
+import { useFormFields } from "../../libs/hooksLib";
+// import { onError } from "../lib/errorLib";
+import { onError } from "../../libs/errorLib";
+import "./ChangePassword.css";
 
 function ChangePassword() {
+  const history = useHistory();
+  const [fields, handleFieldChange] = useFormFields({
+    password: "",
+    oldPassword: "",
+    confirmPassword: "",
+  });
+  const [isChanging, setIsChanging] = useState(false);
 
-    const [op, setOp] = useState('')
-    const [np, setNp] = useState('')
+  function validateForm() {
+    return (
+      fields.oldPassword.length > 0 &&
+      fields.password.length > 0 &&
+      fields.password === fields.confirmPassword
+    );
+  }
 
+  async function handleChangeClick(event) {
+    event.preventDefault();
+
+    setIsChanging(true);
+
+    try {
+      const currentUser = await Auth.currentAuthenticatedUser();
+      await Auth.changePassword(
+        currentUser,
+        fields.oldPassword,
+        fields.password
+      );
+
+      history.push("/settings");
+    } catch (error) {
+      onError(error);
+      setIsChanging(false);
+    }
+  }
 
   return (
-    <div>
-    <input
-      type="text"
-      class="type-2"
-      onChange={e => { 
-          
-        password.oldP = e.target.value
-        setOp(e.target.value)
-    
-    }}
-      placeholder= "oldpassword"
-      value={password.oldP}
-    />
-
-    <input
-      type="text"
-      class="type-2"
-      onChange={e => { password.newP = e.target.value
-    
-        setNp(e.target.value)
-    
-    }}
-      placeholder= "newpassword"
-      value={password.newP}
-    />
-
-    <button onClick={passwordHandler(password.oldP, password.newP)}>Change Pw</button>
-
-  </div>  
+    <div className="ChangePassword">
+      <form onSubmit={handleChangeClick}>
+        <FormGroup bsSize="large" controlId="oldPassword">
+          <FormLabel>Old Password</FormLabel>
+          <FormControl
+            type="password"
+            onChange={handleFieldChange}
+            value={fields.oldPassword}
+          />
+        </FormGroup>
+        <hr />
+        <FormGroup bsSize="large" controlId="password">
+          <FormLabel>New Password</FormLabel>
+          <FormControl
+            type="password"
+            onChange={handleFieldChange}
+            value={fields.password}
+          />
+        </FormGroup>
+        <FormGroup bsSize="large" controlId="confirmPassword">
+          <FormLabel>Confirm Password</FormLabel>
+          <FormControl
+            type="password"
+            onChange={handleFieldChange}
+            value={fields.confirmPassword}
+          />
+        </FormGroup>
+        <button className='button-38'
+          block
+          type="submit"
+          bsSize="large"
+          disabled={!validateForm()}
+          isLoading={isChanging}
+        >
+          Change Password
+        </button>
+      </form>
+    </div>
   );
 }
 
