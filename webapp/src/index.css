@@ -13,9 +13,8 @@ code {
 }
 .leaflet-container {
   width: 100%;
-  height: 100vh;
+  height: 150%;
 }
-
 
 :root {
   --amplify-primary-color: #11a29b;
