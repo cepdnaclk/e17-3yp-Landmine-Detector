@@ -344,21 +344,27 @@ function OpenStreetMap() {
       <br></br>
 
       <input
+        id='name'
         type="text"
         class="type-2"
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="search name"
         value={formData.name}
       />
+      <label for='name'>Name</label>
+
+
       <br></br>
 
       <input
+      id = 'description'
         type="text"
         class="type-2"
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="search description"
         value={formData.description}
       />
+      <label for='description'>Description</label>
       <br></br>
 
 
@@ -374,6 +380,7 @@ function OpenStreetMap() {
 
 
       <input
+      id='lan'
         type="text"
         class="type-2"
         onChange={e => {
@@ -386,9 +393,11 @@ function OpenStreetMap() {
         //value={formData.searchLat}
         value={lan}
       />
+      <label for='lan'>Langitude</label>
       <br></br>
 
       <input
+      id='lat'
         type="text"
         class="type-2"
         onChange={e => {setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
@@ -399,6 +408,7 @@ function OpenStreetMap() {
         //value={formData.searchLon}
         value={lat}
       />
+      <label for='lat'>Latitude</label>
       {/* ending for map container */}
       <br></br>
 
@@ -413,6 +423,7 @@ function OpenStreetMap() {
       <br></br> */}
 
       <input
+      id='area'
         type="text"
         class="type-2"
         // onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
@@ -420,6 +431,7 @@ function OpenStreetMap() {
         placeholder= "Area"
         value={area}
       />
+      <label for='area'>Area</label>
       <br></br>
 
       <button  onClick={create}>Create search</button>
