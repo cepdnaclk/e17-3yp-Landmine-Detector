@@ -14,7 +14,12 @@ import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
 
-const initialFormState = { id: '', RobotID: '#0001', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+
+const initialDate = new Date(); 
+
+
+
+const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getSeconds(), RobotID: '#0001', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
 //LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -79,20 +84,20 @@ function CallMap(lat ,lan, rad) {
 
 
 function createCoodinatesArray(lat, lan, rad) {
-  const currentdate = new Date(); 
+  // const currentdate = new Date(); 
 
   // console.log('Auth '+Auth.currentUserPoolUser);
-  searchID = Auth.UserID + 
 
 
-  Auth.currentUserPoolUser()
-  .then(user=>{
-    // console.log(user);
-    searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
-    // setFormData({ ...formData, 'id': searchID})
-    initialFormState.id = searchID
-    console.log(searchID);
-  } )
+
+  // Auth.currentUserPoolUser()
+  // .then(user=>{
+  //   // console.log(user);
+  //   searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
+  //   // setFormData({ ...formData, 'id': searchID})
+  //   initialFormState.id = searchID
+  //   console.log(searchID);
+  // } )
 
   // console.log('secondary point is '+lat+' '+lan);
   const arraySize = parseInt((2 * rad) / 1.1);
@@ -238,7 +243,26 @@ function OpenStreetMap() {
 
   async function create() {
     
+
+    console.log('helooooooo');
     if (!formData.name) return;
+
+    const currentdate = new Date(); 
+
+
+    console.log('search id' +searchID);
+
+    Auth.currentUserPoolUser()
+  .then(user=>{
+    // console.log(user);
+    searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
+    setFormData({ ...formData, 'id': searchID})
+    initialFormState.id = searchID
+    console.log(searchID);
+  } )
+
+  
+
 //	setFormData({ ...formData, 'id': formData.SearchLocLoc})
 //	formData.id = fromData.SearchLocLoc + formData.name
 	console.log(formData)
