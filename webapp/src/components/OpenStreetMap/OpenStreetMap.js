@@ -76,6 +76,19 @@ function CallMap(lat ,lan, rad) {
 }
 
 
+const validate = (text)=> {
+  var notValid = false
+  // var regex = /^[A-Za-z0-9 ]+$/
+  // var notValid = regex.test(text);
+
+  var letters = /^[0-9a-zA-Z]+$/;
+  notValid = !(letters.test(text))
+
+  console.log(notValid);
+  return notValid
+}
+
+
 
 
 
@@ -347,7 +360,15 @@ function OpenStreetMap() {
         id='name'
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+        onChange={e => { 
+          if(validate(e.target.value)){
+         // if(e.target.value==='1'){
+            alert('Invalid input')
+          }else{
+            setFormData({ ...formData, 'name': e.target.value})
+          }
+          
+      }}
         placeholder="search name"
         value={formData.name}
       />
@@ -360,7 +381,17 @@ function OpenStreetMap() {
       id = 'description'
         type="text"
         class="type-2"
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+        onChange={e => {
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'description': e.target.value})
+             }
+
+          
+          }}
         placeholder="search description"
         value={formData.description}
       />
@@ -384,8 +415,18 @@ function OpenStreetMap() {
         type="text"
         class="type-2"
         onChange={e => {
-          setFormData({ ...formData, 'searchLon': parseFloat(e.target.value)})
+
+
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'searchLon': parseFloat(e.target.value)})
           setLan(parseFloat(e.target.value))
+             }
+
+
+          
         }
       
       }
@@ -400,9 +441,19 @@ function OpenStreetMap() {
       id='lat'
         type="text"
         class="type-2"
-        onChange={e => {setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
+        onChange={e => {
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
         setLat(parseFloat(e.target.value))  
         console.log(lat)
+             }
+          
+          
+          
       }}
         placeholder= "searchLat"
         //value={formData.searchLon}
@@ -427,7 +478,18 @@ function OpenStreetMap() {
         type="text"
         class="type-2"
         // onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
-        onChange={e=>setArea(e.target.value)}
+        onChange={e=>{
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setArea(e.target.value)}}
+             }
+          
+          
+          
+          
         placeholder= "Area"
         value={area}
       />
