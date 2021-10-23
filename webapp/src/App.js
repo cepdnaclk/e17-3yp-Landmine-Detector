@@ -4,7 +4,7 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { getSearch, listSearches } from './graphql/queries';
 import { createSearch, updateSearch , deleteSearch } from './graphql/mutations';
 import './App.css';
-import Amplify, {API, graphqlOperation,Auth} from 'aws-amplify';
+import Amplify, {API, graphqlOperation,Auth,Hub} from 'aws-amplify';
 import config from './aws-exports';
 
 /****************************************** */
@@ -45,17 +45,18 @@ const signUpConfig = {
 
 
 
-
-
-const signOut = (e) => {
-  e.preventDefault();
-  Auth.signOut();
-  window.location.reload()
-}
-
-
-
-
+//Handle SignOut button to reload to loging page
+const handleSignOutButtonClick = async () => {
+  try {
+      await Auth.signOut();
+      Hub.dispatch('UI Auth', {   // channel must be 'UI Auth'
+          event: 'AuthStateChange',    // event must be 'AuthStateChange'
+          message: 'signedout'    // message must be 'signedout'
+      });
+  } catch (error) {
+      console.log('error signing out: ', error);
+  }
+}; 
 
 
 
@@ -180,17 +181,14 @@ function App() {
 
 
 
-     <button className='button-38' onClick={signOut}>please s</button>
-
-
-      {/* <div className="left-signout "  >
-          <AmplifySignOut />
-      </div>       */}
+     {/* <button className='button-38' onClick={signOut}>please s</button> */}
+        
+      <div className="left-signout">
+        <button className='button-38'  onClick={() => handleSignOutButtonClick()}> Sign Out </button>
+      </div>
       
 
-      <div className="left-signout">
-          <AmplifySignOut />
-        </div> 
+      
 
       </div>
         <section >

@@ -446,12 +446,6 @@ function OpenStreetMap() {
         {/* { show ? CallMap(lan, lat, radius) : null} */}
 
 
-        <div className="left-signout "  width="100px">
-          <AmplifySignOut color="red" />
-        </div>
-
-      
-
       
 
     </div>
