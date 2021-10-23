@@ -51,6 +51,7 @@ function ChangePassword() {
       <form onSubmit={handleChangeClick}>
         <FormGroup bsSize="large" controlId="oldPassword">
           <FormLabel>Old Password</FormLabel>
+          <br></br>
           <FormControl
             type="password"
             onChange={handleFieldChange}
@@ -60,6 +61,7 @@ function ChangePassword() {
         <hr />
         <FormGroup bsSize="large" controlId="password">
           <FormLabel>New Password</FormLabel>
+          <br></br>
           <FormControl
             type="password"
             onChange={handleFieldChange}
@@ -68,12 +70,14 @@ function ChangePassword() {
         </FormGroup>
         <FormGroup bsSize="large" controlId="confirmPassword">
           <FormLabel>Confirm Password</FormLabel>
+          <br></br>
           <FormControl
             type="password"
             onChange={handleFieldChange}
             value={fields.confirmPassword}
           />
         </FormGroup>
+        <br></br>
         <button className='button-38'
           block
           type="submit"

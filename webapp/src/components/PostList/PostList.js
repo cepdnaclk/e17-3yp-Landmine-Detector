@@ -48,11 +48,13 @@ class PostList extends Component {
     render(){
         return(
             <div>
+
                 List Of Robots
 
                 {this.state.robotsNames.map((name, index)=>{
                     return(<div key={index}>{name[0]}  status: {name[1]}</div>)
                 })}
+
 
             </div>
         )

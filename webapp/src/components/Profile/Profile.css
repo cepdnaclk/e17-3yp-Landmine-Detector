@@ -39,3 +39,66 @@ section header {
   background: #173904;
   padding-right: 50px;
 }
+
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table th{
+  padding: 12px 15px;
+  background-color: #009879;
+  font-size: 24px;
+  font-weight: 400;
+}
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+.left {
+  position: absolute;
+  left: 20%;
+  width: 25%;
+  border: 0px solid #ffffff;
+  padding: 10px;
+}
+
+.left-signout {
+  position: absolute;
+  left: 20%;
+  width: 200px;
+  border: 0px solid #ffffff;
+  padding: 20px;
+}
+
+.center {
+  position: absolute;
+  left: 60%;
+  width: 35%;
+  height: 300px;
+  border: 0px solid #064d18;
+  padding: 10px;
+}
