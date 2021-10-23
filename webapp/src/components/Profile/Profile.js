@@ -2,8 +2,8 @@
 import React,{ Component } from 'react';
 import Amplify, {API, graphqlOperation, Auth} from 'aws-amplify';
 import PostList from '../PostList/PostList';
-
-
+import { Route, Router, Link, BrowserRouter } from 'react-router-dom';
+import ChangePassword from '../ChangePassword/ChangePassword';
 
 
 
@@ -40,6 +40,16 @@ function Tasks() {
       <h1>user ID:{userID}</h1>
       <p>{userID}</p>
       <PostList />
+      
+
+      <BrowserRouter>
+      <Link to='/changepassword'>
+        <button class="button-37">Change Password</button>
+      </Link>
+
+        <Route path='/ChangePassword' component={ChangePassword} />
+    
+        </BrowserRouter>
       
     </div>
 
