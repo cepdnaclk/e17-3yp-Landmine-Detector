@@ -81,6 +81,11 @@ const validate = (text)=> {
   // var regex = /^[A-Za-z0-9 ]+$/
   // var notValid = regex.test(text);
 
+  if(text==='') {
+    return notValid
+  }
+
+
   var letters = /^[0-9a-zA-Z]+$/;
   notValid = !(letters.test(text))
 
