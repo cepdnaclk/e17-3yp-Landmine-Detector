@@ -28,7 +28,7 @@ class PostList extends Component {
         const { robots } = this.state
         return(
             <div>
-                List Of Robots
+                
                 {robots.items}
                 
                 {
