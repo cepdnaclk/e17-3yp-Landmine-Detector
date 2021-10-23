@@ -14,13 +14,13 @@ class PostList extends Component {
     componentDidMount(){
         axios.get("https://6zx50pbvqb.execute-api.us-east-1.amazonaws.com/items")
         .then(response => {
-            console.log(response.data.Items[0].id)
+            console.log(response.data.Items[0])
             this.setState({robots: response.data})
             // console.log('type '+(response.data.Items[0][0]))
 
             var currentNames = []
         for(let i=0; i< response.data.Items.length; i++) {
-            currentNames.push(response.data.Items[i].id)
+            currentNames.push([response.data.Items[i].id, response.data.Items[i].status])
         }
 
 
@@ -51,7 +51,7 @@ class PostList extends Component {
                 List Of Robots
 
                 {this.state.robotsNames.map((name, index)=>{
-                    return(<div key={index}>{name}</div>)
+                    return(<div key={index}>{name[0]}  status: {name[1]}</div>)
                 })}
 
             </div>
