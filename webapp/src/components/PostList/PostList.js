@@ -6,39 +6,83 @@ class PostList extends Component {
         super(props)
 
         this.state = {
-            robots:[]
+            robots:[],
+            robotsNames: []
         }
     }
 
     componentDidMount(){
         axios.get("https://6zx50pbvqb.execute-api.us-east-1.amazonaws.com/items")
         .then(response => {
-            console.log(response)
+            console.log(response.data.Items[0])
             this.setState({robots: response.data})
-            console.log({ldr: response.data})
+            // console.log('type '+(response.data.Items[0][0]))
+
+            var currentNames = []
+        for(let i=0; i< response.data.Items.length; i++) {
+            currentNames.push([response.data.Items[i].id, response.data.Items[i].status])
+        }
+
+
+        this.setState({robotsNames: currentNames})
+
+        console.log(this.state.robotsNames);
+
+
+
         })
         .catch(error => {
             console.log(error)
         })
+
+        // var currentNames = []
+        // for(let i=0; i< response.data.Items.length; i++) {
+        //     currentNames.push(response.data.Items[i].id)
+        // }
+
+        // this.setState({robotsNames: currentNames})
+
+        // console.log(this.state.robotsNames);
     }
 
-
-
     render(){
-        const { robots } = this.state
         return(
             <div>
-                
-                {robots.items}
-                
-                {
-                    robots.length?
-                    robots.map(robot => <div key={robot.id}>{robot.status}</div>) :
-                    null
-                }
+
+                List Of Robots
+
+                {this.state.robotsNames.map((name, index)=>{
+                    return(<div key={index}>{name[0]}  status: {name[1]}</div>)
+                })}
+
+
             </div>
         )
+
     }
 }
 
 export default PostList
+
+
+// import React, { useState } from "react";
+// import axios from 'axios'
+
+//  function PostList() {
+
+
+//     axios.get("https://6zx50pbvqb.execute-api.us-east-1.amazonaws.com/items")
+//     .then(response=>{
+//         console.log(response.data.Items.length);
+//         console.log(response.data.Items[0].id)
+//     })
+//     .catch(error => {
+//         console.log(error)
+//     })
+//     return (
+//         <h1>hfjdhsjf</h1>
+//     );
+//   }
+
+
+// export default //PostList
