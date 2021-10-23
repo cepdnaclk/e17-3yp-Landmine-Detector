@@ -27,6 +27,48 @@ Auth.currentUserPoolUser()
           console.log(userID)
         })
 
+
+const signUpConfig = {
+  header: 'My Customized Sign Up',
+  hideAllDefaults: true,
+  defaultCountryCode: '1',
+  signUpFields: [
+    {
+      label: 'My custom email label',
+      key: 'email',
+      required: true,
+      displayOrder: 1,
+      type: 'string'
+    }
+  ]
+};
+
+
+
+
+
+const signOut = (e) => {
+  e.preventDefault();
+  Auth.signOut();
+  window.location.reload()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const initialFormState = {name: 'asd', description: '', SearchLocLoc: 0.0, SearchArea: 0.0 ,LocationData: {Lat: 0.0 , Lon: 0.0, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -132,13 +174,23 @@ function App() {
         <li><Link to='/history' className='nav-link'>History</Link></li>
         <li><Link to='/tasks' className='nav-link'>Tasks</Link></li>
         <li><Link to='/reports' className='nav-link'>Reports</Link></li>
+
         <br/>
       </ul>
 
-      <div className="left-signout "  >
-          <AmplifySignOut />
-      </div>      
 
+
+     <button className='button-38' onClick={signOut}>please s</button>
+
+
+      {/* <div className="left-signout "  >
+          <AmplifySignOut />
+      </div>       */}
+      
+
+      <div className="left-signout">
+          <AmplifySignOut />
+        </div> 
 
       </div>
         <section >
@@ -152,12 +204,18 @@ function App() {
           <Route path="/tasks" component={Tasks} />
           <Route path="/reports" component={Reports} />
         </div>
+
+        
+
+
         </section>
 
-
+        
 
       
     </div>
+
+    
 
        </BrowserRouter>
         {/* <AmplifySignOut /> */}
@@ -172,4 +230,10 @@ function App() {
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  signUpConfig: {
+    hiddenDefaults: ["phone_number"],
+    signUpFields: [
+      { label: "Name", key: "name", required: true, type: "string" }
+    ]
+}});
