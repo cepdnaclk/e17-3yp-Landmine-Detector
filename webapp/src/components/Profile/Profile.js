@@ -1,6 +1,14 @@
 
-import React from 'react';
+import React,{ Component } from 'react';
 import Amplify, {API, graphqlOperation, Auth} from 'aws-amplify';
+import PostList from '../PostList/PostList';
+
+
+
+
+
+
+
 
 var userID   = '';
 
@@ -22,8 +30,6 @@ function UsereDetails(){
 
 
 
-const prof = {name: ''}
-
 function Tasks() {
 
 
@@ -33,6 +39,7 @@ function Tasks() {
       <button   onClick={UsereDetails}>User Details</button>
       <h1>user ID:{userID}</h1>
       <p>{userID}</p>
+      <PostList />
       
     </div>
 
