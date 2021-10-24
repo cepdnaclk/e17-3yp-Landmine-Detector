@@ -63,13 +63,13 @@ class PostList extends Component {
             <div>
 
                 List Of Robots
-
+                <div style={{display: 'flex'}}>
                 {this.state.robotsNames.map((name, index)=>{
                     // return(<div key={index} style={{backgroundColor: this.state.colours[index], padding: '5px', border: '5px solid white'}} >{name[0]}  status: {name[1]}</div>)
                     return(<div key={index} style={{backgroundColor: this.state.colours[index], padding: '5px', border: '5px solid white',
-                }} >{name[0]}</div>)
+                color: 'white', width:'100px', textAlign: 'center', fontSize: '20px'}} >{name[0]}</div>)
                 })}
-
+                </div>
 
             </div>
         )

@@ -13,13 +13,14 @@ import Amplify, {API, graphqlOperation, Auth} from 'aws-amplify';
 import config from '../../aws-exports';
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Proceed from "../Proceed/Proceed";
+import PostList from "../PostList/PostList";
 
 
 const initialDate = new Date(); 
 
 
 
-const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getSeconds(), RobotID: '#0001', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getSeconds(), RobotID: '', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
 //LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -399,8 +400,9 @@ function OpenStreetMap() {
         { show ? CallMap(lat, lan, radius) : null}
       </div>
 
-      <h1>My searches App</h1>
+      <h3>My searches App</h3>
       
+      <PostList />
       
       
         
@@ -411,7 +413,6 @@ function OpenStreetMap() {
         placeholder= "id"
         value={formData.id}
       /> */}
-      <br></br>
 
       <input
         id='name'
@@ -552,6 +553,44 @@ function OpenStreetMap() {
       />
       <label for='area'>Area</label>
       <br></br>
+
+      <input
+      id = 'robo'
+        type="text"
+        class="type-2"
+        onChange={e => {
+          
+          if(validate(e.target.value)){
+            // if(e.target.value==='1'){
+               alert('Invalid input')
+             }else{
+              setFormData({ ...formData, 'RobotID': e.target.value})
+             }
+
+          
+          }}
+        placeholder="Robot ID"
+        value={formData.RobotID}
+      />
+      <label for='robo'>Robot ID</label>
+      <br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
 
       <button  onClick={create}>Create search</button>
       <br></br>
