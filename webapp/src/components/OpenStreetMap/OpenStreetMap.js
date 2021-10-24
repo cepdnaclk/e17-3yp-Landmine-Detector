@@ -256,12 +256,11 @@ function callTableToUI() {
   console.log(globalCoorinates);
   return(
     <div>
-      <h1>tableeee</h1>
-      <table>
-        <th>
-        <td>Latitude</td>
-        <td>Langitude</td>
-        </th>
+      <table className='co-table'>
+        <tr>
+            <th>Latitude</th>
+            <th>Langitude</th>
+        </tr>
         {globalCoorinates.map((item, index)=>{
           return(
             <tr key={index}>
