@@ -94,6 +94,17 @@ const validate = (text)=> {
 }
 
 
+const validateFloat = (text)=> {
+  // var notValid = false
+  try{
+    let parsedFloat = parseFloat(text)
+    return false
+  }catch(err) {
+    return true
+  }
+}
+
+
 
 
 
@@ -262,6 +273,8 @@ function OpenStreetMap() {
   async function create() {
     
 
+
+
     console.log('helooooooo');
     if (!formData.name) return;
 
@@ -417,18 +430,18 @@ function OpenStreetMap() {
 
       <input
       id='lan'
-        type="text"
+        type="number"
         class="type-2"
         onChange={e => {
 
 
-          if(validate(e.target.value)){
-            // if(e.target.value==='1'){
-               alert('Invalid input')
-             }else{
+          // if(validateFloat(e.target.value)){
+          //   // if(e.target.value==='1'){
+          //      alert('Invalid input')
+          //    }else{
               setFormData({ ...formData, 'searchLon': parseFloat(e.target.value)})
           setLan(parseFloat(e.target.value))
-             }
+            //  }
 
 
           
@@ -444,18 +457,18 @@ function OpenStreetMap() {
 
       <input
       id='lat'
-        type="text"
+        type="number"
         class="type-2"
         onChange={e => {
           
-          if(validate(e.target.value)){
-            // if(e.target.value==='1'){
-               alert('Invalid input')
-             }else{
+          // if(validateFloat(e.target.value)){
+          //   // if(e.target.value==='1'){
+          //      alert('Invalid input')
+          //    }else{
               setFormData({ ...formData, 'searchLat': parseFloat(e.target.value)})
         setLat(parseFloat(e.target.value))  
-        console.log(lat)
-             }
+        // console.log(lat)
+        //      }
           
           
           
@@ -480,17 +493,17 @@ function OpenStreetMap() {
 
       <input
       id='area'
-        type="text"
+        type="number"
         class="type-2"
         // onChange={e => setFormData({ ...formData, 'startLon': e.target.value})}
         onChange={e=>{
           
-          if(validate(e.target.value)){
-            // if(e.target.value==='1'){
-               alert('Invalid input')
-             }else{
+          // if(validateFloat(e.target.value)){
+          //   // if(e.target.value==='1'){
+          //      alert('Invalid input')
+          //    }else{
               setArea(e.target.value)}}
-             }
+            //  }
           
           
           
