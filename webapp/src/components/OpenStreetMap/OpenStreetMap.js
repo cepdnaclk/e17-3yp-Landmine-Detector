@@ -258,7 +258,8 @@ function callTableToUI() {
   console.log(globalCoorinates);
   return(
     <div>
-      <table className='co-table'>
+      <br/>
+      <table className='co-table' id="customers">
         <tr>
             <th>Latitude</th>
             <th>Langitude</th>
