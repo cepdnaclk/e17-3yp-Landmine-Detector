@@ -25,6 +25,7 @@ const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getS
 Amplify.configure(config);
 
 
+var globalCoorinates = []
 
 
 //   { }   [ ]
@@ -112,6 +113,9 @@ const validateFloat = (text)=> {
 
 
 
+
+
+
 function createCoodinatesArray(lat, lan, rad) {
   // const currentdate = new Date(); 
 
@@ -159,6 +163,8 @@ function createCoodinatesArray(lat, lan, rad) {
     }
 
   }
+
+  globalCoorinates = coordinates
 
   console.log(coordinates.length);
 
@@ -246,12 +252,38 @@ async function create_data(pair, i, j, searchID) {
 }
 
 
-
+function callTableToUI() {
+  console.log(globalCoorinates);
+  return(
+    <div>
+      <h1>tableeee</h1>
+      <table>
+        <th>
+        <td>Latitude</td>
+        <td>Langitude</td>
+        </th>
+        {globalCoorinates.map((item, index)=>{
+          return(
+            <tr key={index}>
+          <td>{item[0]}</td>
+          <td>{item[1]}</td>
+          </tr>
+          )
+        })}
+      </table>
+    </div>
+  )
+}
 
 
 
 function OpenStreetMap() {
 
+  console.log('re rendered');
+
+  const [callTable, setCallTable] = useState(false);
+
+  console.log('table is '+ callTable);
     /************************************ */
     const [searches, setSearches] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
@@ -329,6 +361,9 @@ function OpenStreetMap() {
     const [des, setDes] = useState(0);
 
 
+    
+
+
     const radius = Math.sqrt(area / Math.PI)
 
     // const map = useMapEvent('click', () => {
@@ -347,6 +382,11 @@ function OpenStreetMap() {
     const disableMap = ()=>{
         setShow(false)
         console.log(show);
+    }
+
+    const enableTable = ()=>{
+      console.log('called table');
+      setCallTable(true)
     }
 
     return(
@@ -520,15 +560,21 @@ function OpenStreetMap() {
       <button class="button-37"  onClick={enableMap}>View on map</button>
       <button class="button-37"  onClick={disableMap}>Reset</button>
       
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Link to='/proceed'>
         <button class="button-37">Proceed</button>
       </Link>
 
         <Route path='/proceed' component={Proceed} />
       
-        </BrowserRouter>
+        </BrowserRouter> */}
+
+      <button class="button-37" onClick={enableTable}>Proceed</button>
       
+      <div>
+        {console.log(callTable)}
+        {callTable ? callTableToUI(): null}
+      </div>
 
 
       
