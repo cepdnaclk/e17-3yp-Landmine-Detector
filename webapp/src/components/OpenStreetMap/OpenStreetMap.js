@@ -325,7 +325,7 @@ function OpenStreetMap() {
   } )
 
   
-
+    console.log('before creating search '+ initialFormState);
 //	setFormData({ ...formData, 'id': formData.SearchLocLoc})
 //	formData.id = fromData.SearchLocLoc + formData.name
 	console.log(formData)
