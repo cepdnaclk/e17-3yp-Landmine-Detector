@@ -61,7 +61,8 @@ const parent = {
   width: '90%',
   borderRadius: "25px",
   color: 'white',
-  paddingBottom: '5px'
+  paddingBottom: '5px',
+  opacity: '1'
 }
 
 const name = {
