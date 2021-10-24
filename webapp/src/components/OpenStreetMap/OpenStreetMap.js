@@ -88,7 +88,8 @@ const validate = (text)=> {
   }
 
 
-  var letters = /^[0-9a-zA-Z]+$/;
+  // var letters = /^[0-9a-zA-Z]+$/;
+  var letters = /^[0-9a-zA-Z \-'_]+$/;
   notValid = !(letters.test(text))
 
   console.log(notValid);
