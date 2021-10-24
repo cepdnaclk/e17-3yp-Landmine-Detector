@@ -114,3 +114,8 @@ input[type="text"] {
   border: 0px solid #014716;
   padding: 10px;
 }
+
+.co-table {
+  width: 40%;
+  border: 1px solid black;
+}
