@@ -7,7 +7,8 @@ class PostList extends Component {
 
         this.state = {
             robots:[],
-            robotsNames: []
+            robotsNames: [],
+            colours: []
         }
     }
 
@@ -18,15 +19,27 @@ class PostList extends Component {
             this.setState({robots: response.data})
             // console.log('type '+(response.data.Items[0][0]))
 
-            var currentNames = []
+        let currentColours = []
+
+        var currentNames = []
         for(let i=0; i< response.data.Items.length; i++) {
+            console.log(typeof(response.data.Items[i].status));
+            if(response.data.Items[i].status==1) {
+                currentColours.push('green')
+            }else if(response.data.Items[i].status==2) {
+                currentColours.push('yellow')
+            }else{
+                currentColours.push('red')
+            }
             currentNames.push([response.data.Items[i].id, response.data.Items[i].status])
         }
 
-
+        this.setState({colours: currentColours})
         this.setState({robotsNames: currentNames})
 
         console.log(this.state.robotsNames);
+
+        console.log(this.state.colours);
 
 
 
@@ -50,11 +63,13 @@ class PostList extends Component {
             <div>
 
                 List Of Robots
-
+                <div style={{display: 'flex'}}>
                 {this.state.robotsNames.map((name, index)=>{
-                    return(<div key={index}>{name[0]}  status: {name[1]}</div>)
+                    // return(<div key={index} style={{backgroundColor: this.state.colours[index], padding: '5px', border: '5px solid white'}} >{name[0]}  status: {name[1]}</div>)
+                    return(<div key={index} style={{backgroundColor: this.state.colours[index], padding: '5px', border: '5px solid white',
+                color: 'white', width:'100px', textAlign: 'center', fontSize: '20px'}} >{name[0]}</div>)
                 })}
-
+                </div>
 
             </div>
         )

@@ -72,6 +72,15 @@ input[type="text"] {
   margin: 10px 5px; /* add top and bottom margin */
 }
 
+input[type="number"] {
+  width: 150px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  margin: 10px 5px; /* add top and bottom margin */
+}
+
 .type-2 {
   background-color: #d4d4d4b7;
   border: 1;
