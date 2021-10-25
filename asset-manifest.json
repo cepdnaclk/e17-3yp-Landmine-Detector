@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/e17-3yp-Landmine-Detector/static/css/main.5d4b3e0a.chunk.css",
-    "main.js": "/e17-3yp-Landmine-Detector/static/js/main.b621ba75.chunk.js",
-    "main.js.map": "/e17-3yp-Landmine-Detector/static/js/main.b621ba75.chunk.js.map",
+    "main.css": "/e17-3yp-Landmine-Detector/static/css/main.de2c9aa6.chunk.css",
+    "main.js": "/e17-3yp-Landmine-Detector/static/js/main.570554e3.chunk.js",
+    "main.js.map": "/e17-3yp-Landmine-Detector/static/js/main.570554e3.chunk.js.map",
     "runtime-main.js": "/e17-3yp-Landmine-Detector/static/js/runtime-main.002dde2e.js",
     "runtime-main.js.map": "/e17-3yp-Landmine-Detector/static/js/runtime-main.002dde2e.js.map",
     "static/css/2.0ccb862f.chunk.css": "/e17-3yp-Landmine-Detector/static/css/2.0ccb862f.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.590f7478.chunk.js.map": "/e17-3yp-Landmine-Detector/static/js/3.590f7478.chunk.js.map",
     "index.html": "/e17-3yp-Landmine-Detector/index.html",
     "static/css/2.0ccb862f.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/2.0ccb862f.chunk.css.map",
-    "static/css/main.5d4b3e0a.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/main.5d4b3e0a.chunk.css.map",
+    "static/css/main.de2c9aa6.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/main.de2c9aa6.chunk.css.map",
     "static/js/2.0a5680bd.chunk.js.LICENSE.txt": "/e17-3yp-Landmine-Detector/static/js/2.0a5680bd.chunk.js.LICENSE.txt",
     "static/media/LM.7b0f497e.mp4": "/e17-3yp-Landmine-Detector/static/media/LM.7b0f497e.mp4",
     "static/media/Home.css": "/e17-3yp-Landmine-Detector/static/media/land.a3d03566.jpeg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.002dde2e.js",
     "static/css/2.0ccb862f.chunk.css",
     "static/js/2.0a5680bd.chunk.js",
-    "static/css/main.5d4b3e0a.chunk.css",
-    "static/js/main.b621ba75.chunk.js"
+    "static/css/main.de2c9aa6.chunk.css",
+    "static/js/main.570554e3.chunk.js"
   ]
 }
