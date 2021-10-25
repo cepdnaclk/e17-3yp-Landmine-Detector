@@ -25,11 +25,11 @@ class PostList extends Component {
         for(let i=0; i< response.data.Items.length; i++) {
             console.log(typeof(response.data.Items[i].status));
             if(response.data.Items[i].status==1) {
-                currentColours.push('green')
+                currentColours.push('#2bff00ec')
             }else if(response.data.Items[i].status==2) {
-                currentColours.push('yellow')
+                currentColours.push('#fae100e1')
             }else{
-                currentColours.push('red')
+                currentColours.push('#ff3c00f6')
             }
             currentNames.push([response.data.Items[i].id, response.data.Items[i].status])
         }
@@ -62,12 +62,13 @@ class PostList extends Component {
         return(
             <div>
 
-                List Of Robots
+                   List Of Robots
+                <br></br>
                 <div style={{display: 'flex'}}>
                 {this.state.robotsNames.map((name, index)=>{
                     // return(<div key={index} style={{backgroundColor: this.state.colours[index], padding: '5px', border: '5px solid white'}} >{name[0]}  status: {name[1]}</div>)
                     return(<div key={index} style={{backgroundColor: this.state.colours[index], padding: '5px', border: '5px solid white',
-                color: 'white', width:'100px', textAlign: 'center', fontSize: '20px'}} >{name[0]}</div>)
+                color: '#000000e1', width:'100px', textAlign: 'center', fontSize: '20px'}} >{name[0]}</div>)
                 })}
                 </div>
 

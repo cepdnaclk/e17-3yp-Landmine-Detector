@@ -76,7 +76,7 @@ function Tasks() {
       </table>
 
 
-      <PostList />
+      {/* <PostList /> */}
       
 
       <br/>

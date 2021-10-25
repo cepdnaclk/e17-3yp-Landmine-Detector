@@ -402,7 +402,7 @@ function OpenStreetMap() {
         { show ? CallMap(lat, lan, radius) : null}
       </div>
 
-      <h3>My searches App</h3>
+      <h3>Initialize a New Search</h3>
       
       <PostList />
       
@@ -594,7 +594,7 @@ function OpenStreetMap() {
 
 
 
-      <button  onClick={create}>Create search</button>
+      <button className="button-36"  onClick={create}>Create search</button>
       <br></br>
       <br></br>
       <button class="button-37"  onClick={enableMap}>View on map</button>
