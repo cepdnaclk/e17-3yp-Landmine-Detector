@@ -86,7 +86,6 @@
   transform: translateY(-2px);
 }
 
-
 @media (min-width: 768px) {
   .button-37 {
     padding: 10px 30px;
@@ -168,6 +167,7 @@ input[type="number"] {
 #customers th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
 
 #customers tr:nth-child(even) {
@@ -181,7 +181,7 @@ input[type="number"] {
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: #04aa6d;
   color: white;
 }

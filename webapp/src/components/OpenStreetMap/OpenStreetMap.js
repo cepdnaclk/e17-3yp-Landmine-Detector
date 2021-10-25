@@ -263,12 +263,18 @@ function callTableToUI() {
         <tr>
             <th>Latitude</th>
             <th>Langitude</th>
+            <th>Cleared</th>
+            <th>Obstacle</th>
+            <th>Mine</th>
         </tr>
         {globalCoorinates.map((item, index)=>{
           return(
             <tr key={index}>
-          <td>{item[0]}</td>
-          <td>{item[1]}</td>
+          <td>{item[0].toFixed(5)}</td>
+          <td>{item[1].toFixed(5)}</td>
+          <td>False</td>
+          <td>False</td>
+          <td>False</td>
           </tr>
           )
         })}
