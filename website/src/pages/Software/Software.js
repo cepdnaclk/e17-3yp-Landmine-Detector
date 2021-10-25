@@ -54,39 +54,39 @@ Returned data from the robot will be published using MQTT and using IoT rule by 
 
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-2.png"} />
+              <img src={process.env.PUBLIC_URL +"/images/Signin.JPG"} />
             </div>
             <p>Login UI</p>
           </div>
           <div className="each-fade">
             <p>two-step verification</p>
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-3.png"} />
+              <img src={process.env.PUBLIC_URL +"/images/Auth.JPG"} />
             </div>
           </div>
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-4.png"} />
+              <img src={process.env.PUBLIC_URL +"/images/UI.JPG"} />
             </div>
             <p>User Interface</p>
           </div>
-          <div className="each-fade">
+          {/* <div className="each-fade">
             <div>
               <img src={process.env.PUBLIC_URL +"/images/UI-5.png"} />
             </div>
             <p>User Interface</p>
-          </div>
+          </div> */}
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-6.png"} />
+              <img src={process.env.PUBLIC_URL +"/images/history.JPG"} />
             </div>
             <p>History</p>
           </div>
           <div className="each-fade">
             <div>
-              <img src={process.env.PUBLIC_URL +"/images/UI-1.png"} />
+              <img src={process.env.PUBLIC_URL +"/images/profile.JPG"} />
             </div>
-            <p>History</p>
+            <p>Profile</p>
           </div>
 
         </Fade>
