@@ -57,7 +57,7 @@ function History() {
 
 
 const parent = {
-  backgroundColor: 'grey',
+  backgroundColor: '#5fb82d',
   width: '90%',
   borderRadius: "25px",
   color: 'white',
@@ -68,7 +68,7 @@ const parent = {
 const name = {
   
   fontSize: '35px',
-  backgroundColor: 'black',
+  backgroundColor: '#173904',
   borderRadius: '25px',
   textAlign: 'center'
 }

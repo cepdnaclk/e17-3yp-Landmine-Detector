@@ -13,8 +13,8 @@ import Current from './components/Current/Current';
 import OpenStreetMap from './components/OpenStreetMap/OpenStreetMap';
 import History from './components/History/History';
 import Tasks from './components/Tasks/Tasks';
-import Reports from './components/Reports/Reports';
 import Profile from './components/Profile/Profile';
+import FAQ from './components/FAQ/FAQ';
 
 var userID   = '';
 
@@ -174,7 +174,7 @@ function App() {
         <li><Link to='/profile' className='nav-link'>Profile</Link></li>
         <li><Link to='/history' className='nav-link'>History</Link></li>
         <li><Link to='/tasks' className='nav-link'>Tasks</Link></li>
-        <li><Link to='/reports' className='nav-link'>Reports</Link></li>
+        <li><Link to='/faq' className='nav-link'>FAQ</Link></li>
 
         <br/>
       </ul>
@@ -200,7 +200,7 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/history" component={History} />
           <Route path="/tasks" component={Tasks} />
-          <Route path="/reports" component={Reports} />
+          <Route path="/faq" component={FAQ} />
         </div>
 
         
