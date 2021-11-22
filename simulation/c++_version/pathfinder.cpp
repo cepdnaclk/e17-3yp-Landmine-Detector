@@ -40,8 +40,8 @@ int main(){
 	robot.setFillColor(Color::Green);
 	robot.setPosition(10,window_size-10);
 
-	si = 0;
-	sj = 0;
+	int si = 0;
+	int sj = 0;
 
 
 	while(window.isOpen()){
