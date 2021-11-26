@@ -4,7 +4,7 @@ CC = avr-gcc
 # compiler flags:
 #  -g     - this flag adds debugging information to the executable file
 #  -Wall  - this flag is used to turn on most compiler warnings
-CFLAGS  = -Os --DF_CPU=16000000UL -mmcu=atmega328p 
+CFLAGS  = -Os -DF_CPU=16000000UL -mmcu=atmega328p 
 
 # The build target 
 TARGET = Motor
