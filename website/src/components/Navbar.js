@@ -60,7 +60,7 @@ function Navbar() {
             <Software />
         </div>
         <hr/>
-        <div className='testing-area' id='testing'>
+        <div className='test-area' id='test'>
             <Testing />
         </div>
         <hr/>

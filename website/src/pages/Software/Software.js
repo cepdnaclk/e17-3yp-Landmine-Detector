@@ -31,7 +31,7 @@ function Software() {
         
       
         <img alt="" src={process.env.PUBLIC_URL + '/images/cloud-architecture.JPG'} style={{ display: 'block', marginRight:'auto',width:'100%',opacity:'100%'}}/>          
-            <div  className='hd-text'>
+            <div  className='sf-text'>
                 <p >User is interacted with our front end which is hosted in AWS amplify. Authentication and authorization happen using cognito pools and identity groups. 
                   In the event of creating a user a lambda function is called to sign up a user to a relevant group. With authorized credentials the user calls the API to
                    initiate a new search. The input values are stored in the database and at the same time lambda function is called to publish the data to a topic in the IoT core.

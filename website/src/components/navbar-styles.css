@@ -81,17 +81,7 @@ a:hover {
   height: auto;
   padding-top: 70px;
 }
-.testing-area{
-  position: relative;
-  /* display: flex; */
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-  padding-top: 70px;
-}
+
 
 .video-area{
   position: relative;
@@ -152,6 +142,19 @@ a:hover {
   height: auto;
   padding-top: 70px;
 }
+
+.test-area{
+  position:relative;
+  /* display: flex; */
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding-top: 70px;
+}
+
 
 .time-area{
   position:relative;

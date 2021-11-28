@@ -114,9 +114,9 @@ function Timeline_LM() {
             Milestone 3
             </Typography>
             <Typography><ul>
-              <li>3D Models for Robot.</li>
               <li>Implementation of Backend.</li>
-              <li>PCB designs of circuits.</li>
+              <li>Implementation of Frontend.</li>
+              <li>Software Testing.</li>
               </ul></Typography>
           </Paper>
         </TimelineContent>
@@ -139,7 +139,9 @@ function Timeline_LM() {
             <Typography variant="h6" component="h1">
             Milestone 4
             </Typography>
+            <li>PCB designs of circuits.</li>
             <Typography>Prototype & Testing</Typography>
+            <li>3D Models for Robot.</li>
           </Paper>
         </TimelineContent>
       </TimelineItem>
