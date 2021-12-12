@@ -1,7 +1,7 @@
 #include<Wire.h>
 
-#define SLAVE_ADDR 9 
-#define ANSWERSIZE  5
+#define SLAVE_ADDR 0x09 
+#define ANSWERSIZE  128
 
 void setup(){
   Wire.begin();
