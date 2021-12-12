@@ -1,6 +1,6 @@
 #include<Wire.h>
 
-#define SLAVE_ADDR 9
+#define SLAVE_ADDR 0x09
 
 #define ANSWERSIZE 5
 
@@ -22,10 +22,11 @@ void setup() {
 
 void receiveEvent(){
   while(0< Wire.available()){
-    byte x = Wire.read();
+    char x = Wire.read();
+    Serial.print(x);
   }
 
-  Serial.println("Receive event");
+//  Serial.println("Receive event");
 }
 
 void requestEvent(){
@@ -42,6 +43,7 @@ void requestEvent(){
 
 void loop() {
   // put your main code here, to run repeatedly:
+
   delay(50);
   
 
