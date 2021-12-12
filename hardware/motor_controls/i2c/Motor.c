@@ -10,8 +10,30 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-
 #define BLINK_DELAY_MS 2000
+
+
+
+
+unsigned char uart_recv(){
+	while((UCSRA&(1<<RXC)) ==0 );
+	//wait till 8-bit of a char receive
+	return UDR;
+}
+
+void uart_transmit(unsigned char data){
+
+	while(!(UCSRA & (1<<UDRE)));
+	//wait while register free from data
+	UDR = data;
+
+}
+
+
+
+
+
+
 
 void TWIInit(void){
 
@@ -88,7 +110,7 @@ uint8_t EEReadByte(uint16_t u16addr, uint8_t *u8data)
     TWIStart();
     if (TWIGetStatus() != 0x08)
         return ERROR;
-    //select devise and send A2 A1 A0 address bits
+    //select device and send A2 A1 A0 address bits
     TWIWrite((EEDEVADR)|((uint8_t)((u16addr & 0x0700)>>7)));
     if (TWIGetStatus() != 0x18)
         return ERROR;
@@ -127,7 +149,27 @@ int main (void){
 
 	DDRB = DDRB | LED;
 
+
+	TWIInit();
+
+
+	//UART initialize
+	UBRRH = 0x00;
+	UBRRL = 0x4d;
+	UCSRB=(1<<RXCIE) | (1<<RXEN) | (1<<TXEN);
+	UCSRC=(1<<URSEL) | (1<<UCSZ1)| (1<<UCSZ0);
+
+
+
+
 	while(1){
+	
+		unsigned char data;
+
+		EEReadByte(&data);
+
+		uart_transmit(data);
+
 
 		//Motor 1 (IN1 | IN2)
 		PORTD = PORTD | (IN1);

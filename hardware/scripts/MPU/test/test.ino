@@ -1,64 +1,78 @@
-#include <Wire.h>
+/*
+* Brian R Taylor
+* brian.taylor@bolderflight.com
+* 
+* Copyright (c) 2021 Bolder Flight Systems Inc
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the “Software”), to
+* deal in the Software without restriction, including without limitation the
+* rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+* sell copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+* IN THE SOFTWARE.
+*/
 
-#include <MPU9250.h>
+#include "mpu9250.h"
 
+/* Mpu9250 object, I2C bus,  0x68 address */
+bfs::Mpu9250 imu(&Wire, 0x68);
 
-//https://github.com/bolderflight/mpu9250
-//https://protosupplies.com/product/mpu-9250-3-axis-accel-gryo-mag-sensor-module/
-// The below code is for I2C communication with the Arduino.
-
-
-MPU9250 IMU (Wire , 0x68);      // MPU9250 is a class and "IMU" is a object, we need to pass parameter to the object "IMU". wire is used for I2C communication,
-// second parameter is for I2C address, we left the ADO pin unconnected so its set to low, 0x68 is address,
-// if it was high then the address is 0x69
-
-void setup() {                  // put your setup code here, to run once:
-  Serial.begin(9600);           // initialize the serial monitor
-  IMU.begin();                  // Initialize the IMU object
+void setup() {
+  /* Serial to display data */
+  Serial.begin(115200);
+  while(!Serial) {}
+  /* Start the I2C bus */
+  Wire.begin();
+  Wire.setClock(400000);
+  /* Initialize and configure IMU */
+  if (!imu.Begin()) {
+    Serial.println("Error initializing communication with IMU");
+    while(1) {}
+  }
+  /* Set the sample rate divider */
+  if (!imu.ConfigSrd(19)) {
+    Serial.println("Error configured SRD");
+    while(1) {}
+  }
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  IMU.readSensor();
-  //Accelerometer data code
-  Serial.print("Accelerometer X axis: ");
-  Serial.print(IMU.getAccelX_mss(), 3);     // to get the accelerometer value from the data buffer in the X direction, these values are in meter per second square
-  Serial.print("               Accelerometer Y axis: ");
-  Serial.print(IMU.getAccelY_mss(), 3);
-  Serial.print("               Accelerometer Z axis: ");
-  Serial.println(IMU.getAccelZ_mss(), 3);
-
-  
-  //Gyroscope data code
-  Serial.print("Gyroscope X axis(radians): ");
-  Serial.print(IMU.getGyroX_rads(), 3);        // gets the gyroscope value from the data buffer in the X direction, these vavlues are in radians per second
-  Serial.print("           Gyroscope Y axis(radians): ");
-  Serial.print(IMU.getGyroY_rads(), 3);
-  Serial.print("           Gyroscope Z axis(radians): ");
-  Serial.println(IMU.getGyroZ_rads(), 3);
-
-
-  
-  //Magnetometer data code
-  Serial.print("Magnetometer X axis(MicroTesla): ");
-  Serial.print(IMU.getMagX_uT(), 3);                //gets the magnetometer value from the data buffer in the X direction, these are in microtesla
-  Serial.print("    Magnetometer Y axis(MicroTesla): ");
-  Serial.print(IMU.getMagY_uT(), 3);
-  Serial.print("    Magnetometer Z axis(MicroTesla): ");
-  Serial.println(IMU.getMagZ_uT(), 3);
-
-
-
-  
-  //Temperature reading
-  Serial.print("Temperature: ");
-  Serial.println(IMU.getTemperature_C(), 2);         // gets the temperature value from the data buffer and returns it in units of C
-  Serial.print("*********** Next buffer data *****************");
-  Serial.println("    ");
-  Serial.println("    ");
-  Serial.println("    ");
-  Serial.println("    ");
-  delay(2000);
-
-
+  /* Check if data read */
+  if (imu.Read()) {
+    Serial.print(imu.new_imu_data());
+    Serial.print("\t");
+    Serial.print(imu.new_mag_data());
+    Serial.print("\t");
+    Serial.print(imu.accel_x_mps2());
+    Serial.print("\t");
+    Serial.print(imu.accel_y_mps2());
+    Serial.print("\t");
+    Serial.print(imu.accel_z_mps2());
+    Serial.print("\t");
+    Serial.print(imu.gyro_x_radps());
+    Serial.print("\t");
+    Serial.print(imu.gyro_y_radps());
+    Serial.print("\t");
+    Serial.print(imu.gyro_z_radps());
+    Serial.print("\t");
+    Serial.print(imu.mag_x_ut());
+    Serial.print("\t");
+    Serial.print(imu.mag_y_ut());
+    Serial.print("\t");
+    Serial.print(imu.mag_z_ut());
+    Serial.print("\t");
+    Serial.print(imu.die_temp_c());
+    Serial.print("\n");
+  }
 }
