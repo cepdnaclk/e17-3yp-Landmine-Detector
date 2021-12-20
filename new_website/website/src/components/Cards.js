@@ -11,7 +11,18 @@ function Cards(){
 			<div className="cards__container">
 				<div className="cards_wrapper">
 					<ul className="cards__items">
-					<CardItem />	
+					<CardItem
+			src="images/Hardware.png"
+			text="Hardware architecture"
+			label="Design"
+			path="/hardware"
+		/>	
+					<CardItem
+			src="images/Hardware.png"
+			text="Hardware architecture"
+			label="Design"
+			path="/hardware"
+		/>	
 					</ul>
 				</div>
 			</div>
