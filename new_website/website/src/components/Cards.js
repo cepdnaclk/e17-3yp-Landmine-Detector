@@ -18,8 +18,8 @@ function Cards(){
 			path="/hardware"
 		/>	
 					<CardItem
-			src="images/Hardware.png"
-			text="Hardware architecture"
+			src="images/Cloud_Security.png"
+			text="Software architecture"
 			label="Design"
 			path="/hardware"
 		/>	
