@@ -8,6 +8,7 @@
 
 #include "driver/gpio.h"
 #include "driver/i2c.h"
+#include "driver/uart.h"
 
 #define BLINK_GPIO GPIO_NUM_2
 
@@ -41,13 +42,13 @@ void i2c_init_SENSOR(){
 
 void uart0_init(){
 
-	const int uart_num = UART_NUM_0;
+	const int uart_num = UART_NUM_2;
 	uart_config_t uart_config = {
 		.baud_rate = 9600,
 		.data_bits = UART_DATA_8_BITS,
 		.parity = UART_PARITY_DISABLE,
 		.stop_bits = UART_STOP_BITS_1,
-		.flow_ctrl = UART_HW_FLOWVTRL_CTS_RTS,
+		.flow_ctrl = UART_HW_FLOWCTRL_CTS,
 		.rx_flow_ctrl_thresh = 122,
 	};
 	// Configure UART parameters
@@ -58,24 +59,28 @@ void uart0_init(){
 	//Setup UART buffered IO with event queue
 	const int uart_buffer_size = (1024 * 2);
 	QueueHandle_t uart_queue;
+	
 	//Install UART driver using an event queue 
 	ESP_ERROR_CHECK(uart_driver_install(uart_num,uart_buffer_size,uart_buffer_size, 10, &uart_queue,0));
 }
 
 
-void uart0_read(){
+void uart0_read(void *ignore){
 
 	//Read data from UART
 	
-	const int uart_num = UART_NUM_0;
-	uint8_t data[128];
+	const int uart_num = UART_NUM_2;
+	uint8_t data[128]="asdasd";
 	int length = 0;
 	ESP_ERROR_CHECK(uart_get_buffered_data_len(uart_num, (size_t*)&length));
 	length = uart_read_bytes(uart_num,data,length,100);
 
 	for(int i=0;i<128;i++){
-		printf("%x",data[i]);
+		printf("%c",data[i]);
 	}
+
+	uart_flush(uart_num);
+	vTaskDelete(NULL);
 }
 
 
@@ -130,6 +135,7 @@ void app_main(void)
 
 	gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 
+	// uart0_init();
 
 	while(1){
 
@@ -140,6 +146,7 @@ void app_main(void)
 
 		xTaskCreate(&task_send_msg, "send message", 2048, NULL, 6, NULL);
 
+		// xTaskCreate(&uart0_read, "receive cordinates", 2048, NULL, 6, NULL);
 		// Blink off
 		gpio_set_level(BLINK_GPIO, 0);
 		vTaskDelay(500 / portTICK_PERIOD_MS);
