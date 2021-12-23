@@ -21,7 +21,6 @@
 
 //esp32 hs only 2 i2c port 0 & 1
 //3 UART controllers
-//
 
 void i2c_init_SENSOR(){
 	/*int i2c_master_port = 0;*/
@@ -48,8 +47,7 @@ void uart0_init(){
 		.data_bits = UART_DATA_8_BITS,
 		.parity = UART_PARITY_DISABLE,
 		.stop_bits = UART_STOP_BITS_1,
-		.flow_ctrl = UART_HW_FLOWCTRL_CTS,
-		.rx_flow_ctrl_thresh = 122,
+		.flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
 	};
 	// Configure UART parameters
 	ESP_ERROR_CHECK(uart_param_config(uart_num, &uart_config));
@@ -57,7 +55,7 @@ void uart0_init(){
 	ESP_ERROR_CHECK(uart_set_pin(uart_num,UART_PIN_NO_CHANGE,UART_PIN_NO_CHANGE,18,19));
 
 	//Setup UART buffered IO with event queue
-	const int uart_buffer_size = (1024 * 2);
+	const int uart_buffer_size = (1024 * 5);
 	QueueHandle_t uart_queue;
 	
 	//Install UART driver using an event queue 
@@ -70,12 +68,14 @@ void uart0_read(void *ignore){
 	//Read data from UART
 	
 	const int uart_num = UART_NUM_2;
-	uint8_t data[128]="asdasd";
 	int length = 0;
 	ESP_ERROR_CHECK(uart_get_buffered_data_len(uart_num, (size_t*)&length));
-	length = uart_read_bytes(uart_num,data,length,100);
 
-	for(int i=0;i<128;i++){
+	uint8_t data[length];
+	int res = uart_read_bytes(uart_num,data,length,100);
+
+	printf("%d %d",length,res);
+	for(int i=0;i<length;i++){
 		printf("%c",data[i]);
 	}
 
@@ -135,7 +135,7 @@ void app_main(void)
 
 	gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 
-	// uart0_init();
+	uart0_init();
 
 	while(1){
 
@@ -146,7 +146,7 @@ void app_main(void)
 
 		xTaskCreate(&task_send_msg, "send message", 2048, NULL, 6, NULL);
 
-		// xTaskCreate(&uart0_read, "receive cordinates", 2048, NULL, 6, NULL);
+		 xTaskCreate(&uart0_read, "receive cordinates", 2048, NULL, 6, NULL);
 		// Blink off
 		gpio_set_level(BLINK_GPIO, 0);
 		vTaskDelay(500 / portTICK_PERIOD_MS);
@@ -156,5 +156,4 @@ void app_main(void)
 		vTaskDelay(500 / portTICK_PERIOD_MS);
 
 	}
-	
 }

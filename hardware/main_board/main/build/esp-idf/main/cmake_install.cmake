@@ -1,4 +1,4 @@
-# Install script for directory: /home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/main_board/main/main
+# Install script for directory: /home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
