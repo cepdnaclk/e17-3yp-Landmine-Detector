@@ -17,11 +17,15 @@ void setup(){
 }
 
 void loop(){
-  while (ss.available() > 0){
-    // get the byte data from the GPS
-    byte gpsData = ss.read();
-    Serial.write(gpsData);
-    
-  }
+
+
+  int byteSent = ss.write("hello");
+  Serial.write(byteSent);
+
+//   while (ss.available() > 0){
+//    // get the byte data from the GPS
+//    byte gpsData = ss.read();
+//    Serial.write(gpsData);
+//  }
   
 }
