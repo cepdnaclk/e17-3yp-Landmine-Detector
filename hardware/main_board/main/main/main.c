@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "esp_err.h"
 #include "esp_log.h"
@@ -31,9 +32,14 @@
 #define BUF_SIZE (1024)
 
 
-
 //esp32 hs only 2 i2c port 0 & 1
 //3 UART controllers
+
+/*string converter(uint8_t *str){*/
+
+	/*return string((char *)str);*/
+/*}*/
+
 
 void i2c_init_SENSOR(){
 	/*int i2c_master_port = 0;*/
@@ -81,9 +87,11 @@ static void echo_task(void *arg)
         // Read data from the UART
         int len = uart_read_bytes(ECHO_UART_PORT_NUM, data, BUF_SIZE, 20 / portTICK_RATE_MS);
 
-	for(int i=0;i<BUF_SIZE;i++)
-		printf("%c",data[i]);
-
+	/*for(int i=0;i<BUF_SIZE;i++)*/
+		/*printf("%c",data[i]);*/
+	/*std::string s= String((char *)data);*/
+	/*if(s.compare(0,3,"$GP")==0)*/
+		printf("%s",data);
 	printf("%d",len);
         // Write data back to the UART
 	uart_write_bytes(ECHO_UART_PORT_NUM, (const char *) data, len);
@@ -131,9 +139,22 @@ void task_read_MPU(void *ignore){
 	}
 
 	vTaskDelete(NULL);
-
-
 }
+
+void blink(void *ignore){
+
+	while(1){
+		// Blink off
+		gpio_set_level(BLINK_GPIO, 0);
+		vTaskDelay(500 / portTICK_PERIOD_MS);
+
+		//Blink on
+		gpio_set_level(BLINK_GPIO, 1);
+		vTaskDelay(500 / portTICK_PERIOD_MS);
+	}
+	vTaskDelete(NULL);
+}
+
 
 void app_main(void)
 {
@@ -143,25 +164,29 @@ void app_main(void)
 
 	gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 
-	xTaskCreate(echo_task, "uart_echo_task", ECHO_TASK_STACK_SIZE, NULL, 10, NULL);
+	/*xTaskCreate(echo_task, "uart_echo_task", ECHO_TASK_STACK_SIZE, NULL, 10, NULL);*/
+
+	xTaskCreatePinnedToCore(echo_task, "GPS cordinates", ECHO_TASK_STACK_SIZE, NULL, 10,NULL, 0);
 
 
-	while(1){
+	xTaskCreatePinnedToCore(blink, "test blinker", 2048, NULL, 10,NULL, 1);
 
-		printf("Hello world!\n");
+	/*while(1){*/
 
-		xTaskCreate(&task_read_MPU,"receive orientation", 2048,NULL,6,NULL);
-		printf("%c\n",I2C_NUM_MAX);
+		/*printf("Hello world!\n");*/
 
-		xTaskCreate(&task_send_msg, "send message", 2048, NULL, 6, NULL);
+		/*xTaskCreate(&task_read_MPU,"receive orientation", 2048,NULL,6,NULL);*/
+		/*printf("%c\n",I2C_NUM_MAX);*/
 
-		// Blink off
-		gpio_set_level(BLINK_GPIO, 0);
-		vTaskDelay(500 / portTICK_PERIOD_MS);
+		/*xTaskCreate(&task_send_msg, "send message", 2048, NULL, 6, NULL);*/
 
-		//Blink on
-		gpio_set_level(BLINK_GPIO, 1);
-		vTaskDelay(500 / portTICK_PERIOD_MS);
+		/*// Blink off*/
+		/*gpio_set_level(BLINK_GPIO, 0);*/
+		/*vTaskDelay(500 / portTICK_PERIOD_MS);*/
 
-	}
+		/*//Blink on*/
+		/*gpio_set_level(BLINK_GPIO, 1);*/
+		/*vTaskDelay(500 / portTICK_PERIOD_MS);*/
+
+	/*}*/
 }
