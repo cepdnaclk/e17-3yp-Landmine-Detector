@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "esp_err.h"
 #include "esp_log.h"
@@ -19,9 +20,26 @@
 #define ATMEL_ADDRESS 0x09
 #define MPU_ADDRESS 0x68
 
+#define ECHO_TEST_TXD 4 //(CONFIG_EXAMPLE_UART_TXD)
+#define ECHO_TEST_RXD 5 //(CONFIG_EXAMPLE_UART_RXD)
+#define ECHO_TEST_RTS (UART_PIN_NO_CHANGE)
+#define ECHO_TEST_CTS (UART_PIN_NO_CHANGE)
+
+#define ECHO_UART_PORT_NUM      2	// (CONFIG_EXAMPLE_UART_PORT_NUM)
+#define ECHO_UART_BAUD_RATE     9600	//(CONFIG_EXAMPLE_UART_BAUD_RATE)
+#define ECHO_TASK_STACK_SIZE    2048    //(CONFIG_EXAMPLE_TASK_STACK_SIZE)
+
+#define BUF_SIZE (1024)
+
+
 //esp32 hs only 2 i2c port 0 & 1
 //3 UART controllers
-//
+
+/*string converter(uint8_t *str){*/
+
+	/*return string((char *)str);*/
+/*}*/
+
 
 void i2c_init_SENSOR(){
 	/*int i2c_master_port = 0;*/
@@ -40,49 +58,47 @@ void i2c_init_SENSOR(){
 
 }
 
-void uart0_init(){
+static void echo_task(void *arg)
+{
+    /* Configure parameters of an UART driver,
+     * communication pins and install the driver */
+    uart_config_t uart_config = {
+        .baud_rate = ECHO_UART_BAUD_RATE,
+        .data_bits = UART_DATA_8_BITS,
+        .parity    = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
+        .source_clk = UART_SCLK_APB,
+    };
+    int intr_alloc_flags = 0;
 
-	const int uart_num = UART_NUM_2;
-	uart_config_t uart_config = {
-		.baud_rate = 9600,
-		.data_bits = UART_DATA_8_BITS,
-		.parity = UART_PARITY_DISABLE,
-		.stop_bits = UART_STOP_BITS_1,
-		.flow_ctrl = UART_HW_FLOWCTRL_CTS,
-		.rx_flow_ctrl_thresh = 122,
-	};
-	// Configure UART parameters
-	ESP_ERROR_CHECK(uart_param_config(uart_num, &uart_config));
+#if CONFIG_UART_ISR_IN_IRAM
+    intr_alloc_flags = ESP_INTR_FLAG_IRAM;
+#endif
 
-	ESP_ERROR_CHECK(uart_set_pin(uart_num,UART_PIN_NO_CHANGE,UART_PIN_NO_CHANGE,18,19));
+    ESP_ERROR_CHECK(uart_driver_install(ECHO_UART_PORT_NUM, BUF_SIZE * 2, 0, 0, NULL, intr_alloc_flags));
+    ESP_ERROR_CHECK(uart_param_config(ECHO_UART_PORT_NUM, &uart_config));
+    ESP_ERROR_CHECK(uart_set_pin(ECHO_UART_PORT_NUM, ECHO_TEST_TXD, ECHO_TEST_RXD, ECHO_TEST_RTS, ECHO_TEST_CTS));
 
-	//Setup UART buffered IO with event queue
-	const int uart_buffer_size = (1024 * 2);
-	QueueHandle_t uart_queue;
-	
-	//Install UART driver using an event queue 
-	ESP_ERROR_CHECK(uart_driver_install(uart_num,uart_buffer_size,uart_buffer_size, 10, &uart_queue,0));
+    // Configure a temporary buffer for the incoming data
+    uint8_t *data = (uint8_t *) malloc(BUF_SIZE);
+
+    while (1) {
+        // Read data from the UART
+        int len = uart_read_bytes(ECHO_UART_PORT_NUM, data, BUF_SIZE, 20 / portTICK_RATE_MS);
+
+	/*for(int i=0;i<BUF_SIZE;i++)*/
+		/*printf("%c",data[i]);*/
+	/*std::string s= String((char *)data);*/
+	/*if(s.compare(0,3,"$GP")==0)*/
+		printf("%s",data);
+	printf("%d",len);
+        // Write data back to the UART
+	uart_write_bytes(ECHO_UART_PORT_NUM, (const char *) data, len);
+    }
+
+    vTaskDelete(NULL);
 }
-
-
-void uart0_read(void *ignore){
-
-	//Read data from UART
-	
-	const int uart_num = UART_NUM_2;
-	uint8_t data[128]="asdasd";
-	int length = 0;
-	ESP_ERROR_CHECK(uart_get_buffered_data_len(uart_num, (size_t*)&length));
-	length = uart_read_bytes(uart_num,data,length,100);
-
-	for(int i=0;i<128;i++){
-		printf("%c",data[i]);
-	}
-
-	uart_flush(uart_num);
-	vTaskDelete(NULL);
-}
-
 
 
 //task to send data to motor controller
@@ -123,9 +139,22 @@ void task_read_MPU(void *ignore){
 	}
 
 	vTaskDelete(NULL);
-
-
 }
+
+void blink(void *ignore){
+
+	while(1){
+		// Blink off
+		gpio_set_level(BLINK_GPIO, 0);
+		vTaskDelay(500 / portTICK_PERIOD_MS);
+
+		//Blink on
+		gpio_set_level(BLINK_GPIO, 1);
+		vTaskDelay(500 / portTICK_PERIOD_MS);
+	}
+	vTaskDelete(NULL);
+}
+
 
 void app_main(void)
 {
@@ -135,26 +164,29 @@ void app_main(void)
 
 	gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 
-	// uart0_init();
+	/*xTaskCreate(echo_task, "uart_echo_task", ECHO_TASK_STACK_SIZE, NULL, 10, NULL);*/
 
-	while(1){
+	xTaskCreatePinnedToCore(echo_task, "GPS cordinates", ECHO_TASK_STACK_SIZE, NULL, 10,NULL, 0);
 
-		printf("Hello world!\n");
 
-		xTaskCreate(&task_read_MPU,"receive orientation", 2048,NULL,6,NULL);
-		printf("%c\n",I2C_NUM_MAX);
+	xTaskCreatePinnedToCore(blink, "test blinker", 2048, NULL, 10,NULL, 1);
 
-		xTaskCreate(&task_send_msg, "send message", 2048, NULL, 6, NULL);
+	/*while(1){*/
 
-		// xTaskCreate(&uart0_read, "receive cordinates", 2048, NULL, 6, NULL);
-		// Blink off
-		gpio_set_level(BLINK_GPIO, 0);
-		vTaskDelay(500 / portTICK_PERIOD_MS);
+		/*printf("Hello world!\n");*/
 
-		//Blink on
-		gpio_set_level(BLINK_GPIO, 1);
-		vTaskDelay(500 / portTICK_PERIOD_MS);
+		/*xTaskCreate(&task_read_MPU,"receive orientation", 2048,NULL,6,NULL);*/
+		/*printf("%c\n",I2C_NUM_MAX);*/
 
-	}
-	
+		/*xTaskCreate(&task_send_msg, "send message", 2048, NULL, 6, NULL);*/
+
+		/*// Blink off*/
+		/*gpio_set_level(BLINK_GPIO, 0);*/
+		/*vTaskDelay(500 / portTICK_PERIOD_MS);*/
+
+		/*//Blink on*/
+		/*gpio_set_level(BLINK_GPIO, 1);*/
+		/*vTaskDelay(500 / portTICK_PERIOD_MS);*/
+
+	/*}*/
 }

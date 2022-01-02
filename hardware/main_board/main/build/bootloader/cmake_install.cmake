@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/main_board/main/build/bootloader/esp-idf/cmake_install.cmake")
+  include("/home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/build/bootloader/esp-idf/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/main_board/main/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

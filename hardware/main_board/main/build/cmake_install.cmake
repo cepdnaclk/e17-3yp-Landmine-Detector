@@ -1,4 +1,4 @@
-# Install script for directory: /home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/main_board/main
+# Install script for directory: /home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/cmake_install.cmake")
+  include("/home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/akilax0/Documents/3YP/e17-3yp-Landmine-Detector/hardware/main_board/main/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
