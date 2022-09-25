@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+# Content
+
+- GPS localization
+- Metal Detection
+- Motor Configurations
+- Path planning methods
+- Sensors and Control
+- MQTT Communication
+- Backend Architecture
+- Security Implementations
+- Testing
