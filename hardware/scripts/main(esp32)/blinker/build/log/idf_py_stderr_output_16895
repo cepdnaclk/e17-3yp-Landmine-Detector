@@ -1,0 +1,110 @@
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/bt/controller/lib_esp32 is out of date.  Run 'git
+  submodule update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/bt/controller/lib_esp32c2/esp32c2-bt-lib is out of
+  date.  Run 'git submodule update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/bt/controller/lib_esp32c3_family is out of date.
+  Run 'git submodule update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/bt/host/nimble/nimble is out of date.  Run 'git
+  submodule update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/esp_wifi/lib is out of date.  Run 'git submodule
+  update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/ieee802154/lib is out of date.  Run 'git submodule
+  update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/lwip/lwip is out of date.  Run 'git submodule
+  update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/openthread/lib is out of date.  Run 'git submodule
+  update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/openthread/openthread is out of date.  Run 'git
+  submodule update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+
+CMake Warning at /home/akilax0/Packages/esp/esp-idf/tools/cmake/git_submodules.cmake:52 (message):
+  Git submodule components/protobuf-c/protobuf-c is out of date.  Run 'git
+  submodule update --init --recursive' to fix.
+Call Stack (most recent call first):
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:80 (git_submodule_check)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/build.cmake:237 (__build_get_idf_git_revision)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/idf.cmake:53 (__build_init)
+  /home/akilax0/Packages/esp/esp-idf/tools/cmake/project.cmake:12 (include)
+  CMakeLists.txt:7 (include)
+
+

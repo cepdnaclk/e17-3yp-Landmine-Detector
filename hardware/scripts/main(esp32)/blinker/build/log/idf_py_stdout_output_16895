@@ -1,0 +1,87 @@
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/akilax0/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/akilax0/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/akilax0/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:231 CONFIG_MCPWM_ISR_IN_IRAM was replaced with CONFIG_MCPWM_ISR_IRAM_SAFE
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:302 CONFIG_ESP32_DEFAULT_CPU_FREQ_80 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_80
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:303 CONFIG_ESP32_DEFAULT_CPU_FREQ_160 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_160
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:304 CONFIG_ESP32_DEFAULT_CPU_FREQ_240 was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:305 CONFIG_ESP32_DEFAULT_CPU_FREQ_MHZ was replaced with CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:306 CONFIG_ESP32_SPIRAM_SUPPORT was replaced with CONFIG_SPIRAM
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:309 CONFIG_ESP32_ULP_COPROC_ENABLED was replaced with CONFIG_ULP_COPROC_ENABLED
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:310 CONFIG_ESP32_ULP_COPROC_RESERVE_MEM was replaced with CONFIG_ULP_COPROC_RESERVE_MEM
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:311 CONFIG_ESP32_DEBUG_OCDAWARE was replaced with CONFIG_ESP_DEBUG_OCDAWARE
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:312 CONFIG_ESP32_BROWNOUT_DET was replaced with CONFIG_ESP_BROWNOUT_DET
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:313 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_0 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_0
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:314 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_1 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_1
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:315 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_2 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_2
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:316 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_3 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_3
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:317 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_4 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_4
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:318 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_5 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_5
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:319 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_6 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_6
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:320 CONFIG_ESP32_BROWNOUT_DET_LVL_SEL_7 was replaced with CONFIG_ESP_BROWNOUT_DET_LVL_SEL_7
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:321 CONFIG_ESP32_BROWNOUT_DET_LVL was replaced with CONFIG_ESP_BROWNOUT_DET_LVL
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:322 CONFIG_ESP32_TIME_SYSCALL_USE_RTC_FRC1 was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC_HRT
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:323 CONFIG_ESP32_TIME_SYSCALL_USE_RTC was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_RTC
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:324 CONFIG_ESP32_TIME_SYSCALL_USE_FRC1 was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_HRT
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:325 CONFIG_ESP32_TIME_SYSCALL_USE_NONE was replaced with CONFIG_NEWLIB_TIME_SYSCALL_USE_NONE
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:326 CONFIG_ESP32_RTC_CLK_SRC_INT_RC was replaced with CONFIG_RTC_CLK_SRC_INT_RC
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:327 CONFIG_ESP32_RTC_CLK_SRC_EXT_CRYS was replaced with CONFIG_RTC_CLK_SRC_EXT_CRYS
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:328 CONFIG_ESP32_RTC_CLK_SRC_EXT_OSC was replaced with CONFIG_RTC_CLK_SRC_EXT_OSC
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:329 CONFIG_ESP32_RTC_CLK_SRC_INT_8MD256 was replaced with CONFIG_RTC_CLK_SRC_INT_8MD256
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:330 CONFIG_ESP32_RTC_CLK_CAL_CYCLES was replaced with CONFIG_RTC_CLK_CAL_CYCLES
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:331 CONFIG_ESP32_DEEP_SLEEP_WAKEUP_DELAY was replaced with CONFIG_ESP_SLEEP_DEEP_SLEEP_WAKEUP_DELAY
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:332 CONFIG_ESP32_XTAL_FREQ_40 was replaced with CONFIG_XTAL_FREQ_40
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:333 CONFIG_ESP32_XTAL_FREQ_26 was replaced with CONFIG_XTAL_FREQ_26
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:334 CONFIG_ESP32_XTAL_FREQ_AUTO was replaced with CONFIG_XTAL_FREQ_AUTO
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:335 CONFIG_ESP32_XTAL_FREQ was replaced with CONFIG_XTAL_FREQ
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:337 CONFIG_ESP32_NO_BLOBS was replaced with CONFIG_APP_NO_BLOBS
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:338 CONFIG_ESP32_COMPATIBLE_PRE_V2_1_BOOTLOADERS was replaced with CONFIG_APP_COMPATIBLE_PRE_V2_1_BOOTLOADERS
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:339 CONFIG_ESP32_COMPATIBLE_PRE_V3_1_BOOTLOADERS was replaced with CONFIG_APP_COMPATIBLE_PRE_V3_1_BOOTLOADERS
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:412 CONFIG_OTA_ALLOW_HTTP was replaced with CONFIG_ESP_HTTPS_OTA_ALLOW_HTTP
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:478 CONFIG_ESP32_PHY_CALIBRATION_AND_DATA_STORAGE was replaced with CONFIG_ESP_PHY_CALIBRATION_AND_DATA_STORAGE
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:479 CONFIG_ESP32_PHY_INIT_DATA_IN_PARTITION was replaced with CONFIG_ESP_PHY_INIT_DATA_IN_PARTITION
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:480 CONFIG_ESP32_PHY_MAX_WIFI_TX_POWER was replaced with CONFIG_ESP_PHY_MAX_WIFI_TX_POWER
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:481 CONFIG_ESP32_PHY_MAX_TX_POWER was replaced with CONFIG_ESP_PHY_MAX_TX_POWER
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:482 CONFIG_ESP32_REDUCE_PHY_TX_POWER was replaced with CONFIG_ESP_PHY_REDUCE_TX_POWER
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:523 CONFIG_ESP_TASK_WDT was replaced with CONFIG_ESP_TASK_WDT_INIT
+/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/sdkconfig:696 CONFIG_HAL_ASSERTION_SILIENT was replaced with CONFIG_HAL_ASSERTION_SILENT
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: /home/akilax0/.espressif/python_env/idf5.1_py3.10_env/bin/python (found version "3.10.6") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "blinker" version: 7394aaf6-dirty
+-- Adding linker script /home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/akilax0/Packages/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_netif esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport tinyusb ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/akilax0/Packages/esp/esp-idf/components/app_trace /home/akilax0/Packages/esp/esp-idf/components/app_update /home/akilax0/Packages/esp/esp-idf/components/bootloader /home/akilax0/Packages/esp/esp-idf/components/bootloader_support /home/akilax0/Packages/esp/esp-idf/components/bt /home/akilax0/Packages/esp/esp-idf/components/cmock /home/akilax0/Packages/esp/esp-idf/components/console /home/akilax0/Packages/esp/esp-idf/components/cxx /home/akilax0/Packages/esp/esp-idf/components/driver /home/akilax0/Packages/esp/esp-idf/components/efuse /home/akilax0/Packages/esp/esp-idf/components/esp-tls /home/akilax0/Packages/esp/esp-idf/components/esp_adc /home/akilax0/Packages/esp/esp-idf/components/esp_app_format /home/akilax0/Packages/esp/esp-idf/components/esp_common /home/akilax0/Packages/esp/esp-idf/components/esp_eth /home/akilax0/Packages/esp/esp-idf/components/esp_event /home/akilax0/Packages/esp/esp-idf/components/esp_gdbstub /home/akilax0/Packages/esp/esp-idf/components/esp_hid /home/akilax0/Packages/esp/esp-idf/components/esp_http_client /home/akilax0/Packages/esp/esp-idf/components/esp_http_server /home/akilax0/Packages/esp/esp-idf/components/esp_https_ota /home/akilax0/Packages/esp/esp-idf/components/esp_https_server /home/akilax0/Packages/esp/esp-idf/components/esp_hw_support /home/akilax0/Packages/esp/esp-idf/components/esp_lcd /home/akilax0/Packages/esp/esp-idf/components/esp_local_ctrl /home/akilax0/Packages/esp/esp-idf/components/esp_netif /home/akilax0/Packages/esp/esp-idf/components/esp_phy /home/akilax0/Packages/esp/esp-idf/components/esp_pm /home/akilax0/Packages/esp/esp-idf/components/esp_psram /home/akilax0/Packages/esp/esp-idf/components/esp_ringbuf /home/akilax0/Packages/esp/esp-idf/components/esp_rom /home/akilax0/Packages/esp/esp-idf/components/esp_system /home/akilax0/Packages/esp/esp-idf/components/esp_timer /home/akilax0/Packages/esp/esp-idf/components/esp_wifi /home/akilax0/Packages/esp/esp-idf/components/espcoredump /home/akilax0/Packages/esp/esp-idf/components/esptool_py /home/akilax0/Packages/esp/esp-idf/components/fatfs /home/akilax0/Packages/esp/esp-idf/components/freertos /home/akilax0/Packages/esp/esp-idf/components/hal /home/akilax0/Packages/esp/esp-idf/components/heap /home/akilax0/Packages/esp/esp-idf/components/http_parser /home/akilax0/Packages/esp/esp-idf/components/idf_test /home/akilax0/Packages/esp/esp-idf/components/ieee802154 /home/akilax0/Packages/esp/esp-idf/components/json /home/akilax0/Packages/esp/esp-idf/components/log /home/akilax0/Packages/esp/esp-idf/components/lwip /home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/main /home/akilax0/Packages/esp/esp-idf/components/mbedtls /home/akilax0/Packages/esp/esp-idf/components/mqtt /home/akilax0/Packages/esp/esp-idf/components/newlib /home/akilax0/Packages/esp/esp-idf/components/nvs_flash /home/akilax0/Packages/esp/esp-idf/components/openthread /home/akilax0/Packages/esp/esp-idf/components/partition_table /home/akilax0/Packages/esp/esp-idf/components/perfmon /home/akilax0/Packages/esp/esp-idf/components/protobuf-c /home/akilax0/Packages/esp/esp-idf/components/protocomm /home/akilax0/Packages/esp/esp-idf/components/pthread /home/akilax0/Packages/esp/esp-idf/components/sdmmc /home/akilax0/Packages/esp/esp-idf/components/soc /home/akilax0/Packages/esp/esp-idf/components/spi_flash /home/akilax0/Packages/esp/esp-idf/components/spiffs /home/akilax0/Packages/esp/esp-idf/components/tcp_transport /home/akilax0/Packages/esp/esp-idf/components/tinyusb /home/akilax0/Packages/esp/esp-idf/components/ulp /home/akilax0/Packages/esp/esp-idf/components/unity /home/akilax0/Packages/esp/esp-idf/components/usb /home/akilax0/Packages/esp/esp-idf/components/vfs /home/akilax0/Packages/esp/esp-idf/components/wear_levelling /home/akilax0/Packages/esp/esp-idf/components/wifi_provisioning /home/akilax0/Packages/esp/esp-idf/components/wpa_supplicant /home/akilax0/Packages/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/scripts/ESP32_test_scripts/scratch/blinker/build

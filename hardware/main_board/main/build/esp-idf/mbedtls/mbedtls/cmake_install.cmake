@@ -1,4 +1,4 @@
-# Install script for directory: /home/akilax0/Packages/esp-idf/components/mbedtls/mbedtls
+# Install script for directory: /home/akilax0/Packages/esp/esp-idf/components/mbedtls/mbedtls
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,13 +34,14 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/home/akilax0/.espressif/tools/xtensa-esp32-elf/esp-2021r2-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump")
+  set(CMAKE_OBJDUMP "/home/akilax0/.espressif/tools/xtensa-esp32-elf/esp-2022r1-11.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
-  include("/home/akilax0/Documents/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("/home/akilax0/Documents/projects/e17-3yp-Landmine-Detector/hardware/main_board/main/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
 
 endif()
 
