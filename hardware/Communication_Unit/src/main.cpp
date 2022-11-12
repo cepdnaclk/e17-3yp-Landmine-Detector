@@ -1,29 +1,68 @@
-// Wire Peripheral Sender
+// Wire Peripheral Receiver
 // by Nicholas Zambetti <http://www.zambetti.com>
 
 // Demonstrates use of the Wire library
-// Sends data as an I2C/TWI peripheral device
-// Refer to the "Wire Master Reader" example for use with this
+// Receives data as an I2C/TWI Peripheral device
+// Refer to the "Wire Master Writer" example for use with this
 
 // Created 29 March 2006
 
 // This example code is in the public domain.
+
 #include <Arduino.h>
 #include <Wire.h>
 
-// function that executes whenever data is requested by master
+// function that executes whenever data is received from master
 // this function is registered as an event, see setup()
-void requestEvent() {
-  Wire.write("hello "); // respond with message of 6 bytes
-  // as expected by master
+void receiveEvent(int howMany)
+{
+
+  union {
+    float a;
+    unsigned char bytes[4];
+  } thing;
+
+
+  int i=0;
+  while(4 < Wire.available()) // loop through all but the last
+  {
+    thing.bytes[i] = Wire.read();
+    i++;
+
+    // char c = Wire.read(); // receive byte as a character
+    // Serial.print(c);         // print the character
+  }
+
+  Serial.print(thing.a);
+  Serial.print(" ");
+
+  i=0;
+  while(0< Wire.available()) // loop through all but the last
+  {
+    thing.bytes[i] = Wire.read();
+    i++;
+
+    // char c = Wire.read(); // receive byte as a character
+    // Serial.print(c);         // print the character
+  }
+  
+  Serial.print(thing.a);
+  Serial.println(" ");
+
+
+  // int x = Wire.read();    // receive byte as an integer
+  // Serial.println(x);         // print the integer
 }
 
-void setup() {
-  Wire.begin(8);                // join i2c bus with address #8
-  Wire.onRequest(requestEvent); // register event
+void setup()
+{
+  Wire.begin(4);                // join i2c bus with address #4
+  Wire.onReceive(receiveEvent); // register event
+  Serial.begin(9600);           // start serial for output
 }
 
-void loop() {
+void loop()
+{
   delay(100);
 }
 
