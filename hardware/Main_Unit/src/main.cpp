@@ -148,17 +148,56 @@ void updateSerial(){
 //Display GPS data 
 void displayInfo()
 {
+
+  int ii;
+  union {
+    float a;
+    unsigned char bytes[4];
+  } thing;
+
+
+  // byte gpslat,gpslan;
+
+  Wire.beginTransmission(4); // transmit to device #4
+
   Serial.print(F("Location: "));
+  // Wire.write("Location: ");
+
+  
   if (gps.location.isValid()){
+    thing.a = gps.location.lat();
+    Wire.write(thing.bytes,4);
+    // Wire.write(" ");
+    thing.a = gps.location.lng();
+    Wire.write(thing.bytes,4);
+    
+
+  
     Serial.print(gps.location.lat(), 6);
     Serial.print(F(","));
     Serial.print(gps.location.lng(), 6);
+    
+  
+    // Wire.write(gps.location.lat());
+    // Wire.write(",");
+    // Wire.write(gps.location.lng())
+   
   }
   else
   {
+    Wire.write("INVALID");
     Serial.print(F("INVALID"));
   }
+  // Wire.write("\n");
+  Wire.endTransmission();
+  Serial.println("");
 }
+
+/********************* IMU ***********************/
+const int MPU_ADDR = 0x68; // I2C address of the MPU-6050
+int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
+
+
 
 void setup() {
   Serial.begin(115200);
@@ -181,6 +220,14 @@ void setup() {
   //GPS
   Serial2.begin(9600);
   delay(3000);
+
+  Wire.begin();
+  // //I2C for IMU
+  // Wire.begin(21, 22, 100000); // sda, scl, clock speed
+  // Wire.beginTransmission(MPU_ADDR);
+  // Wire.write(0x6B);  // PWR_MGMT_1 register
+  // Wire.write(0);     // set to zero (wakes up the MPU−6050)
+  // Wire.endTransmission(true);
 
   Serial.println("Setup done");
 }
@@ -205,6 +252,21 @@ void loop() {
 
   // publishMessage();
   // client.loop();
+  
+
+  //Write to I2C Slave  
+
+
+  while (Serial2.available() > 0)
+    if (gps.encode(Serial2.read()))
+      displayInfo();
+  if (millis() > 5000 && gps.charsProcessed() < 10)
+  {
+    Serial.println(F("No GPS detected: check wiring."));
+    // Wire.write("No GPS detected: check wiring.");
+    while (true);
+  }
+
 
 
   if (Serial.available()) {
@@ -214,6 +276,6 @@ void loop() {
     Serial.write(SerialBT.read());
   }
 
-  delay(20);
+  delay(500);
   
 }
