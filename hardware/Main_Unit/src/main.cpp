@@ -276,6 +276,6 @@ void loop() {
     Serial.write(SerialBT.read());
   }
 
-  delay(500);
+  delay(5000);
   
 }
