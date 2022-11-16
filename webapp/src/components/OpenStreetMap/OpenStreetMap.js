@@ -410,6 +410,17 @@ function OpenStreetMap() {
       })
     }
 
+    useEffect(()=>{
+      const interval = setInterval(()=>{
+        console.log("Logs in every 10 seconds");
+        showLandmines();
+      }, 10000);
+      return () => clearInterval(interval);
+    }, [])
+
+
+
+
     return(
 
 
