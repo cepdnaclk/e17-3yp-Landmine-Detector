@@ -121,84 +121,6 @@ const validateFloat = (text)=> {
 
 
 function createCoodinatesArray(lat, lan, rad) {
-  // const currentdate = new Date(); 
-
-  // console.log('Auth '+Auth.currentUserPoolUser);
-
-
-
-  // Auth.currentUserPoolUser()
-  // .then(user=>{
-  //   // console.log(user);
-  //   searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
-  //   // setFormData({ ...formData, 'id': searchID})
-  //   initialFormState.id = searchID
-  //   console.log(searchID);
-  // } )
-
-  // console.log('secondary point is '+lat+' '+lan);
-  const arraySize = parseInt((2 * rad) / 1.1);
-  console.log(rad*2);
-  console.log(arraySize);
-  console.log('seacrId ' + initialFormState.id);
-  // console.log(rad);
-
-
-  // //In reacl case
-  const coordinates = []
-  //if arraysize is odd
-  //go to top left
-  const topLeftLat = lat + (((arraySize/2)-1)*0.00001);
-  const topLeftLan = lan - (((arraySize/2)-1)*0.00001);
-
-  /*** */
-  //coordinates.push([topLeftLat, topLeftLan])
-  //coordinates.push([topLeftLat-0.000005, topLeftLan+0.000005])
-/*** */
-
-
-  for(let row=0; row<arraySize; row++) {
-    for(let col=0; col<arraySize; col++) {
-      let current;
-      current = [topLeftLat-row*0.00001, topLeftLan+col*0.00001]
-      //create_data(current, row, col, searchID)
-      // console.log('current is '+current);
-      coordinates.push(current)
-    }
-
-  }
-
-  globalCoorinates = coordinates
-
-  console.log(coordinates.length);
-
-  // //to display
-  // const coordinates = []
-  // //if arraysize is odd
-  // //go to top left
-  // const topLeftLat = lat - ((arraySize-1)*0.0005);
-  // const topLeftLan = lan + ((arraySize-1)*0.0005);
-
-  // for(let row=0; row<arraySize-1; row++) {
-  //   for(let col=0; col<arraySize-1; col++) {
-  //     let current;
-  //     current = [topLeftLat-topLeftLat*row*0.0001, topLeftLan+topLeftLan*col*0.0001]
-  //     // console.log('current is '+current);
-  //     coordinates.push(current)
-  //   }
-  // }
-
-  // console.log('here is the cordinates array');
-  // console.log(coordinates);
-
-  // const displayMarker = (pos)=>{
-  //   console.log('now im going to draw '+ pos);
-  //   return(
-  //   <Marker
-  //     position={pos}>
-  //   </Marker>
-  // );
-  // }
 
   const test = [[lat-0.0001, lan+0.0001], [lat-0.0002, lan+0.0002]];
 
@@ -206,10 +128,10 @@ function createCoodinatesArray(lat, lan, rad) {
     <div>
       {
         
-        coordinates.map((item, index)=>{
+        globalCoorinates.map((item)=>{
           // console.log(index);
           return(
-            <div key={index}>
+            <div key={globalCoorinates.indexOf(item)}>
             <Marker
               position={item}>
             </Marker>
@@ -407,6 +329,7 @@ function OpenStreetMap() {
       .then(res=>{
         console.log(res.data);
         if (landmines !== res.data) {
+          globalCoorinates = res.data
           setLandmines(res.data);
         }
       })
