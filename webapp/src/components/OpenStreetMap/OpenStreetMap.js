@@ -16,6 +16,8 @@ import Proceed from "../Proceed/Proceed";
 import PostList from "../PostList/PostList";
 
 
+import axios from "axios";
+
 const initialDate = new Date(); 
 
 
@@ -313,8 +315,8 @@ function OpenStreetMap() {
   async function create() {
     
 
-
-
+    showLandmines();
+    
     console.log('helooooooo');
     if (!formData.name) return;
 
@@ -395,6 +397,17 @@ function OpenStreetMap() {
     const enableTable = ()=>{
       console.log('called table');
       setCallTable(true)
+    }
+
+    const showLandmines = ()=>{
+      console.log('landmines table showed');
+      axios.get('https://obscure-depths-03721.herokuapp.com/get-landmines')
+      .then(res=>{
+        console.log(res.data);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
     }
 
     return(
