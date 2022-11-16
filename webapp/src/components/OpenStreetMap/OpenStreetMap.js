@@ -315,7 +315,7 @@ function OpenStreetMap() {
   async function create() {
     
 
-    showLandmines();
+    // showLandmines();
     
     console.log('helooooooo');
     if (!formData.name) return;
@@ -399,11 +399,16 @@ function OpenStreetMap() {
       setCallTable(true)
     }
 
+    const [landmines, setLandmines] = useState([]);
+
     const showLandmines = ()=>{
       console.log('landmines table showed');
       axios.get('https://obscure-depths-03721.herokuapp.com/get-landmines')
       .then(res=>{
         console.log(res.data);
+        if (landmines !== res.data) {
+          setLandmines(res.data);
+        }
       })
       .catch(err=>{
         console.log(err);
@@ -417,6 +422,29 @@ function OpenStreetMap() {
       }, 10000);
       return () => clearInterval(interval);
     }, [])
+
+
+    function callLandminesTableToUI() {
+      return(
+        <div>
+          <br/>
+          <table className='co-table' id="customers">
+            <tr>
+                <th>Latitude</th>
+                <th>Langitude</th>
+            </tr>
+            {landmines.map((item, index)=>{
+              return(
+                <tr key={index}>
+              <td>{item[0].toFixed(5)}</td>
+              <td>{item[1].toFixed(5)}</td>
+              </tr>
+              )
+            })}
+          </table>
+        </div>
+      )
+    }
 
 
 
@@ -644,6 +672,11 @@ function OpenStreetMap() {
       <div>
         {console.log(callTable)}
         {callTable ? callTableToUI(): null}
+      </div>
+
+      <div>
+        <h1>Detected landmines</h1>
+        { callLandminesTableToUI() }
       </div>
 
 
