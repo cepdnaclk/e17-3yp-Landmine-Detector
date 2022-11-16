@@ -6,9 +6,16 @@
 #include <SPI.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
-#include <BluetoothSerial.h>
+// #include <BluetoothSerial.h>
 
 #include <TinyGPSPlus.h>
+
+//Task to Handle GPS and data communication
+TaskHandle_t Task1;
+
+
+//Task to Handle IMU Data and data to slave 
+TaskHandle_t Task2;
 
 
 //Checking bluetooth
@@ -16,7 +23,7 @@
 #error Bluetooth is not enabled! Please run `make menuconfig` to and enable it
 #endif
 
-BluetoothSerial SerialBT;
+// BluetoothSerial SerialBT;
 
 const int PushButton = 15;
 
@@ -37,7 +44,7 @@ PubSubClient client(net);
 void initWiFi() {
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi ..");
+  Serial.print("Connecting to Network ..");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
     delay(1000);
@@ -56,6 +63,8 @@ void publishMessage()
   client.publish(AWS_IOT_PUBLISH_TOPIC, jsonBuffer);
 }
  
+
+
 void messageHandler(char* topic, byte* payload, unsigned int length)
 {
   Serial.print("incoming: ");
@@ -199,23 +208,70 @@ int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
 
 
 
+//Task1code: Wait for init MQTT and pub GPS data
+void Task1code( void * pvParameters ){
+  Serial.print("Task1 running on core ");
+  Serial.println(xPortGetCoreID());
+
+
+
+  for(;;){
+
+    // checkWIFI();
+
+    unsigned long currentMillis = millis();
+    // if WiFi is down, try reconnecting every CHECK_WIFI_TIME seconds
+    if ((WiFi.status() != WL_CONNECTED) && (currentMillis - previousMillis >=interval)) {
+      Serial.print(millis());
+      Serial.println("Reconnecting to WiFi...");
+      WiFi.disconnect();
+      WiFi.reconnect();
+      previousMillis = currentMillis;
+    }
+    while (Serial2.available() > 0)
+      if (gps.encode(Serial2.read()))
+        displayInfo();
+    if (millis() > 5000 && gps.charsProcessed() < 10)
+    {
+      Serial.println(F("No GPS detected: check wiring."));
+      // Wire.write("No GPS detected: check wiring.");
+      while (true);
+    }
+
+  } 
+}
+
+//Task2code: READ IMU data and send data to slave
+void Task2code( void * pvParameters ){
+  Serial.print("Task1 running on core ");
+  Serial.println(xPortGetCoreID());
+
+
+
+  for(;;){
+    /// READ IMU data
+
+}
+
+
+
 void setup() {
   Serial.begin(115200);
-  // initWiFi();
+  initWiFi();
   // initAWS();
   // Serial.print("RSSI: ");
   // Serial.println(WiFi.RSSI());
 
-  SerialBT.begin("ESP32test"); //Bluetooth device name
-  Serial.println("The device started, now you can pair it with bluetooth!");
+  // SerialBT.begin("ESP32test"); //Bluetooth device name
+  // Serial.println("The device started, now you can pair it with bluetooth!");
 
   // Setting up push button
   pinMode(PushButton, INPUT);
 
   // Set WiFi to station mode and disconnect from an AP if it was previously connected
-  // WiFi.mode(WIFI_STA);
-  // WiFi.disconnect();
-  // delay(100);
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+  delay(100);
 
   //GPS
   Serial2.begin(9600);
@@ -230,6 +286,29 @@ void setup() {
   // Wire.endTransmission(true);
 
   Serial.println("Setup done");
+
+
+
+      //create a task that will be executed in the Task1code() function, with priority 1 and executed on core 0
+  xTaskCreatePinnedToCore(
+                    Task1code,   /* Task function. */
+                    "Task1",     /* name of task. */
+                    10000,       /* Stack size of task */
+                    NULL,        /* parameter of the task */
+                    1,           /* priority of the task */
+                    &Task1,      /* Task handle to keep track of created task */
+                    0);          /* pin task to core 0 */                  
+  delay(500); 
+        //create a task that will be executed in the Task1code() function, with priority 1 and executed on core 0
+  xTaskCreatePinnedToCore(
+                    Task2code,   /* Task function. */
+                    "Task2",     /* name of task. */
+                    10000,       /* Stack size of task */
+                    NULL,        /* parameter of the task */
+                    1,           /* priority of the task */
+                    &Task2,      /* Task handle to keep track of created task */
+                    1);          /* pin task to core 0 */                  
+  delay(500); 
 }
 
 void loop() {
@@ -257,25 +336,25 @@ void loop() {
   //Write to I2C Slave  
 
 
-  while (Serial2.available() > 0)
-    if (gps.encode(Serial2.read()))
-      displayInfo();
-  if (millis() > 5000 && gps.charsProcessed() < 10)
-  {
-    Serial.println(F("No GPS detected: check wiring."));
-    // Wire.write("No GPS detected: check wiring.");
-    while (true);
-  }
+  // while (Serial2.available() > 0)
+  //   if (gps.encode(Serial2.read()))
+  //     displayInfo();
+  // if (millis() > 5000 && gps.charsProcessed() < 10)
+  // {
+  //   Serial.println(F("No GPS detected: check wiring."));
+  //   // Wire.write("No GPS detected: check wiring.");
+  //   while (true);
+  // }
 
 
 
-  if (Serial.available()) {
-    SerialBT.write(Serial.read());
-  }
-  if (SerialBT.available()) {
-    Serial.write(SerialBT.read());
-  }
+  // if (Serial.available()) {
+  //   SerialBT.write(Serial.read());
+  // }
+  // if (SerialBT.available()) {
+  //   Serial.write(SerialBT.read());
+  // }
 
-  delay(5000);
+  // delay(5000);
   
 }

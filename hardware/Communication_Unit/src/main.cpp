@@ -12,7 +12,10 @@
 
 #include "DHT.h"
 
-#define DHTPIN 2     // Digital pin connected to the DHT sensor
+//Task to read DHT data
+TaskHandle_t Task1;
+
+#define DHTPIN 0   // Digital pin connected to the DHT sensor
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
@@ -33,8 +36,8 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 // defines pins numbers
-const int trigPin = 4;
-const int echoPin = 3;
+const int trigPin = 16;
+const int echoPin = 4;
 
 
 // defines variables
@@ -86,12 +89,84 @@ void receiveEvent(int howMany)
   // Serial.println(x);         // print the integer
 }
 
+//Task1code: READ DHT data and calculate distance
+void Task1code( void * pvParameters ){
+  Serial.print("Task1 running on core ");
+  Serial.println(xPortGetCoreID());
+
+
+
+  for(;;){
+        // Wait a few seconds between measurements.
+    delay(2000);
+
+    // Reading temperature or humidity takes about 250 milliseconds!
+    // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+    float h = dht.readHumidity();
+    // Read temperature as Celsius (the default)
+    float t = dht.readTemperature();
+    // Read temperature as Fahrenheit (isFahrenheit = true)
+    float f = dht.readTemperature(true);
+
+    // Check if any reads failed and exit early (to try again).
+    if (isnan(h) || isnan(t) || isnan(f)) {
+      Serial.println(F("Failed to read from DHT sensor!"));
+      return;
+    }
+
+    // Compute heat index in Fahrenheit (the default)
+    float hif = dht.computeHeatIndex(f, h);
+    // Compute heat index in Celsius (isFahreheit = false)
+    float hic = dht.computeHeatIndex(t, h, false);
+
+    Serial.print(F("Humidity: "));
+    Serial.print(h);
+    Serial.print(" ");
+    Serial.print(F("Temp: "));
+    Serial.println(t);
+
+
+    // Clears the trigPin
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    // Sets the trigPin on HIGH state for 10 micro seconds
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    // Reads the echoPin, returns the sound wave travel time in microseconds
+    duration = pulseIn(echoPin, HIGH);
+    speed_sound = 331.3 + 0.606*(float)t + 0.01243*h;
+    speed_sound = speed_sound/10000;
+
+    // Calculating the distance
+    distance = duration * speed_sound/ 2;
+    // Prints the distance on the Serial Monitor
+    Serial.print("Distance with t & h: ");
+    Serial.println(distance);
+    Serial.print("Distance without: ");
+    Serial.println(duration * 0.034 / 2);
+
+  }
+}
+
+
 void setup()
 {
   Wire.begin(4);                // join i2c bus with address #4
   Wire.onReceive(receiveEvent); // register event
-  Serial.begin(9600);           // start serial for output
+  Serial.begin(115200);           // start serial for output
   dht.begin();
+
+        //create a task that will be executed in the Task1code() function, with priority 1 and executed on core 0
+  xTaskCreatePinnedToCore(
+                    Task1code,   /* Task function. */
+                    "Task1",     /* name of task. */
+                    10000,       /* Stack size of task */
+                    NULL,        /* parameter of the task */
+                    1,           /* priority of the task */
+                    &Task1,      /* Task handle to keep track of created task */
+                    0);          /* pin task to core 0 */                  
+  delay(500); 
 
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode(echoPin, INPUT); // Sets the echoPin as an Input
@@ -100,53 +175,6 @@ void setup()
 void loop()
 {
 
-  // Wait a few seconds between measurements.
-  delay(2000);
 
-  // Reading temperature or humidity takes about 250 milliseconds!
-  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-  float h = dht.readHumidity();
-  // Read temperature as Celsius (the default)
-  float t = dht.readTemperature();
-  // Read temperature as Fahrenheit (isFahrenheit = true)
-  float f = dht.readTemperature(true);
-
-  // Check if any reads failed and exit early (to try again).
-  if (isnan(h) || isnan(t) || isnan(f)) {
-    Serial.println(F("Failed to read from DHT sensor!"));
-    return;
-  }
-
-  // Compute heat index in Fahrenheit (the default)
-  float hif = dht.computeHeatIndex(f, h);
-  // Compute heat index in Celsius (isFahreheit = false)
-  float hic = dht.computeHeatIndex(t, h, false);
-
-  Serial.print(F("Humidity: "));
-  Serial.print(h);
-  Serial.print(" ");
-  Serial.print(F("Temp: "));
-  Serial.println(t);
-
-
-  // Clears the trigPin
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
-  // Sets the trigPin on HIGH state for 10 micro seconds
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-  // Reads the echoPin, returns the sound wave travel time in microseconds
-  duration = pulseIn(echoPin, HIGH);
-  speed_sound = 331.3 + 0.606*(float)t + 0.01243*h;
-  speed_sound = speed_sound/10000;
-
-  // Calculating the distance
-  distance = duration * speed_sound/ 2;
-  // Prints the distance on the Serial Monitor
-  Serial.print("Distance with t & h: ");
-  Serial.println(distance);
-  Serial.print("Distance without: ");
-  Serial.println(duration * 0.034 / 2);
 }
 
