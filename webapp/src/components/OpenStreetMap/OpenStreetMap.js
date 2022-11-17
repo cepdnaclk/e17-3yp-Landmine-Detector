@@ -355,10 +355,19 @@ function OpenStreetMap() {
       console.log('landmines table showed');
       axios.get('https://obscure-depths-03721.herokuapp.com/get-detections')
       .then(res=>{
-        console.log(res.data);
+        console.log("global coordinates - " + globalCoorinates);
+        console.log("resp " + res.data);
+        console.log("length " + res.data.length);
+
+        
         if (landmines !== res.data) {
-          globalCoorinates = res.data
-          setLandmines(res.data);
+          if (res.data.length != 0) {
+            globalCoorinates = res.data
+            setLandmines(res.data);
+          }
+            
+          
+          
         }
       })
       .catch(err=>{
