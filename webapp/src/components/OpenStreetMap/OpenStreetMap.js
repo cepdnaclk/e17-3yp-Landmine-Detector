@@ -130,13 +130,41 @@ function createCoodinatesArray(lat, lan, rad) {
         
         globalCoorinates.map((item)=>{
           // console.log(index);
-          return(
-            <div key={globalCoorinates.indexOf(item)}>
-            <Marker
-              position={item}>
-            </Marker>
-          </div>
-          )
+
+            if (item[0] == 'landmine') {
+              return(
+              <div key={globalCoorinates.indexOf(item)}>
+
+              
+
+              <Circle
+                  center={[item[1], item[2]]} fillColor="red" radius={5}
+              />
+
+              {/* <Marker
+                // position={item}>
+                position={[item[1], item[2]]}>
+              </Marker> */}
+            </div>
+              )
+            } else {
+              return(
+                <div key={globalCoorinates.indexOf(item)}>
+  
+                
+  
+                <Circle
+                    center={[item[1], item[2]]} fillColor="blue" radius={5}
+                />
+  
+                {/* <Marker
+                  // position={item}>
+                  position={[item[1], item[2]]}>
+                </Marker> */}
+              </div>
+                )
+            }
+          
         })
 
 
@@ -325,7 +353,7 @@ function OpenStreetMap() {
 
     const showLandmines = ()=>{
       console.log('landmines table showed');
-      axios.get('https://obscure-depths-03721.herokuapp.com/get-landmines')
+      axios.get('https://obscure-depths-03721.herokuapp.com/get-detections')
       .then(res=>{
         console.log(res.data);
         if (landmines !== res.data) {
@@ -353,14 +381,16 @@ function OpenStreetMap() {
           <br/>
           <table className='co-table' id="customers">
             <tr>
+                <th>Type</th>
                 <th>Latitude</th>
                 <th>Langitude</th>
             </tr>
             {landmines.map((item, index)=>{
               return(
                 <tr key={index}>
-              <td>{item[0].toFixed(5)}</td>
+                  <td>{item[0]}</td>
               <td>{item[1].toFixed(5)}</td>
+              <td>{item[2].toFixed(5)}</td>
               </tr>
               )
             })}
@@ -598,7 +628,7 @@ function OpenStreetMap() {
       </div>
 
       <div>
-        <h1>Detected landmines</h1>
+        <h1>Detected landmines and Obstacles</h1>
         { callLandminesTableToUI() }
       </div>
 
