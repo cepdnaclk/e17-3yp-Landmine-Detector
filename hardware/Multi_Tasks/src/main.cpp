@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Wire.h>
 
 
 TaskHandle_t Task1;
