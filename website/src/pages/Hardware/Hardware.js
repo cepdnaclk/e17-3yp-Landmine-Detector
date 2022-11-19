@@ -7,6 +7,8 @@ function Hardware() {
         <div className="slide-show">
         <h1 style={{color:"#43dea5", textAlign:'center' }}>Hardware Design</h1>  
         <br></br>      
+
+            <div>
             <Slide easing="ease">
                     <div className="each-slide">
                     <h1 className='sub-topic-hd'>Obstacle Detection</h1>
@@ -97,7 +99,24 @@ function Hardware() {
                         </div>
                     </div>
             </Slide>
+            </div>
             <br/><br/>
+
+
+                    <div>
+                            <div className="each-slide">
+                            <h1 className='sub-topic-ha'>3d Model</h1>
+                                <div className="left">
+                                    <img alt="" src={process.env.PUBLIC_URL + '/images/3d model.JPG'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'95%'}}/> 
+                                    <div  className='hd-text'>
+                                        <p>3d model created using Fusion 360.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <br></br>
+                    
             
                     <div className="each-slide">
                     <h1 className='sub-topic-ha'>Connections</h1>
@@ -113,7 +132,7 @@ function Hardware() {
                         </div>
                     </div>
            
-            <div>
+                <div>
                     <div className="each-slide">
                     <h1 className='sub-topic-ha'>Power</h1>
                         <div className="left">
@@ -127,7 +146,7 @@ function Hardware() {
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
         </div>
     )
 }
