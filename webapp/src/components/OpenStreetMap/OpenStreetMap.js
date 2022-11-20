@@ -267,7 +267,8 @@ function OpenStreetMap() {
 
     axios.post('http://localhost:5000/create-search', {
       lat: lat,
-      lan: lan
+      lan: lan,
+      rad: radius
     })
     .then(res=>{
       console.log(res);
