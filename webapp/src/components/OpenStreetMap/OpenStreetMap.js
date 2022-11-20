@@ -265,6 +265,19 @@ function OpenStreetMap() {
   async function create() {
     
 
+    axios.post('https://obscure-depths-03721.herokuapp.com/get-detections', {
+      lat: lat,
+      lan: lan,
+      rad: radius
+    })
+    .then(res=>{
+      console.log(res);
+    })
+    .catch(err=>{
+      console.log(err);
+    });
+
+
     // showLandmines();
     
     console.log('helooooooo');
