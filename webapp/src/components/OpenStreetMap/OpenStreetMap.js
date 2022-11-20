@@ -265,7 +265,7 @@ function OpenStreetMap() {
   async function create() {
     
 
-    axios.post('https://obscure-depths-03721.herokuapp.com/get-detections', {
+    axios.post('https://obscure-depths-03721.herokuapp.com/create-search', {
       lat: lat,
       lan: lan,
       rad: radius
