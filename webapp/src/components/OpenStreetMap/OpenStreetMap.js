@@ -265,6 +265,18 @@ function OpenStreetMap() {
   async function create() {
     
 
+    axios.post('http://localhost:5000/create-search', {
+      lat: lat,
+      lan: lan
+    })
+    .then(res=>{
+      console.log(res);
+    })
+    .catch(err=>{
+      console.log(err);
+    });
+
+
     // showLandmines();
     
     console.log('helooooooo');
