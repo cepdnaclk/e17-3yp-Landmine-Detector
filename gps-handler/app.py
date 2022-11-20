@@ -20,6 +20,8 @@ coordinatesTopic = '/3yp/coordinates'
 
 detections = []
 
+coordinates = []
+
 mqtt_client = Mqtt(app)
 
 
@@ -40,6 +42,15 @@ def handle_mqtt_message(client, userdata, message):
     )
    data = json.loads(data['payload'])
 
+   #  check whether it is an endpoint
+   wayPoint = [data['lat'], data['lon']]
+
+   if (wayPoint in coordinates):
+       coordinates.remove(wayPoint)
+       print(len(coordinates))
+       return
+
+   print('its not a waypoint')
    detections.append([data['type'], data['lat'], data['lon']])
 
    print(detections)
@@ -60,15 +71,12 @@ def createSearch():
     lan = data['lan']
     rad = data['rad']
 
+    global coordinates
     coordinates = calculateWaypoints(lat, lan, rad)
 
-    # x = {
-    #     "name": "Thisaraaaa"
-    # }
-    #
-    #
-    # mqtt_client.publish(coordinatesTopic, json.dumps(x), 0)
     mqtt_client.publish(coordinatesTopic, json.dumps(coordinates), 0)
+    print(coordinates)
+    print(len(coordinates))
 
 
 
@@ -97,7 +105,7 @@ if __name__ == '__main__':
 # todos
 # listen to create search mqtt topic - **(change to post request)
 # calculate waypoints for robot - **
-# then send waypoints (5) through mqtt
+# then send waypoints (5) through mqtt **
 # listen and check waypoints are acheived
 # listen detections
 # until all points are checked
