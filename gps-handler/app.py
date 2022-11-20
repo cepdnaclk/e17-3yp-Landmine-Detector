@@ -11,11 +11,11 @@ app.config['MQTT_BROKER_URL'] = 'mqtt.eclipseprojects.io'
 app.config['MQTT_BROKER_PORT'] = 1883
 app.config['MQTT_KEEPALIVE'] = 5  # Set KeepAlive time in seconds
 
-topic = '/3yp/detections'
+topic = '/3yp/ldr01/detections'
 
-coordinatesTopic = '/3yp/coordinates'
+coordinatesTopic = '/3yp/ldr01/coordinates'
 
-finishedTopic = '/3yp/finish'
+finishedTopic = '/3yp/ldr01/finish'
 
 
 
