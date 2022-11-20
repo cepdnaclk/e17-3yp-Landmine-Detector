@@ -16,6 +16,8 @@ import Proceed from "../Proceed/Proceed";
 import PostList from "../PostList/PostList";
 
 
+import axios from "axios";
+
 const initialDate = new Date(); 
 
 
@@ -119,84 +121,6 @@ const validateFloat = (text)=> {
 
 
 function createCoodinatesArray(lat, lan, rad) {
-  // const currentdate = new Date(); 
-
-  // console.log('Auth '+Auth.currentUserPoolUser);
-
-
-
-  // Auth.currentUserPoolUser()
-  // .then(user=>{
-  //   // console.log(user);
-  //   searchID = user.username + currentdate.getMinutes()+currentdate.getSeconds()
-  //   // setFormData({ ...formData, 'id': searchID})
-  //   initialFormState.id = searchID
-  //   console.log(searchID);
-  // } )
-
-  // console.log('secondary point is '+lat+' '+lan);
-  const arraySize = parseInt((2 * rad) / 1.1);
-  console.log(rad*2);
-  console.log(arraySize);
-  console.log('seacrId ' + initialFormState.id);
-  // console.log(rad);
-
-
-  // //In reacl case
-  const coordinates = []
-  //if arraysize is odd
-  //go to top left
-  const topLeftLat = lat + (((arraySize/2)-1)*0.00001);
-  const topLeftLan = lan - (((arraySize/2)-1)*0.00001);
-
-  /*** */
-  //coordinates.push([topLeftLat, topLeftLan])
-  //coordinates.push([topLeftLat-0.000005, topLeftLan+0.000005])
-/*** */
-
-
-  for(let row=0; row<arraySize; row++) {
-    for(let col=0; col<arraySize; col++) {
-      let current;
-      current = [topLeftLat-row*0.00001, topLeftLan+col*0.00001]
-      //create_data(current, row, col, searchID)
-      // console.log('current is '+current);
-      coordinates.push(current)
-    }
-
-  }
-
-  globalCoorinates = coordinates
-
-  console.log(coordinates.length);
-
-  // //to display
-  // const coordinates = []
-  // //if arraysize is odd
-  // //go to top left
-  // const topLeftLat = lat - ((arraySize-1)*0.0005);
-  // const topLeftLan = lan + ((arraySize-1)*0.0005);
-
-  // for(let row=0; row<arraySize-1; row++) {
-  //   for(let col=0; col<arraySize-1; col++) {
-  //     let current;
-  //     current = [topLeftLat-topLeftLat*row*0.0001, topLeftLan+topLeftLan*col*0.0001]
-  //     // console.log('current is '+current);
-  //     coordinates.push(current)
-  //   }
-  // }
-
-  // console.log('here is the cordinates array');
-  // console.log(coordinates);
-
-  // const displayMarker = (pos)=>{
-  //   console.log('now im going to draw '+ pos);
-  //   return(
-  //   <Marker
-  //     position={pos}>
-  //   </Marker>
-  // );
-  // }
 
   const test = [[lat-0.0001, lan+0.0001], [lat-0.0002, lan+0.0002]];
 
@@ -204,15 +128,43 @@ function createCoodinatesArray(lat, lan, rad) {
     <div>
       {
         
-        coordinates.map((item, index)=>{
+        globalCoorinates.map((item)=>{
           // console.log(index);
-          return(
-            <div key={index}>
-            <Marker
-              position={item}>
-            </Marker>
-          </div>
-          )
+
+            if (item[0] == 'landmine') {
+              return(
+              <div key={globalCoorinates.indexOf(item)}>
+
+              
+
+              <Circle
+                  center={[item[1], item[2]]} fillColor="red" radius={5}
+              />
+
+              {/* <Marker
+                // position={item}>
+                position={[item[1], item[2]]}>
+              </Marker> */}
+            </div>
+              )
+            } else {
+              return(
+                <div key={globalCoorinates.indexOf(item)}>
+  
+                
+  
+                <Circle
+                    center={[item[1], item[2]]} fillColor="blue" radius={5}
+                />
+  
+                {/* <Marker
+                  // position={item}>
+                  position={[item[1], item[2]]}>
+                </Marker> */}
+              </div>
+                )
+            }
+          
         })
 
 
@@ -313,8 +265,8 @@ function OpenStreetMap() {
   async function create() {
     
 
-
-
+    // showLandmines();
+    
     console.log('helooooooo');
     if (!formData.name) return;
 
@@ -396,6 +348,68 @@ function OpenStreetMap() {
       console.log('called table');
       setCallTable(true)
     }
+
+    const [landmines, setLandmines] = useState([]);
+
+    const showLandmines = ()=>{
+      console.log('landmines table showed');
+      axios.get('https://obscure-depths-03721.herokuapp.com/get-detections')
+      .then(res=>{
+        console.log("global coordinates - " + globalCoorinates);
+        console.log("resp " + res.data);
+        console.log("length " + res.data.length);
+
+        
+        if (landmines !== res.data) {
+          if (res.data.length != 0) {
+            globalCoorinates = res.data
+            setLandmines(res.data);
+          }
+            
+          
+          
+        }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    }
+
+    useEffect(()=>{
+      const interval = setInterval(()=>{
+        console.log("Logs in every 10 seconds");
+        showLandmines();
+      }, 10000);
+      return () => clearInterval(interval);
+    }, [])
+
+
+    function callLandminesTableToUI() {
+      return(
+        <div>
+          <br/>
+          <table className='co-table' id="customers">
+            <tr>
+                <th>Type</th>
+                <th>Latitude</th>
+                <th>Langitude</th>
+            </tr>
+            {landmines.map((item, index)=>{
+              return(
+                <tr key={index}>
+                  <td>{item[0]}</td>
+              <td>{item[1].toFixed(5)}</td>
+              <td>{item[2].toFixed(5)}</td>
+              </tr>
+              )
+            })}
+          </table>
+        </div>
+      )
+    }
+
+
+
 
     return(
 
@@ -620,6 +634,11 @@ function OpenStreetMap() {
       <div>
         {console.log(callTable)}
         {callTable ? callTableToUI(): null}
+      </div>
+
+      <div>
+        <h1>Detected landmines and Obstacles</h1>
+        { callLandminesTableToUI() }
       </div>
 
 

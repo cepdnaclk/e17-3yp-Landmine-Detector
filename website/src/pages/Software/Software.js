@@ -88,6 +88,12 @@ Returned data from the robot will be published using MQTT and using IoT rule by 
             </div>
             <p>Profile</p>
           </div>
+          <div className="each-fade">
+            <div>
+              <img src={process.env.PUBLIC_URL +"/images/bluetooth.jpg"} />
+            </div>
+            <p>Bluetooth Controller</p>
+          </div>
 
         </Fade>
           </div>
