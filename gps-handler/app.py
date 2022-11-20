@@ -62,12 +62,15 @@ def createSearch():
 
     coordinates = calculateWaypoints(lat, lan, rad)
 
-    x = {
-        "name": "Thisaraaaa"
-    }
-    
+    # x = {
+    #     "name": "Thisaraaaa"
+    # }
+    #
+    #
+    # mqtt_client.publish(coordinatesTopic, json.dumps(x), 0)
+    mqtt_client.publish(coordinatesTopic, json.dumps(coordinates), 0)
 
-    mqtt_client.publish(coordinatesTopic, json.dumps(x), 0)
+
 
     return "data receieved"
 
