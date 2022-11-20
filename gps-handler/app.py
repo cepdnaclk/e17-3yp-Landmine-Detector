@@ -15,6 +15,8 @@ topic = '/3yp/detections'
 
 coordinatesTopic = '/3yp/coordinates'
 
+finishedTopic = '/3yp/finish'
+
 
 
 
@@ -48,6 +50,13 @@ def handle_mqtt_message(client, userdata, message):
    if (wayPoint in coordinates):
        coordinates.remove(wayPoint)
        print(len(coordinates))
+
+       if (len(coordinates) == 0):
+           x = {
+               "finished": True
+           }
+           mqtt_client.publish(finishedTopic, json.dumps(x), 0)
+
        return
 
    print('its not a waypoint')
@@ -106,8 +115,8 @@ if __name__ == '__main__':
 # listen to create search mqtt topic - **(change to post request)
 # calculate waypoints for robot - **
 # then send waypoints (5) through mqtt **
-# listen and check waypoints are acheived
-# listen detections
-# until all points are checked
+# listen and check waypoints are acheived **
+# listen detections **
+# until all points are checked **
 
-# send to finish signal to separate topic
+# send to finish signal to separate topic **
