@@ -65,6 +65,7 @@ def createSearch():
     x = {
         "name": "Thisaraaaa"
     }
+    
 
     mqtt_client.publish(coordinatesTopic, json.dumps(x), 0)
 
