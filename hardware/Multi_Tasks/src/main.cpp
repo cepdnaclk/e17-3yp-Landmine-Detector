@@ -63,15 +63,7 @@ void Task1code( void * pvParameters ){
   Serial.println(xPortGetCoreID());
 
   for(;;){
-  while (Serial2.available() > 0)
-    if (gps.encode(Serial2.read()))
-      displayInfo();
-  if (millis() > 5000 && gps.charsProcessed() < 10)
-  {
-    Serial.println(F("No GPS detected: check wiring."));
-    // Wire.write("No GPS detected: check wiring.");
-    while (true);
-  }
+
 
   } 
 }
