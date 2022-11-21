@@ -23,6 +23,7 @@ finishedTopic = '/3yp/ldr01/finish'
 detections = []
 
 coordinates = []
+coordinatesDict = {}
 
 mqtt_client = Mqtt(app)
 
@@ -60,7 +61,7 @@ def handle_mqtt_message(client, userdata, message):
        return
 
    print('its not a waypoint')
-   detections.append([data['type'], data['lat'], data['lon']])
+   detections.append([data['landmine'], data['obstacle'], data['lat'], data['lon']])
 
    print(detections)
 
@@ -80,11 +81,13 @@ def createSearch():
     lan = data['lan']
     rad = data['rad']
 
+    # global coordinates
+    global coordinatesDict
     global coordinates
-    coordinates = calculateWaypoints(lat, lan, rad)
+    coordinatesDict, coordinates = calculateWaypoints(lat, lan, rad)
 
-    mqtt_client.publish(coordinatesTopic, json.dumps(coordinates), 0)
-    print(coordinates)
+    mqtt_client.publish(coordinatesTopic, json.dumps(coordinatesDict), 0)
+    print(type(json.dumps(coordinatesDict)))
     print(len(coordinates))
 
 
@@ -92,17 +95,21 @@ def createSearch():
     return "data receieved"
 
 def calculateWaypoints(lat, lan, rad):
+    coordinatesD = {}
     coordinates = []
     arraySize = int((2*rad)/1.1)
     topLeftLat = lat + (((arraySize/2)-1)*0.00001)
     topLeftLan = lan - (((arraySize/2)-1)*0.00001)
 
+    x = 0
     for row in range(arraySize):
         for col in range(arraySize):
             current = [topLeftLat-row*0.00001, topLeftLan+col*0.00001]
             coordinates.append(current)
-
-    return coordinates
+            coordinatesD[str(x)] = current
+            x += 1
+            print(coordinatesD)
+    return coordinatesD, coordinates
 
 
 
