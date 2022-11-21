@@ -131,14 +131,14 @@ function createCoodinatesArray(lat, lan, rad) {
         globalCoorinates.map((item)=>{
           // console.log(index);
 
-            if (item[0] == 'landmine') {
+            if (item[0] === 1) {
               return(
               <div key={globalCoorinates.indexOf(item)}>
 
               
 
               <Circle
-                  center={[item[1], item[2]]} fillColor="red" radius={5}
+                  center={[item[2], item[3]]} fillColor="red" radius={5}
               />
 
               {/* <Marker
@@ -154,7 +154,7 @@ function createCoodinatesArray(lat, lan, rad) {
                 
   
                 <Circle
-                    center={[item[1], item[2]]} fillColor="blue" radius={5}
+                    center={[item[2], item[3]]} fillColor="blue" radius={5}
                 />
   
                 {/* <Marker
@@ -211,7 +211,7 @@ function callTableToUI() {
   return(
     <div>
       <br/>
-      <table className='co-table' id="customers">
+      {/* <table className='co-table' id="customers">
         <tr>
             <th>Latitude</th>
             <th>Langitude</th>
@@ -230,7 +230,7 @@ function callTableToUI() {
           </tr>
           )
         })}
-      </table>
+      </table> */}
     </div>
   )
 }
@@ -403,16 +403,18 @@ function OpenStreetMap() {
           <br/>
           <table className='co-table' id="customers">
             <tr>
-                <th>Type</th>
+                <th>Landmine</th>
+                <th>Obstacle</th>
                 <th>Latitude</th>
                 <th>Langitude</th>
             </tr>
             {landmines.map((item, index)=>{
               return(
                 <tr key={index}>
-                  <td>{item[0]}</td>
-              <td>{item[1].toFixed(5)}</td>
+              <td>{item[0]}</td>
+              <td>{item[1]}</td>
               <td>{item[2].toFixed(5)}</td>
+              <td>{item[3].toFixed(5)}</td>
               </tr>
               )
             })}
