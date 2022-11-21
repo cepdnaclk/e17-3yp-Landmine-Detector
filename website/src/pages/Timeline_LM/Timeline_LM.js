@@ -99,7 +99,7 @@ function Timeline_LM() {
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            {/* add date */}
+            25 October 2021
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -122,34 +122,12 @@ function Timeline_LM() {
         </TimelineContent>
       </TimelineItem>
 
-      <TimelineItem>
-        <TimelineOppositeContent>
-        <WhiteTextTypography>
-            {/* add date */}
-          </WhiteTextTypography>
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineDot color="primary">
-            {/* <LaptopMacIcon /> */}
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
-            Milestone 4
-            </Typography>
-            <li>PCB designs of circuits.</li>
-            <Typography>Prototype & Testing</Typography>
-            <li>3D Models for Robot.</li>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
+      
 
       <TimelineItem>
         <TimelineOppositeContent>
           <WhiteTextTypography>
-            {/* //add date */}
+            22 November 2022
           </WhiteTextTypography>
         </TimelineOppositeContent>
         <TimelineSeparator>
@@ -159,9 +137,16 @@ function Timeline_LM() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-            Milestone 5
+            Milestone 4
             </Typography>
-            <Typography>Complete Working System</Typography>
+            <Typography>
+              <ul>
+                <li>PCB designs of circuits.</li>
+                <li>Prototype & Testing</li>
+                <li>3D Models for Robot.</li>
+                <li>Complete Working System</li>
+              </ul>
+            </Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
