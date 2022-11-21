@@ -104,7 +104,7 @@ def calculateWaypoints(lat, lan, rad):
     x = 0
     for row in range(arraySize):
         for col in range(arraySize):
-            current = [topLeftLat-row*0.00001, topLeftLan+col*0.00001]
+            current = [round(topLeftLat-row*0.00001, 5), round(topLeftLan+col*0.00001, 5)]
             coordinates.append(current)
             coordinatesD[str(x)] = current
             x += 1
