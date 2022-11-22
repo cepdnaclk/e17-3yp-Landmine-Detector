@@ -35,25 +35,21 @@ TaskHandle_t Task2;
 
 const int PushButton = 15;
 
-// Replace with your network credentials (STATION)
-// const char* ssid = "SLT-Fiber-AA63";
-// const char* password = "homeWIFI2485";
-
 #define AWS_IOT_PUBLISH_TOPIC   "esp32/pub"
-#define AWS_IOT_SUBSCRIBE_TOPIC "esp32/sub"
+#define AWS_IOT_SUBSCRIBE_TOPIC "robo-data/ldr01/command"
 
 unsigned long previousMillis = 0;
 unsigned long interval = 30000;
 
-// WiFiClientSecure net = WiFiClientSecure();
-// PubSubClient client(net);
+WiFiClientSecure net = WiFiClientSecure();
+PubSubClient client(net);
 
 
-WiFiClient espClient;
-PubSubClient client(espClient);
-long lastMsg = 0;
-char msg[50];
-int value = 0;
+// WiFiClient espClient;
+// PubSubClient client(espClient);
+// long lastMsg = 0;
+// char msg[50];
+// int value = 0;
 
 
 void initWiFi() {
@@ -91,37 +87,37 @@ void messageHandler(char* topic, byte* payload, unsigned int length)
   Serial.println(message);
 }
 
-// void initAWS(){
-//   // Configure WiFiClientSecure to use the AWS IoT device credentials
-//   net.setCACert(AWS_CERT_CA);
-//   net.setCertificate(AWS_CERT_CRT);
-//   net.setPrivateKey(AWS_CERT_PRIVATE);
+void initAWS(){
+  // Configure WiFiClientSecure to use the AWS IoT device credentials
+  net.setCACert(AWS_CERT_CA);
+  net.setCertificate(AWS_CERT_CRT);
+  net.setPrivateKey(AWS_CERT_PRIVATE);
 
-//    // Connect to the MQTT broker on the AWS endpoint we defined earlier
-//   client.setServer(AWS_IOT_ENDPOINT, 8883);
+   // Connect to the MQTT broker on the AWS endpoint we defined earlier
+  client.setServer(AWS_IOT_ENDPOINT, 8883);
  
-//   // Create a message handler
-//   client.setCallback(messageHandler);
+  // Create a message handler
+  client.setCallback(messageHandler);
  
-//   Serial.println("Connecting to AWS IOT");
+  Serial.println("Connecting to AWS IOT");
  
-//   while (!client.connect(THINGNAME))
-//   {
-//     Serial.print(".");
-//     delay(100);
-//   }
+  while (!client.connect(THINGNAME))
+  {
+    Serial.print(".");
+    delay(100);
+  }
  
-//   if (!client.connected())
-//   {
-//     Serial.println("AWS IoT Timeout!");
-//     return;
-//   }
+  if (!client.connected())
+  {
+    Serial.println("AWS IoT Timeout!");
+    return;
+  }
  
-//   // Subscribe to a topic
-//   client.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
+  // Subscribe to a topic
+  client.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
  
-//   Serial.println("AWS IoT Connected!");
-// }
+  Serial.println("AWS IoT Connected!");
+}
 
 
 void checkWIFI(){
@@ -228,7 +224,7 @@ void reconnect() {
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
       // Subscribe
-      client.subscribe("esp32/output");
+      client.subscribe("robo-data/ldr01/command");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -256,7 +252,7 @@ void callback(char* topic, byte* message, unsigned int length) {
 
   // If a message is received on the topic esp32/output, you check if the message is either "on" or "off". 
   // Changes the output state according to the message
-  if (String(topic) == "/3yp/flask/test") {
+  if (String(topic) == "robo-data/ldr01/command") {
     Serial.print("Changing output to ");
     if(messageTemp == "on"){
       Serial.println("on");
@@ -299,10 +295,10 @@ void Task1code( void * pvParameters ){
     // }
 
 
-    // if (!client.connected()) {
-    //   reconnect();
-    // }
-    // client.loop();
+    if (!client.connected()) {
+      reconnect();
+    }
+    client.loop();
 
 
 
@@ -366,7 +362,7 @@ void Task2code( void * pvParameters ){
 void setup() {
   Serial.begin(115200);
   initWiFi();
-  // initAWS();
+  initAWS();
   // Serial.print("RSSI: ");
   // Serial.println(WiFi.RSSI());
 
@@ -383,8 +379,8 @@ void setup() {
 
 
   //MQTT
-  client.setServer(mqtt_server, 1883);
-  client.setCallback(callback);
+  // client.setServer(mqtt_server, 1883);
+  // client.setCallback(callback);
 
   //GPS
   Serial2.begin(9600);
