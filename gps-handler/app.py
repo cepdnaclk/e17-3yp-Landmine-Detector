@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_mqtt import Mqtt
 from flask_cors import CORS
 import json
-
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -17,8 +17,22 @@ coordinatesTopic = '/3yp/ldr01/coordinates'
 
 finishedTopic = '/3yp/ldr01/finish'
 
+landminesAndObstacles = [{'landmine': 0, 'obstacle': 0, 'lat': 7.2699, 'lon': 80.5938},
+                         {'landmine': 0, 'obstacle': 1, 'lat': 7.2699, 'lon': 80.59381},
+                         {'landmine': 0, 'obstacle': 0, 'lat': 7.2699, 'lon': 80.59382},
+                         {'landmine': 1, 'obstacle': 0, 'lat': 7.26989, 'lon': 80.59381},
+                         {'landmine': 0, 'obstacle': 0, 'lat': 7.26989, 'lon': 80.59382},
+                         {'landmine': 0, 'obstacle': 0, 'lat': 7.26988, 'lon': 80.5938},
+                         {'landmine': 1, 'obstacle': 0, 'lat': 7.26988, 'lon': 80.59381},
+                         {'landmine': 0, 'obstacle': 1, 'lat': 7.26988, 'lon': 80.59382}]
 
 
+def sendData():
+    for i in range(len(landminesAndObstacles)):
+        # mqtt_client.connect("mqtt.eclipseprojects.io", port=1883)
+        mqtt_client.publish(topic, json.dumps(landminesAndObstacles[i]))
+        print("published to topic " + topic)
+        time.sleep(5)
 
 detections = []
 
@@ -84,13 +98,13 @@ def createSearch():
     # global coordinates
     global coordinatesDict
     global coordinates
-    coordinatesDict, coordinates = calculateWaypoints(lat, lan, rad)
+    # coordinatesDict, coordinates = calculateWaypoints(lat, lan, rad)
 
-    mqtt_client.publish(coordinatesTopic, json.dumps(coordinatesDict), 0)
-    print(type(json.dumps(coordinatesDict)))
-    print(len(coordinates))
+    # mqtt_client.publish(coordinatesTopic, json.dumps(coordinatesDict), 0)
+    # print(type(json.dumps(coordinatesDict)))
+    # print(len(coordinates))
 
-
+    sendData()
 
     return "data receieved"
 
