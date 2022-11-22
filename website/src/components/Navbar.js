@@ -26,7 +26,7 @@ function Navbar() {
                 <li><a href='#ha'>Solution Architecture</a></li>
                 <li><a href='#hd'>Hardware Design</a></li>
                 <li><a href='#sd'>Software Design</a></li>
-                <li><a href='#testing'>Testing</a></li>
+                <li><a href='#test'>Testing</a></li>
                 <li><a href='#budget'>Budget</a></li>
                 <li><a href='#time'>Timeline</a></li>
                 <li><a href='#team'>Team</a></li>

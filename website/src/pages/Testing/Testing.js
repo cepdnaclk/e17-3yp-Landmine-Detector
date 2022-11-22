@@ -1,10 +1,13 @@
 import './Testing.css'
+import ReactPlayer from 'react-player/youtube'
 
 function Testing(){
     return(
+        <div>
      <div className="slide-show">
             <h1 style={{color:"#43dea5", textAlign:'center' }}>Testing</h1>  
-            <br></br>    
+            <br></br>   
+            <h2 style={{color:"#43dea5", textAlign:'left' }}>Software Testing</h2>   
 
                     <div className="each-slide">
                     <h1 className='sub-topic-ha'>API</h1>
@@ -37,7 +40,7 @@ function Testing(){
                         </div>
                     </div>
                     <br></br> 
-                    <div className="each-slide">
+                    {/* <div className="each-slide">
                     <h1 className='sub-topic-ha'>Hardware Integration</h1>
                         <div className="left-sa">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/mqtt_test.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
@@ -46,9 +49,36 @@ function Testing(){
                             </div>
                         </div>
                     </div>
-                    <br></br> 
+                    <br></br> */}
+            
+            <h2 style={{color:"#43dea5", textAlign:'left' }}>Hardware Testing</h2> 
+
+            <h1 className='sub-topic-ha'>Manual Controller</h1>
+
+            <div className="left-sa">
+
+                    <div  className='hd-text-video'>
+                                <p> User can switch to the manual controller if he wishes to override the autonomous drive. Connect to the robot using Bluetooth.
+                                </p>
+                    </div>
+                    <div className='player-wrapper'>
+                    <ReactPlayer
+                        className='react-player'
+                        url='https://youtu.be/IbjO4ZFprQQ'
+
+
+                        style={{ display: 'block', marginRight:0,width:'90%',opacity:'70%'}}
+                        />
+
+                        
+                    </div>
+                        {/* <img alt="" src={process.env.PUBLIC_URL + '/images/aws_lambda.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/>  */}
+
+                    
 
            </div>
+        </div>
+        </div>
 
     )
 }

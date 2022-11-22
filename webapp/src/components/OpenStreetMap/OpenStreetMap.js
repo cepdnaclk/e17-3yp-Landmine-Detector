@@ -22,7 +22,7 @@ const initialDate = new Date();
 
 
 
-const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getSeconds(), RobotID: '', UserID: '', name: '', description: '', searchLat: 6.0513, searchLon: 80.2405, startLat: 34.342, startLon: 23.345}
+const initialFormState = { id: 'index'+initialDate.getMinutes()+initialDate.getSeconds(), RobotID: '', UserID: '', name: '', description: '', searchLat: 7.2699, searchLon: 80.5938, startLat: 34.342, startLon: 23.345}
 //LocationData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}, PathData: {Lat: 24.233 , Lon: 23.234, Elev:0.0, isMine:false, isObs:false,isClear:true}}
 
 Amplify.configure(config);
@@ -131,14 +131,14 @@ function createCoodinatesArray(lat, lan, rad) {
         globalCoorinates.map((item)=>{
           // console.log(index);
 
-            if (item[0] == 'landmine') {
+            if (item[0] === 1) {
               return(
               <div key={globalCoorinates.indexOf(item)}>
 
               
 
               <Circle
-                  center={[item[1], item[2]]} fillColor="red" radius={5}
+                  center={[item[2], item[3]]} fillColor="red" radius={5}
               />
 
               {/* <Marker
@@ -154,7 +154,7 @@ function createCoodinatesArray(lat, lan, rad) {
                 
   
                 <Circle
-                    center={[item[1], item[2]]} fillColor="blue" radius={5}
+                    center={[item[2], item[3]]} fillColor="blue" radius={5}
                 />
   
                 {/* <Marker
@@ -211,7 +211,7 @@ function callTableToUI() {
   return(
     <div>
       <br/>
-      <table className='co-table' id="customers">
+      {/* <table className='co-table' id="customers">
         <tr>
             <th>Latitude</th>
             <th>Langitude</th>
@@ -230,7 +230,7 @@ function callTableToUI() {
           </tr>
           )
         })}
-      </table>
+      </table> */}
     </div>
   )
 }
@@ -264,6 +264,19 @@ function OpenStreetMap() {
 
   async function create() {
     
+
+    axios.post('https://obscure-depths-03721.herokuapp.com/create-search', {
+      lat: lat,
+      lan: lan,
+      rad: radius
+    })
+    .then(res=>{
+      console.log(res);
+    })
+    .catch(err=>{
+      console.log(err);
+    });
+
 
     // showLandmines();
     
@@ -315,9 +328,9 @@ function OpenStreetMap() {
 
 
     
-    const [lan, setLan] = useState(80.2405);
-    const [lat, setLat] = useState(6.0513);
-    const [area, setArea] = useState(200);
+    const [lan, setLan] = useState(80.5938);
+    const [lat, setLat] = useState(7.2699);
+    const [area, setArea] = useState(15);
     const [des, setDes] = useState(0);
 
 
@@ -390,16 +403,18 @@ function OpenStreetMap() {
           <br/>
           <table className='co-table' id="customers">
             <tr>
-                <th>Type</th>
+                <th>Landmine</th>
+                <th>Obstacle</th>
                 <th>Latitude</th>
-                <th>Langitude</th>
+                <th>Longitude</th>
             </tr>
             {landmines.map((item, index)=>{
               return(
                 <tr key={index}>
-                  <td>{item[0]}</td>
-              <td>{item[1].toFixed(5)}</td>
+              <td>{item[0]}</td>
+              <td>{item[1]}</td>
               <td>{item[2].toFixed(5)}</td>
+              <td>{item[3].toFixed(5)}</td>
               </tr>
               )
             })}
@@ -514,7 +529,7 @@ function OpenStreetMap() {
         //value={formData.searchLat}
         value={lan}
       />
-      <label for='lan'>Langitude</label>
+      <label for='lan'>Longitude</label>
       <br></br>
 
       <input
