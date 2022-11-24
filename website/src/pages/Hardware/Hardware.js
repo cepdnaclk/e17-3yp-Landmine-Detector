@@ -224,6 +224,23 @@ function Hardware() {
                     </div>
                 </div>
             </div>
+
+
+            <div className="each-slide">
+                <div className="left">
+                    <img alt="" src={process.env.PUBLIC_URL + '/images/pdesign.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
+                    <div  className='hd-text'>
+                    </div>
+                </div>
+
+                <div className="left">
+                    <img alt="" src={process.env.PUBLIC_URL + '/images/pdesign2.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
+                    <div  className='hd-text'>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 </div>
 </div>
