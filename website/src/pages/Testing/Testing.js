@@ -77,6 +77,71 @@ function Testing(){
                     
 
            </div>
+
+           <h2 style={{color:"#43dea5", textAlign:'left' }}>Unit Testing in PlatformIO</h2> 
+
+{/* <h1 className='sub-topic-ha'>Manual Controller</h1> */}
+
+<div className="left-sa">
+
+        <div className="left-sa">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/unit.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
+                        </div>
+
+            
+            {/* <img alt="" src={process.env.PUBLIC_URL + '/images/aws_lambda.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/>  */}
+
+        
+
+</div>
+
+
+
+<h2 style={{color:"#43dea5", textAlign:'left' }}>Competitions</h2> 
+
+<h1 className='sub-topic-ha'>IESL Undergraduate Inventor Of The Year Competition 2021</h1>
+
+<div className="left-sa">
+
+        <div className="left-sa">
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/uiy.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
+                        </div>
+
+            
+            {/* <img alt="" src={process.env.PUBLIC_URL + '/images/aws_lambda.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/>  */}
+
+        
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         </div>
 
