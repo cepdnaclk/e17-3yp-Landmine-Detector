@@ -84,15 +84,7 @@ a:hover {
 
 
 .video-area{
-  position: relative;
-  /* display: flex; */
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-  padding-top: 70px;
+  padding-left: 50%;
 }
 
 
