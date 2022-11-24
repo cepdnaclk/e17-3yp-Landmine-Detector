@@ -33,6 +33,8 @@ TaskHandle_t Task2;
 
 // BluetoothSerial SerialBT;
 
+
+
 const int PushButton = 15;
 
 #define AWS_IOT_PUBLISH_TOPIC   "esp32/pub"
@@ -295,10 +297,10 @@ void Task1code( void * pvParameters ){
     // }
 
 
-    if (!client.connected()) {
-      reconnect();
-    }
-    client.loop();
+    // if (!client.connected()) {
+    //   reconnect();
+    // }
+    // client.loop();
 
 
 

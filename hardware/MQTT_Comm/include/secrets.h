@@ -9,8 +9,8 @@ const char WIFI_PASSWORD[] = "***************";           //change this
 // const char* ssid = "Eng-Student";
 // const char* password = "3nG5tuDt";
 
-const char* ssid = "SLT-Fiber-AA63";
-const char* password = "homeWIFI2485";
+const char* ssid = "Akiller";
+const char* password = "72be85ec1ba1";
 
 const char AWS_IOT_ENDPOINT[] = "a3ey8fsc2z6gz-ats.iot.us-east-1.amazonaws.com";
 //"arn:aws:iot:us-east-1:326807654214:thing/3yp-device1";       //change this

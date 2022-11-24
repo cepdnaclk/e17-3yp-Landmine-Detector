@@ -151,9 +151,7 @@ void callback(char* topic, byte* message, unsigned int length) {
     DynamicJsonDocument doc(1024);
     deserializeJson(doc,char_array);
 
-
 //input latitude , longitude
-
 
     // Serial.println(doc[0]);
 
@@ -180,47 +178,122 @@ void callback(char* topic, byte* message, unsigned int length) {
     // lon: float
     // }
 
-  
-  DynamicJsonDocument reply(1024);
-
-  reply["landmine"] = 1;
-  reply["obstacle"]   = 0;
-  reply["lat"] =  22.5726;
-  reply["lon"] = 88.3639;
-
-
-
+   // {"0": [7.2699, 80.5938], "1": [7.2699, 80.59381], "2": [7.2699, 80.59382], "3": [7.26989, 80.5938], "4": [7.26989, 80.59381], "5": [7.26989, 80.59382], "6": [7.26988, 80.5938], "7": [7.26988, 80.59381], "8": [7.26988, 80.59382]}bytes = 56
   char out[128];
   int b;
   bool rc;
   int l,o;
-
-for(int i=0;i<9;i++){
-  if(i%4==0){
-    l = 1;
-  }else{
-    l=0;
-  }
-
-  if(i%5==0){
-    o = 1;
-  }else{
-    o=0;
-  }
-
-  reply["landmine"] = l;
-  reply["obstacle"]   = o;
-  reply["lat"] =  24.5726;
-  reply["lon"] = 88.3639;
+  DynamicJsonDocument reply(1024);
+//0
+  reply["landmine"] = 1;
+  reply["obstacle"]   = 0;
+  reply["lat"] =  6.05131;
+  reply["lon"] = 80.24049;
 
   b =serializeJson(reply, out);
   Serial.print("bytes = ");
   Serial.println(b,DEC);  
   Serial.println(out);
   rc = client.publish("/3yp/ldr01/detections", out);
-  delay(1000);
-}
-  
+
+ delay(5000);
+//1
+  reply["landmine"] = 0;
+  reply["obstacle"]   = 0;
+  reply["lat"] = 7.2699;
+  reply["lon"] = 80.5938;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+ delay(5000);
+//2
+  reply["landmine"] = 0;
+  reply["obstacle"]   = 1;
+  reply["lat"] =  7.2699;
+  reply["lon"] = 80.59381;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+   delay(5000);
+//3
+  reply["landmine"] = 0;
+  reply["obstacle"]   = 0;
+  reply["lat"] =  7.2699;
+  reply["lon"] = 80.59382;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+ delay(5000);
+//4
+    reply["landmine"] = 1;
+  reply["obstacle"]   = 0;
+  reply["lat"] =  7.26989; 
+  reply["lon"] = 80.59381;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+ delay(5000);
+//5
+    reply["landmine"] = 0;
+  reply["obstacle"]   = 0;
+  reply["lat"] =  7.26989;
+  reply["lon"] =  80.59382;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+ delay(5000);
+//6
+    reply["landmine"] = 0;
+  reply["obstacle"]   = 0;
+  reply["lat"] =  7.26988;
+  reply["lon"] = 80.5938;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+ delay(5000);
+//7
+    reply["landmine"] = 1;
+  reply["obstacle"]   = 0;
+  reply["lat"] =  7.26988; 
+  reply["lon"] = 80.59381;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+ delay(5000);
+
+//8
+    reply["landmine"] = 0;
+  reply["obstacle"]   = 1;
+  reply["lat"] =  7.26988;
+  reply["lon"] =  80.59382;
+
+  b =serializeJson(reply, out);
+  Serial.print("bytes = ");
+  Serial.println(b,DEC);  
+  Serial.println(out);
+  rc = client.publish("/3yp/ldr01/detections", out);
+  delay(5000);
   }
 }
 

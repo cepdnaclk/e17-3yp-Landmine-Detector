@@ -119,30 +119,29 @@ function Hardware() {
                     <br></br>
                     
             
-                    {/* <div className="each-slide">
+                    <div className="each-slide">
                     <h1 className='sub-topic-ha'>Connections</h1>
                         <div className="left-sa">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/connection.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/overall.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
                             <div  className='hd-text'>
-                                <p>The robot has a main I2C bus connecting two masters and sensors as slaves. Also an atmel chip is used as a 
-                                    slave for controlling motors and interrupt generator for the metal detector. One aster being the ESP32 handles the calculations
-                                    while the second master the atmel chip is responsible for communiation and data buffering. The data would be stored in an SD card 
-                                    using the SPI conncetion protocol. Communication happens through the SIM900A GSM module using the UART protocol.
+                                <p>The robot has a main I2C bus connecting a master controller a slave controller and an IMU sensor. The controllers are two Esp32 Dev Kit Modules.
+                                    The master control handles the data communiation using SIM900A module. It also handles the Neo6m GPS module. The slave controller handles the motor driver 
+                                    and the control logic for the navigation based on the information received.
                                 </p>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
            
                 <div>
                     <div className="each-slide">
                     <h1 className='sub-topic-ha'>Power</h1>
                         <div className="left">
-                            <img alt="" src={process.env.PUBLIC_URL + '/images/power.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
+                            <img alt="" src={process.env.PUBLIC_URL + '/images/Design_Manual.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
                             <div  className='hd-text'>
                                 <p>There are three main power lines within the robot. A 5V power line for some sensors that require it and a 3.3V power line 
                                     for specific components which needs it for optimum performance. Such as the ESP32 , GY80 and the NEO8M. The dedicated
                                     12V would be for the motors and the metal detector. The power for the whole system will be provided using a LiPo 12V 10000mAh battery and 
-                                    voltage regulators will be used to get required voltages.
+                                    Buck-Boost conver is used to get required voltages.
                                 </p>
                             </div>
                         </div>
@@ -159,20 +158,16 @@ function Hardware() {
 
     <div>
     <Slide easing="ease">
-            <div className="each-slide">
-            <h1 className='sub-topic-hd'>PCB Design for Metal Detector Circuit</h1>
-                <div className="left">
-                
-                 <img alt="" src={process.env.PUBLIC_URL + '/images/pcb1.png'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
-                 <ul  className='ha-text'>
-                        <br></br>
-                    </ul>
-                 </div>
+    <div className="each-slide">
+            <h1 className='sub-topic-hd'>PCB design for Metal Detector Circuit</h1>
+            <div className="left">
+                 <img alt="" src={process.env.PUBLIC_URL + '/images/pcb1.png'} style={{ display: 'block',width:'40%',opacity:'70%'}}/> 
+            </div>
             </div>
             <div className="each-slide">
             <h1 className='sub-topic-hd'>PCB design for power circuit</h1>
             <div className="left">
-                 <img alt="" src={process.env.PUBLIC_URL + '/images/pcb2.png'} style={{ display: 'block', marginRight:'auto',width:'40%',opacity:'70%'}}/> 
+                 <img alt="" src={process.env.PUBLIC_URL + '/images/pcb2.png'} style={{ display: 'block',width:'40%',opacity:'70%'}}/> 
             </div>
             </div>
 
@@ -194,6 +189,8 @@ function Hardware() {
                     </div>
             </div>
             <br></br>
+            <br></br>
+            <br></br>
             
 {/*     
             <div className="each-slide">
@@ -210,7 +207,7 @@ function Hardware() {
                 </div>
             </div> */}
    
-        <div>
+        {/* <div> */}
             {/* <div className="each-slide">
             <h1 className='sub-topic-ha'>Power</h1>
                 <div className="left">
@@ -226,7 +223,7 @@ function Hardware() {
             </div> */}
 
 
-            <div className="each-slide">
+            {/* <div className="each-slide">
             <h1 className='sub-topic-ha'>Connections</h1>
                 <div className="left">
                     <img alt="" src={process.env.PUBLIC_URL + '/images/pdesign.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
@@ -240,9 +237,9 @@ function Hardware() {
                     </div>
                 </div>
             </div>
+ */}
 
-
-        </div>
+        {/* </div> */}
 </div>
 </div>
 
