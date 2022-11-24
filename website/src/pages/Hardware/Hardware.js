@@ -103,7 +103,7 @@ function Hardware() {
             </div>
             <br/><br/>
 
-
+{/* 
                     <div>
                             <div className="each-slide">
                             <h1 className='sub-topic-ha'>3d Model</h1>
@@ -115,11 +115,11 @@ function Hardware() {
                                     </div>
                                 </div>
                             </div>
-                    </div>
+                    </div> */}
                     <br></br>
                     
             
-                    <div className="each-slide">
+                    {/* <div className="each-slide">
                     <h1 className='sub-topic-ha'>Connections</h1>
                         <div className="left-sa">
                             <img alt="" src={process.env.PUBLIC_URL + '/images/connection.png'} style={{ display: 'block', marginRight:'auto',width:'90%',opacity:'70%'}}/> 
@@ -131,7 +131,7 @@ function Hardware() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
            
                 <div>
                     <div className="each-slide">
@@ -195,7 +195,7 @@ function Hardware() {
             </div>
             <br></br>
             
-    
+{/*     
             <div className="each-slide">
             <h1 className='sub-topic-ha'>Connections</h1>
                 <div className="left-sa">
@@ -208,10 +208,10 @@ function Hardware() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
    
         <div>
-            <div className="each-slide">
+            {/* <div className="each-slide">
             <h1 className='sub-topic-ha'>Power</h1>
                 <div className="left">
                     <img alt="" src={process.env.PUBLIC_URL + '/images/power.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
@@ -223,10 +223,11 @@ function Hardware() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="each-slide">
+            <h1 className='sub-topic-ha'>Connections</h1>
                 <div className="left">
                     <img alt="" src={process.env.PUBLIC_URL + '/images/pdesign.png'} style={{ display: 'block', marginRight:'auto',width:'75%',opacity:'70%'}}/> 
                     <div  className='hd-text'>
