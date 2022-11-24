@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/e17-3yp-Landmine-Detector/static/css/main.de2c9aa6.chunk.css",
-    "main.js": "/e17-3yp-Landmine-Detector/static/js/main.014a576b.chunk.js",
-    "main.js.map": "/e17-3yp-Landmine-Detector/static/js/main.014a576b.chunk.js.map",
+    "main.css": "/e17-3yp-Landmine-Detector/static/css/main.ad98c260.chunk.css",
+    "main.js": "/e17-3yp-Landmine-Detector/static/js/main.bdf21c84.chunk.js",
+    "main.js.map": "/e17-3yp-Landmine-Detector/static/js/main.bdf21c84.chunk.js.map",
     "runtime-main.js": "/e17-3yp-Landmine-Detector/static/js/runtime-main.002dde2e.js",
     "runtime-main.js.map": "/e17-3yp-Landmine-Detector/static/js/runtime-main.002dde2e.js.map",
     "static/css/2.0ccb862f.chunk.css": "/e17-3yp-Landmine-Detector/static/css/2.0ccb862f.chunk.css",
-    "static/js/2.0a5680bd.chunk.js": "/e17-3yp-Landmine-Detector/static/js/2.0a5680bd.chunk.js",
-    "static/js/2.0a5680bd.chunk.js.map": "/e17-3yp-Landmine-Detector/static/js/2.0a5680bd.chunk.js.map",
+    "static/js/2.a0edaf76.chunk.js": "/e17-3yp-Landmine-Detector/static/js/2.a0edaf76.chunk.js",
+    "static/js/2.a0edaf76.chunk.js.map": "/e17-3yp-Landmine-Detector/static/js/2.a0edaf76.chunk.js.map",
     "static/js/3.590f7478.chunk.js": "/e17-3yp-Landmine-Detector/static/js/3.590f7478.chunk.js",
     "static/js/3.590f7478.chunk.js.map": "/e17-3yp-Landmine-Detector/static/js/3.590f7478.chunk.js.map",
     "index.html": "/e17-3yp-Landmine-Detector/index.html",
     "static/css/2.0ccb862f.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/2.0ccb862f.chunk.css.map",
-    "static/css/main.de2c9aa6.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/main.de2c9aa6.chunk.css.map",
-    "static/js/2.0a5680bd.chunk.js.LICENSE.txt": "/e17-3yp-Landmine-Detector/static/js/2.0a5680bd.chunk.js.LICENSE.txt",
+    "static/css/main.ad98c260.chunk.css.map": "/e17-3yp-Landmine-Detector/static/css/main.ad98c260.chunk.css.map",
+    "static/js/2.a0edaf76.chunk.js.LICENSE.txt": "/e17-3yp-Landmine-Detector/static/js/2.a0edaf76.chunk.js.LICENSE.txt",
     "static/media/LM.7b0f497e.mp4": "/e17-3yp-Landmine-Detector/static/media/LM.7b0f497e.mp4",
     "static/media/Home.css": "/e17-3yp-Landmine-Detector/static/media/land.a3d03566.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.002dde2e.js",
     "static/css/2.0ccb862f.chunk.css",
-    "static/js/2.0a5680bd.chunk.js",
-    "static/css/main.de2c9aa6.chunk.css",
-    "static/js/main.014a576b.chunk.js"
+    "static/js/2.a0edaf76.chunk.js",
+    "static/css/main.ad98c260.chunk.css",
+    "static/js/main.bdf21c84.chunk.js"
   ]
 }
